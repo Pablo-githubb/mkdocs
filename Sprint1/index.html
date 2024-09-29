@@ -161,6 +161,36 @@ Fem un ping per connectivitat.
 <img alt="25" src="../img/25.png" title="Comprovació del ping a google" /></p>
 <h1 id="punts-de-restauracio">Punts de restauració</h1>
 <h1 id="grub">GRUB</h1>
+<blockquote>
+<h3 id="mbr-master-boot-record">MBR (Master Boot Record)</h3>
+<p>MBR és un format de partició més antic, creat als anys 80, utilitzant en molts sistemes operatius. És compatible amb gairebé en tots, però té algunes limitacions importants.</p>
+<ul>
+<li>Pot gestionar discs de fins a 2 TB de mida màxima.</li>
+<li>Només permet crear fins a 4 particions primàries. Si necessites més, has de convertir una de les particions en "partició estesa" i, dins d'ella, crear particions lògiques</li>
+<li>L'MBR conté un petit codi de "boot" (arrencada), que és el primer lloc on el sistema operatiu busca per iniciar-se quan engegues l'ordinador.</li>
+</ul>
+<blockquote>
+<p><strong>Limitacions</strong></p>
+<ul>
+<li>No suporta discs més grans de 2 TB.</li>
+<li>Menys flexible pel que fa a la quantitat de particions.</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="gpt-guid-partition-table">GPT (GUID Partition Table)</h3>
+<blockquote>
+<p>GPT és el nou format de particions el qual es va dissenyar per superar les limitacions del MBR. És part de l'especificació UEFI (Unified Extensible Firmware Interface) i ofereix moltes millores tècniques.</p>
+<blockquote>
+<ul>
+<li>Suporta discs de fins a 9,4 ZB.</li>
+<li>Pot gestionar fins a 128 particions en molts sistemes (i més en d'altres), sense necessitat de particions esteses o lògiques.</li>
+<li>Cada partició en GPT té un identificador únic global (GUID), el que fa que sigui molt més robust a l'hora d'identificar particions.</li>
+<li>Té còpies de seguretat de la taula de particions, de manera que si una part del disc es corromp, és més fàcil recuperar la informació.</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>Quan instal·les Ubuntu o qualsevol altre sistema operatiu basat en Linux, pots triar entre utilitzar MBR o GPT per al disc, depenent de les teves necessitats. També perquè hi han distribucions que actualment no soporten GPT encara.</p>
+<p><strong>Si tens un ordinador modern amb UEFI, la millor opció és utilitzar GPT, perquè aprofita les capacitats modernes del maquinari i permet una millor gestió dels discs i particions.</strong></p>
 <h2 id="_1"></h2>
 <h2 id="_2"></h2></div>
             </div>
