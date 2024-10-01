@@ -100,11 +100,7 @@
             
             <li class="nav-item" data-level="1"><a href="#grub" class="nav-link">GRUB</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link"></a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link"></a>
+            <li class="nav-item" data-level="2"><a href="#boot-repair-disk" class="nav-link">Boot Repair Disk</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -160,6 +156,14 @@ Comprovem si la IP s'ha canviat.
 Fem un ping per connectivitat.
 <img alt="25" src="../img/25.png" title="Comprovació del ping a google" /></p>
 <h1 id="punts-de-restauracio">Punts de restauració</h1>
+<p><img alt="x" src="../img/timeshift0.png" title="" />
+<img alt="x" src="../img/timeshift1.png" title="" />
+<img alt="x" src="../img/timeshift3.png" title="" />
+<img alt="x" src="../img/timeshift4.png" title="" />
+<img alt="x" src="../img/timeshift5.png" title="" />
+<img alt="x" src="../img/timeshift6.png" title="" />
+<img alt="x" src="../img/timeshift7.png" title="" />
+<img alt="x" src="../img/timeshift8.png" title="" /></p>
 <h1 id="grub">GRUB</h1>
 <blockquote>
 <h3 id="mbr-master-boot-record">MBR (Master Boot Record)</h3>
@@ -190,9 +194,25 @@ Fem un ping per connectivitat.
 </blockquote>
 </blockquote>
 <p>Quan instal·les Ubuntu o qualsevol altre sistema operatiu basat en Linux, pots triar entre utilitzar MBR o GPT per al disc, depenent de les teves necessitats. També perquè hi han distribucions que actualment no soporten GPT encara.</p>
+<p><img alt="x" src="../img/comparativa.png" title="Comparativa del GPT-MBR" /></p>
 <p><strong>Si tens un ordinador modern amb UEFI, la millor opció és utilitzar GPT, perquè aprofita les capacitats modernes del maquinari i permet una millor gestió dels discs i particions.</strong></p>
-<h2 id="_1"></h2>
-<h2 id="_2"></h2></div>
+<h3 id="elliminar-la-carpeta-grub">El·liminar la carpeta GRUB</h3>
+<p>Per començar la pràctica hem de descarregar la ISO del Boot Repair Disk.
+<img alt="20" src="../img/grub1.png" title="Descarregar ISO Boot Repair" />
+Borrem tots el arxius de la carpeta /boot/grub.
+<img alt="20" src="../img/grub2.png" title="Borrar carpeta /GRUB" />
+Com podem veure, no estan els arxius necessaris de la carpeta d'arranc del sistema.
+<img alt="20" src="../img/grub3.png" title="" />
+<img alt="20" src="../img/grub4.png" title="" />
+<img alt="20" src="../img/grub5.png" title="" />
+<img alt="20" src="../img/grub6.png" title="" />
+<img alt="20" src="../img/grub7.png" title="" />
+<img alt="20" src="../img/grub8.png" title="" /></p>
+<h2 id="boot-repair-disk">Boot Repair Disk</h2>
+<p><img alt="x" src="../img/boot1.png" title="boot repair iniciat" />
+<img alt="x" src="../img/boot2.png" title="borrem carpeta /grub en el boot repair" />
+<img alt="x" src="../img/boot3.png" title="borrem carpeta /grub en el boot repair" />
+<img alt="x" src="../img/boot4.png" title="borrem carpeta /grub en el boot repair" /></p></div>
             </div>
         </div>
 
