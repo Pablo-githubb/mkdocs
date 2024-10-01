@@ -148,7 +148,7 @@ Comprovem si la IP s'ha canviat.
 Fem un ping per connectivitat.
 <img alt="20" src="../img/20.png" title="Comprovació ping a google amb IP" /></p>
 <h2 id="configuracio-de-la-xarxa-amb-comandes">Configuració de la xarxa (amb comandes)</h2>
-<p>Ara, si volem fer el mateix procediment que abans amb la terminal ens d'utilitzar la comanda <strong>"sudo nano /etc/netplan/01-network-manager-all.yaml"</strong>. </p>
+<p>Ara, si volem fer el mateix procediment que abans amb la terminal ens d'utilitzar la comanda <strong><em>"sudo nano /etc/netplan/01-network-manager-all.yaml"</em></strong>. </p>
 <p>D'aquesta manera, copiarem tota la configuració que hi ha a l'imatge, guardarem amb Ctrl+O i sortirem amb Ctrl+X.
 <img alt="23" src="../img/23.png" title="Configuració de l'arxiu de la configuració de la xarxa" />
 Comprovem si la IP s'ha canviat.
@@ -156,8 +156,9 @@ Comprovem si la IP s'ha canviat.
 Fem un ping per connectivitat.
 <img alt="25" src="../img/25.png" title="Comprovació del ping a google" /></p>
 <h1 id="punts-de-restauracio">Punts de restauració</h1>
-<p><img alt="x" src="../img/timeshift0.png" title="" />
-<img alt="x" src="../img/timeshift1.png" title="" />
+<p><img alt="x" src="../img/timeshift0.png" title="" /></p>
+<h3 id="timeshift">Timeshift</h3>
+<p><img alt="x" src="../img/timeshift1.png" title="" />
 <img alt="x" src="../img/timeshift3.png" title="" />
 <img alt="x" src="../img/timeshift4.png" title="" />
 <img alt="x" src="../img/timeshift5.png" title="" />
@@ -203,15 +204,20 @@ Borrem tots el arxius de la carpeta /boot/grub.
 <img alt="20" src="../img/grub2.png" title="Borrar carpeta /GRUB" />
 Com podem veure, no estan els arxius necessaris de la carpeta d'arranc del sistema.
 <img alt="20" src="../img/grub3.png" title="" />
+Ara, el que volem fer es iniciar la màquina virutal del nos super grub2 per poder restaurar el sistema d'arranc.
 <img alt="20" src="../img/grub4.png" title="" />
+<strong>Seguim tots els passos que es mostren en les captures</strong>.
 <img alt="20" src="../img/grub5.png" title="" />
 <img alt="20" src="../img/grub6.png" title="" />
 <img alt="20" src="../img/grub7.png" title="" />
+Finalment, reiniciem la màquina i vorem que ja ens arranca el Ubuntu. Com pas final, apliquem la comanda <strong><em>"sudo grub-install /dev/sda"</em></strong> i un <strong><em>"sudo update-grub2"</em></strong>.
 <img alt="20" src="../img/grub8.png" title="" /></p>
 <h2 id="boot-repair-disk">Boot Repair Disk</h2>
 <p><img alt="x" src="../img/boot1.png" title="boot repair iniciat" />
+Al moment de ja tindre instal·lat el Boot Repair Disk solament ens caldrà fer la prova de borrar la nostra carpeta <em>boot/grub</em>, provar a iniciar la ISO i veure si la ferramente ha arreglat el directori d'arranc. 
 <img alt="x" src="../img/boot2.png" title="borrem carpeta /grub en el boot repair" />
 <img alt="x" src="../img/boot3.png" title="borrem carpeta /grub en el boot repair" />
+Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut iniciar el sistema operatiu correctament.
 <img alt="x" src="../img/boot4.png" title="borrem carpeta /grub en el boot repair" /></p></div>
             </div>
         </div>
