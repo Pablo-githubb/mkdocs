@@ -107,7 +107,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#installaciodesinstallacio-de-programes" class="nav-link">Instal·lació/Desinstal·lació de programes</a>
+            <li class="nav-item" data-level="1"><a href="#gestio-de-paquets" class="nav-link">Gestió de paquets</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -224,7 +224,7 @@ Al moment de ja tindre instal·lat el Boot Repair Disk solament ens caldrà fer 
 <img alt="x" src="../img/boot3.png" title="borrem carpeta /grub en el boot repair" />
 Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut iniciar el sistema operatiu correctament.
 <img alt="x" src="../img/boot4.png" title="borrem carpeta /grub en el boot repair" /></p>
-<h1 id="installaciodesinstallacio-de-programes">Instal·lació/Desinstal·lació de programes</h1>
+<h1 id="gestio-de-paquets">Gestió de paquets</h1>
 <h3 id="installacio-amb-synaptic">Instal·lació amb Synaptic</h3>
 <p>apt-get install synaptic</p>
 <p><img alt="x" src="../img/sypnaptic.png" title="" /></p>
@@ -249,14 +249,15 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <li>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</li>
 <li>echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</li>
 <li>sudo apt update</li>
-<li>sudo apt install nom_del_paquet (sudo apt install docker-ce)
+<li>sudo apt install "nom_del_paquet" (sudo apt install docker-ce)
 <img alt="x" src="../img/repositori1.png" title="" />
 <img alt="x" src="../img/repositori2.png" title="" />
 <img alt="x" src="../img/repositori3.png" title="" /></li>
 </ol>
+<p><strong>ESCRIURE LA LÍNIA 3 A LA RUTA: /etc/apt/source.list/</strong></p>
 <h3 id="desinstallar-aplicacions-amb-repositoris">Desinstal·lar aplicacions amb repositoris</h3>
 <ol>
-<li>sudo apt remove nombre_del_paquete (sudo apt remove docker-ce)</li>
+<li>sudo apt remove "nom_del_paquet" (sudo apt remove docker-ce)</li>
 <li>sudo apt purge docker-ce</li>
 <li>sudo rm /etc/apt/sources.list.d/docker.list</li>
 <li>sudo apt autoremove
@@ -264,7 +265,20 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <img alt="x" src="../img/repositori5.png" title="" />
 <img alt="x" src="../img/repositori6.png" title="" />
 <img alt="x" src="../img/repositori7.png" title="" /></li>
-</ol></div>
+</ol>
+<h3 id="installacio-amb-dpkg">Instal·lació amb dpkg</h3>
+<p>sudo dpkg -i "arxiu.deb"
+<img alt="x" src="../img/dpkg1.png" title="" />
+<img alt="x" src="../img/dpkg2.png" title="" />
+<img alt="x" src="../img/dpkg3.png" title="" /></p>
+<h3 id="desinstallacio-amb-dpkg">Desinstal·lació amb dpkg</h3>
+<p>sudo dpkg -r "nom_del_paquet"
+<img alt="x" src="../img/dpkg4.png" title="" /></p>
+<h3 id="installacio-amb-aptitude">Instal·lació amb aptitude</h3>
+<h3 id="desinstallacio-amb-aptitude">Desinstal·lació amb aptitude</h3>
+<h3 id="compliar-a-traves-de-codi-font">Compliar a traves de codi font</h3>
+<p><img alt="x" src="../img/tar1.png" title="" />
+<img alt="x" src="../img/tar2.png" title="" /></p></div>
             </div>
         </div>
 
