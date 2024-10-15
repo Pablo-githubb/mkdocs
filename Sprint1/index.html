@@ -226,30 +226,30 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <img alt="x" src="../img/boot4.png" title="borrem carpeta /grub en el boot repair" /></p>
 <h1 id="gestio-de-paquets">Gestió de paquets</h1>
 <h3 id="installacio-amb-synaptic">Instal·lació amb Synaptic</h3>
-<p>apt-get install synaptic</p>
+<p>sudo apt-get install synaptic.</p>
 <p><img alt="x" src="../img/sypnaptic.png" title="" /></p>
 <h3 id="installacio-amb-apt-get-o-apt">Instal·lació amb apt-get o apt</h3>
-<p>sudo apt update</p>
-<p>apt search vim</p>
-<p>sudo apt install nom_del_paquet (vim)</p>
-<p>sudo apt install vim
+<p>sudo apt update.</p>
+<p>apt search vim.</p>
+<p>sudo apt install nom_del_paquet (vim).</p>
+<p>sudo apt install vim.
 <img alt="x" src="../img/apt1.png" title="" />
 <img alt="x" src="../img/apt2.png" title="" /></p>
 <h3 id="desinstallacio-amb-apt">Desinstal·lació amb apt</h3>
-<p>sudo apt remove nom_del_paquet (vim)</p>
-<p>sudo apt remove vim</p>
-<p>sudo apt purge nombre_del_paquete</p>
+<p>sudo apt remove nom_del_paquet (vim).</p>
+<p>sudo apt remove vim.</p>
+<p>sudo apt purge nombre_del_paquete.</p>
 <p>sudo apt autoremove
 <img alt="x" src="../img/apt3.png" title="" />
 <img alt="x" src="../img/apt4.png" title="" /></p>
 <h3 id="instalacio-daplicacions-amb-repositoris">Instalació d'Aplicacions amb repositoris</h3>
 <ol>
-<li>sudo apt update</li>
-<li>sudo apt install apt-transport-https ca-certificates curl software-properties-common</li>
-<li>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</li>
-<li>echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</li>
-<li>sudo apt update</li>
-<li>sudo apt install "nom_del_paquet" (sudo apt install docker-ce)
+<li>sudo apt update.sudo aptitude install "nom_del_paquet</li>
+<li>sudo apt install apt-transport-https ca-certificates curl software-properties-common.</li>
+<li>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg.</li>
+<li>echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null.</li>
+<li>sudo apt update.</li>
+<li>sudo apt install "nom_del_paquet" (sudo apt install docker-ce).
 <img alt="x" src="../img/repositori1.png" title="" />
 <img alt="x" src="../img/repositori2.png" title="" />
 <img alt="x" src="../img/repositori3.png" title="" /></li>
@@ -257,10 +257,10 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <p><strong>ESCRIURE LA LÍNIA 3 A LA RUTA: /etc/apt/source.list/</strong></p>
 <h3 id="desinstallar-aplicacions-amb-repositoris">Desinstal·lar aplicacions amb repositoris</h3>
 <ol>
-<li>sudo apt remove "nom_del_paquet" (sudo apt remove docker-ce)</li>
-<li>sudo apt purge docker-ce</li>
-<li>sudo rm /etc/apt/sources.list.d/docker.list</li>
-<li>sudo apt autoremove
+<li>sudo apt remove "nom_del_paquet" (sudo apt remove docker-ce).</li>
+<li>sudo apt purge docker-ce.</li>
+<li>sudo rm /etc/apt/sources.list.d/docker.list.</li>
+<li>sudo apt autoremove.
 <img alt="x" src="../img/repositori4.png" title="" />
 <img alt="x" src="../img/repositori5.png" title="" />
 <img alt="x" src="../img/repositori6.png" title="" />
@@ -272,11 +272,16 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <img alt="x" src="../img/dpkg2.png" title="" />
 <img alt="x" src="../img/dpkg3.png" title="" /></p>
 <h3 id="desinstallacio-amb-dpkg">Desinstal·lació amb dpkg</h3>
-<p>sudo dpkg -r "nom_del_paquet"
+<p>sudo dpkg -r "nom_del_paquet".
 <img alt="x" src="../img/dpkg4.png" title="" /></p>
 <h3 id="installacio-amb-aptitude">Instal·lació amb aptitude</h3>
+<p>sudo aptitude install "nom_del_paquet".
+<img alt="x" src="../img/aptitude1.png" title="" />
+<img alt="x" src="../img/aptitude2.png" title="" /></p>
 <h3 id="desinstallacio-amb-aptitude">Desinstal·lació amb aptitude</h3>
-<h3 id="compliar-a-traves-de-codi-font">Compliar a traves de codi font</h3>
+<p>sudo aptitude purge "nom_del_paquet".
+<img alt="x" src="../img/aptitude3.png" title="" /></p>
+<h3 id="compilar-a-traves-de-codi-font">Compilar a traves de codi font</h3>
 <p><img alt="x" src="../img/tar1.png" title="" />
 <img alt="x" src="../img/tar2.png" title="" /></p></div>
             </div>
