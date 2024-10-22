@@ -1,125 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
+
+<head>
+        <title>Sprint1 - Sistemes Informàtics Pablo</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Sprint1 - Sistemes Informàtics Pablo</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="..">Sistemes Informàtics Pablo</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/darcula-highlight.min.css">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href=".." class="nav-link">Inici</a>
-                            </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Sprint1</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../Sprint2/" class="nav-link">Sprint2</a>
-                            </li>
-                        </ul>
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../assets/css/mkdocs.min.css">
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../Sprint2/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
+            <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
 
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
         </button>
     </div>
 
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-light">
-        <ul class="nav flex-column">
+    <div class="p-4">
+        
+
+        <div class="drac-text-center">
             
-            <li class="nav-item" data-level="1"><a href="#installacio-dubuntu-2404-lts" class="nav-link">Instal·lació d'Ubuntu 24.04 LTS</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#proces-dinstallacio" class="nav-link">Procés d'instal·lació</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#proces-de-configuracio" class="nav-link">Procés de configuració</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#configuracio-de-la-xarxa-interficie-grafica" class="nav-link">Configuració de la xarxa (interfície gràfica)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#configuracio-de-la-xarxa-amb-comandes" class="nav-link">Configuració de la xarxa (amb comandes)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
+                <span class="drac-text drac-line-height drac-text-white">Sistemes Informàtics Pablo</span>
             
-            <li class="nav-item" data-level="1"><a href="#punts-de-restauracio" class="nav-link">Punts de restauració</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
             
-            <li class="nav-item" data-level="1"><a href="#grub" class="nav-link">GRUB</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#boot-repair-disk" class="nav-link">Boot Repair Disk</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Inici
+                </a>
             </li>
-              </ul>
+            <li class="drac-box">
+                <a href="./"
+                    class=" active 
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Sprint1
+                </a>
             </li>
-            
-            <li class="nav-item" data-level="1"><a href="#gestio-de-paquets" class="nav-link">Gestió de paquets</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href="../Sprint2/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Sprint2
+                </a>
             </li>
         </ul>
+        <!-- endblock -->
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+</nav>
+        <!-- endblock -->
 
-<h1 id="installacio-dubuntu-2404-lts">Instal·lació d'Ubuntu 24.04 LTS</h1>
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href=".."
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../Sprint2/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="installacio-dubuntu-2404-lts">Instal·lació d'Ubuntu 24.04 LTS</h1>
 <h2 id="proces-dinstallacio">Procés d'instal·lació</h2>
 <p>Començarem el procés d'intal·lació de la màquina virtual fican't-li un nom, el directori on volem que es guardi i la seva ISO corresponent.
 <img alt="1" src="../img/1.png" title="Configuració de la màquina virtual" /></p>
@@ -137,12 +175,12 @@
 <p>Començant el procés de configuració del sistema operatiu solament hem de configurar-ho amb les nostres preferencies i donar següent als passos.
 <img alt="8" src="../img/8.png" title="Configuració de la màquina virtual" /></p>
 <p><img alt="9" src="../img/9.png" title="Configuració de la màquina virtual" /></p>
-<p><img alt="10" src="../img/10.png" title="Configuració de la màquina virtual" />
-Ara, ens cal configurar manualment les nostres particions i el sistema de gestió d'emmagatzemament del nostre sistema. Per això, elegim l'opció de <strong>"Manual installation"</strong> i prenem el botó de següent.
+<p><img alt="10" src="../img/10.png" title="Configuració de la màquina virtual" /></p>
+<p>Ara, ens cal configurar manualment les nostres particions i el sistema de gestió d'emmagatzemament del nostre sistema. Per això, elegim l'opció de <strong>"Manual installation"</strong> i prenem el botó de següent.
 <img alt="11" src="../img/11.png" title="Configuració manual de les particions" />
 Dintre d'aquesta pantalla el que farem será amb l'espai lliure que ens deixa configurar prenem el signe de "<strong>+</strong>". Afegim <em>25GB</em> la carpeta <strong>/home</strong>, <em>10GB</em> a la carpeta <strong>Swap</strong>, (la resta de gigabytes a la <strong>/</strong>).
-<img alt="13" src="../img/13.png" title="Configuració de particions" />
-Creem un compte per al nostre usuari principal amb una contraseya que sigui fácil de recordar.
+<img alt="13" src="../img/13.png" title="Configuració de particions" /></p>
+<p>Creem un compte per al nostre usuari principal amb una contraseya que sigui fácil de recordar.
 <img alt="14" src="../img/14.png" title="Configuració d'usuari" /></p>
 <p><img alt="15" src="../img/15.png" title="Configuració de la màquina virtual" /></p>
 <p><img alt="16" src="../img/16.png" title="Configuració de la màquina virtual" /></p>
@@ -152,28 +190,28 @@ Finalment, solament en fa falta reiniciar la màquina virtual i ja tindrem el no
 <p>Si volem aplicar la configuració de l'adaptador amb Xarxa NAT hem de dirigirnos a paràmetres&gt;Newtwork i configurar l'adaptador manualment. Ficarem com IP: 10.0.2.X amb una màscara 255.255.255.0 i una porta d'enllaç 10.0.2.1. Aplicarem els canvis.
 <img alt="18" src="../img/18.png" title="Configuració de la xarxa en interfície gràfica" />
 Comprovem si la IP s'ha canviat.
-<img alt="19" src="../img/19.png" title="Comprovació canvi de la IP" />
-Fem un ping per connectivitat.
+<img alt="19" src="../img/19.png" title="Comprovació canvi de la IP" /></p>
+<p>Fem un ping per connectivitat.
 <img alt="20" src="../img/20.png" title="Comprovació ping a google amb IP" /></p>
 <h2 id="configuracio-de-la-xarxa-amb-comandes">Configuració de la xarxa (amb comandes)</h2>
 <p>Ara, si volem fer el mateix procediment que abans amb la terminal ens d'utilitzar la comanda <strong><em>"sudo nano /etc/netplan/01-network-manager-all.yaml"</em></strong>. </p>
 <p>D'aquesta manera, copiarem tota la configuració que hi ha a l'imatge, guardarem amb Ctrl+O i sortirem amb Ctrl+X.
 <img alt="23" src="../img/23.png" title="Configuració de l'arxiu de la configuració de la xarxa" />
 Comprovem si la IP s'ha canviat.
-<img alt="24" src="../img/24.png" title="Comprovació canvi de IP" />
-Fem un ping per connectivitat.
+<img alt="24" src="../img/24.png" title="Comprovació canvi de IP" /></p>
+<p>Fem un ping per connectivitat.
 <img alt="25" src="../img/25.png" title="Comprovació del ping a google" /></p>
 <h1 id="punts-de-restauracio">Punts de restauració</h1>
 <p>====================
 <img alt="x" src="../img/timeshift0.png" title="" /></p>
 <h3 id="timeshift">Timeshift</h3>
-<p><img alt="x" src="../img/timeshift1.png" title="" />
-<img alt="x" src="../img/timeshift3.png" title="" />
-<img alt="x" src="../img/timeshift4.png" title="" />
-<img alt="x" src="../img/timeshift5.png" title="" />
-<img alt="x" src="../img/timeshift6.png" title="" />
-<img alt="x" src="../img/timeshift7.png" title="" />
-<img alt="x" src="../img/timeshift8.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift1.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift3.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift4.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift5.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift6.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift7.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift8.png" title="" /></p>
 <h1 id="grub">GRUB</h1>
 <p>====</p>
 <blockquote>
@@ -213,40 +251,60 @@ Fem un ping per connectivitat.
 Borrem tots el arxius de la carpeta /boot/grub.
 <img alt="20" src="../img/grub2.png" title="Borrar carpeta /GRUB" />
 Com podem veure, no estan els arxius necessaris de la carpeta d'arranc del sistema.
-<img alt="20" src="../img/grub3.png" title="" />
-Ara, el que volem fer es iniciar la màquina virutal del nos super grub2 per poder restaurar el sistema d'arranc.
-<img alt="20" src="../img/grub4.png" title="" />
-<strong>Seguim tots els passos que es mostren en les captures</strong>.
+<img alt="20" src="../img/grub3.png" title="" /></p>
+<p>Ara, el que volem fer es iniciar la màquina virutal del nos super grub2 per poder restaurar el sistema d'arranc.
+<img alt="20" src="../img/grub4.png" title="" /></p>
+<p><strong>Seguim tots els passos que es mostren en les captures</strong>.
 <img alt="20" src="../img/grub5.png" title="" />
 <img alt="20" src="../img/grub6.png" title="" />
 <img alt="20" src="../img/grub7.png" title="" /></p>
 <p>Finalment, reiniciem la màquina i vorem que ja ens arranca el Ubuntu. Com pas final, apliquem la comanda <strong><em>"sudo grub-install /dev/sda"</em></strong> i un <strong><em>"sudo update-grub2"</em></strong>.
 <img alt="20" src="../img/grub8.png" title="" /></p>
 <h2 id="boot-repair-disk">Boot Repair Disk</h2>
-<p><img alt="x" src="../img/boot1.png" title="boot repair iniciat" />
-Al moment de ja tindre instal·lat el Boot Repair Disk solament ens caldrà fer la prova de borrar la nostra carpeta <em>boot/grub</em>, provar a iniciar la ISO i veure si la ferramente ha arreglat el directori d'arranc. 
-<img alt="x" src="../img/boot2.png" title="borrem carpeta /grub en el boot repair" />
-<img alt="x" src="../img/boot3.png" title="borrem carpeta /grub en el boot repair" />
-Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut iniciar el sistema operatiu correctament.
+<p><img alt="x" src="../img/boot1.png" title="boot repair iniciat" /></p>
+<p>Al moment de ja tindre instal·lat el Boot Repair Disk solament ens caldrà fer la prova de borrar la nostra carpeta <em>boot/grub</em>, provar a iniciar la ISO i veure si la ferramente ha arreglat el directori d'arranc. 
+<img alt="x" src="../img/boot2.png" title="borrem carpeta /grub en el boot repair" /></p>
+<p><img alt="x" src="../img/boot3.png" title="borrem carpeta /grub en el boot repair" /></p>
+<p>Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut iniciar el sistema operatiu correctament.
 <img alt="x" src="../img/boot4.png" title="borrem carpeta /grub en el boot repair" /></p>
 <h1 id="gestio-de-paquets">Gestió de paquets</h1>
 <h3 id="installacio-amb-synaptic">Instal·lació amb Synaptic</h3>
 <p>sudo apt-get install synaptic.</p>
 <p><img alt="x" src="../img/sypnaptic.png" title="" /></p>
 <h3 id="installacio-amb-apt-get-o-apt">Instal·lació amb apt-get o apt</h3>
+<ol>
+<li>
 <p>sudo apt update.</p>
+</li>
+<li>
 <p>apt search vim.</p>
+</li>
+<li>
 <p>sudo apt install nom_del_paquet (vim).</p>
-<p>sudo apt install vim.
-<img alt="x" src="../img/apt1.png" title="" />
-<img alt="x" src="../img/apt2.png" title="" /></p>
+</li>
+<li>
+<p>sudo apt install vim.</p>
+</li>
+</ol>
+<p><img alt="x" src="../img/apt1.png" title="" /></p>
+<p><img alt="x" src="../img/apt2.png" title="" /></p>
 <h3 id="desinstallacio-amb-apt">Desinstal·lació amb apt</h3>
+<ol>
+<li>
 <p>sudo apt remove nom_del_paquet (vim).</p>
+</li>
+<li>
 <p>sudo apt remove vim.</p>
+</li>
+<li>
 <p>sudo apt purge nombre_del_paquete.</p>
-<p>sudo apt autoremove
-<img alt="x" src="../img/apt3.png" title="" />
-<img alt="x" src="../img/apt4.png" title="" /></p>
+</li>
+<li>
+<p>sudo apt autoremove</p>
+</li>
+</ol>
+<p><img alt="x" src="../img/apt3.png" title="" /></p>
+<p><img alt="x" src="../img/apt4.png" title="" /></p>
 <h3 id="instalacio-daplicacions-amb-repositoris">Instalació d'Aplicacions amb repositoris</h3>
 <ol>
 <li>sudo apt update.sudo aptitude install "nom_del_paquet</li>
@@ -254,28 +312,28 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <li>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg.</li>
 <li>echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null.</li>
 <li>sudo apt update.</li>
-<li>sudo apt install "nom_del_paquet" (sudo apt install docker-ce).
-<img alt="x" src="../img/repositori1.png" title="" />
-<img alt="x" src="../img/repositori2.png" title="" />
-<img alt="x" src="../img/repositori3.png" title="" /></li>
+<li>sudo apt install "nom_del_paquet" (sudo apt install docker-ce).</li>
 </ol>
+<p><img alt="x" src="../img/repositori1.png" title="" /></p>
+<p><img alt="x" src="../img/repositori2.png" title="" /></p>
+<p><img alt="x" src="../img/repositori3.png" title="" /></p>
 <p><strong>ESCRIURE LA LÍNIA 3 A LA RUTA: /etc/apt/source.list/</strong></p>
 <h3 id="desinstallar-aplicacions-amb-repositoris">Desinstal·lar aplicacions amb repositoris</h3>
 <ol>
 <li>sudo apt remove "nom_del_paquet" (sudo apt remove docker-ce).</li>
 <li>sudo apt purge docker-ce.</li>
 <li>sudo rm /etc/apt/sources.list.d/docker.list.</li>
-<li>sudo apt autoremove.
-<img alt="x" src="../img/repositori4.png" title="" />
-<img alt="x" src="../img/repositori5.png" title="" />
-<img alt="x" src="../img/repositori6.png" title="" />
-<img alt="x" src="../img/repositori7.png" title="" /></li>
+<li>sudo apt autoremove.</li>
 </ol>
+<p><img alt="x" src="../img/repositori4.png" title="" /></p>
+<p><img alt="x" src="../img/repositori5.png" title="" /></p>
+<p><img alt="x" src="../img/repositori6.png" title="" /></p>
+<p><img alt="x" src="../img/repositori7.png" title="" /></p>
 <h3 id="installacio-amb-dpkg">Instal·lació amb dpkg</h3>
 <p>sudo dpkg -i "arxiu.deb"
-<img alt="x" src="../img/dpkg1.png" title="" />
-<img alt="x" src="../img/dpkg2.png" title="" />
-<img alt="x" src="../img/dpkg3.png" title="" /></p>
+<img alt="x" src="../img/dpkg1.png" title="" /></p>
+<p><img alt="x" src="../img/dpkg2.png" title="" /></p>
+<p><img alt="x" src="../img/dpkg3.png" title="" /></p>
 <h3 id="desinstallacio-amb-dpkg">Desinstal·lació amb dpkg</h3>
 <p>sudo dpkg -r "nom_del_paquet".
 <img alt="x" src="../img/dpkg4.png" title="" /></p>
@@ -288,83 +346,31 @@ Com podem apreciar, tots els problemes d'arranc s'han arreglat i hem pogut inici
 <img alt="x" src="../img/aptitude3.png" title="" /></p>
 <h3 id="compilar-a-traves-de-codi-font">Compilar a traves de codi font</h3>
 <p><img alt="x" src="../img/tar1.png" title="" />
-<img alt="x" src="../img/tar2.png" title="" /></p></div>
-            </div>
-        </div>
+<img alt="x" src="../img/tar2.png" title="" /></p></p>
+    </article>
+</section>
+            <!-- endblock -->
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+</footer>
+            <!-- endblock -->
         </div>
-    </div>
-</div>
 
-    </body>
+    </main>
+
+        <script>var base_url = '..';</script>
+        <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/mkdocs.js"></script>
+			<script src="../search/main.js" defer></script>
+
+</body>
+
 </html>
