@@ -370,6 +370,12 @@
 
 
 <h1 id="identificador-de-procesos">Identificador de procesos</h1>
+<p>Alhora d'identificar procesos podem utilitzar la comanda <code>pstree</code>. Però, per no tindre incompatibilitats utilitzarem la comanda <code>sudo su</code> per estar en superadmin.
+<img alt="" src="../img/pstree.png" title="terminal en superadmin" /></p>
+<p>Ara si utilitzem <code>pstree -h "usuari"</code> podrem veure els procesos executats per l'usuari indicat (en el meu cas, pmc)
+<img alt="" src="../img/pstreeh.png" title="terminal en superadmin" /></p>
+<p>A més a més, utilitzant la comanda <code>pstree -h -p "usuari"</code> podem a més veure els procesos de l'usuari amb el ID de cada proces.
+<img alt="" src="../img/pstreep.png" title="terminal en superadmin" /></p>
 
 
 
