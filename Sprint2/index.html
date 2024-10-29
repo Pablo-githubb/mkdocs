@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#identificador-de-procesos" class="md-skip">
+        <a href="#gestio-i-identificacio-de-processos" class="md-skip">
           Salta el contingut
         </a>
       
@@ -369,13 +369,36 @@
                   
 
 
-<h1 id="identificador-de-procesos">Identificador de procesos</h1>
+<h1 id="gestio-i-identificacio-de-processos">GESTIÓ I IDENTIFICACIÓ DE PROCESSOS</h1>
 <p>Alhora d'identificar procesos podem utilitzar la comanda <code>pstree</code>. Però, per no tindre incompatibilitats utilitzarem la comanda <code>sudo su</code> per estar en superadmin.
 <img alt="" src="../img/pstree.png" title="terminal en superadmin" /></p>
 <p>Ara si utilitzem <code>pstree -h "usuari"</code> podrem veure els procesos executats per l'usuari indicat (en el meu cas, pmc)
 <img alt="" src="../img/pstreeh.png" title="terminal en superadmin" /></p>
 <p>A més a més, utilitzant la comanda <code>pstree -h -p "usuari"</code> podem a més veure els procesos de l'usuari amb el ID de cada proces.
 <img alt="" src="../img/pstreep.png" title="terminal en superadmin" /></p>
+<h1 id="nf4-usuaris-linux-1-9-13-15-26-29">NF4-USUARIS-LINUX (1-9. 13-15. 26-29)</h1>
+<h2 id="crear-nous-usuaris">Crear nous usuaris</h2>
+<p>adduser gina
+cat /etc/passwd | grep gina
+cat /etc/group | grep gina
+cat /etc/gshadow | grep gina</p>
+<h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
+<p>adduser gina sudo
+deluser gina sudo //treure a gina del group sudo
+deluser gina //borrar usuari
+passwd gina //canviar contrasenya del usuari</p>
+<h2 id="borrar-usuaris">Borrar usuaris</h2>
+<p>deluser gina
+userdel -r gina //borrar l'usuari i el seu /home</p>
+<p>chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
+<h2 id="modificacio-dels-usuaris-i-grups">Modificació dels usuaris i grups</h2>
+<p>usermod -p contrasenya julia
+usermod -s interprete
+usermode -L user //bloqueja
+usermod -U gina
+usermod --help</p>
+<p>usermod -d /home/julia2 julia
+groupmode -n julia2 julia</p>
 
 
 
