@@ -377,28 +377,36 @@
 <p>A més a més, utilitzant la comanda <code>pstree -h -p "usuari"</code> podem a més veure els procesos de l'usuari amb el ID de cada proces.
 <img alt="" src="../img/pstreep.png" title="terminal en superadmin" /></p>
 <h1 id="nf4-usuaris-linux-1-9-13-15-26-29">NF4-USUARIS-LINUX (1-9. 13-15. 26-29)</h1>
-<h2 id="crear-nous-usuaris">Crear nous usuaris</h2>
+<h3 id="crear-nous-usuaris">Crear nous usuaris</h3>
 <p>adduser gina
+addgroup
 cat /etc/passwd | grep gina
 cat /etc/group | grep gina
 cat /etc/gshadow | grep gina</p>
-<h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
+<h3 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h3>
 <p>adduser gina sudo
 deluser gina sudo //treure a gina del group sudo
 deluser gina //borrar usuari
 passwd gina //canviar contrasenya del usuari</p>
-<h2 id="borrar-usuaris">Borrar usuaris</h2>
+<p>gpasswd -a user group</p>
+<h3 id="borrar-usuaris">Borrar usuaris</h3>
 <p>deluser gina
-userdel -r gina //borrar l'usuari i el seu /home</p>
-<p>chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
-<h2 id="modificacio-dels-usuaris-i-grups">Modificació dels usuaris i grups</h2>
+userdel -r gina //borrar l'usuari i el seu /home
+deluser gina group
+chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
+<h3 id="modificacio-dels-usuaris-i-grups">Modificació dels usuaris i grups</h3>
 <p>usermod -p contrasenya julia
 usermod -s interprete
 usermode -L user //bloqueja
 usermod -U gina
-usermod --help</p>
-<p>usermod -d /home/julia2 julia
+usermod --help
+sudo mv /home/julia julia2 <strong>Moure la carpeta física
+usermod -d /home/julia2 julia </strong>Modificar en el /passwd
 groupmode -n julia2 julia</p>
+<p>usermod -a -G group user
+gpasswd -A user group //afegir un user a un group com admin
+usermod -g group user // afegit al grup principal del usuari
+groupmod -n castanyada halloween // canvia el nom del grup</p>
 
 
 
