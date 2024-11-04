@@ -424,6 +424,8 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>deluser alumne2
 </span></code></pre></div>
 <img alt="" src="../img/deluser2.png" title="" /></p>
+<p>Comprovació:</p>
+<p><img alt="" src="../img/alumne5.png" title="" /></p>
 <h3 id="crear-grups">Crear grups</h3>
 <ul>
 <li>
@@ -443,10 +445,6 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <img alt="" src="../img/groups3.png" title="" /></p>
 </li>
 </ul>
-<p>addgroup group</p>
-<p>cat /etc/passwd | grep gina</p>
-<p>cat /etc/group | grep gina</p>
-<p>cat /etc/gshadow | grep gina</p>
 <h3 id="modificacio-13-15">Modificació (13-15)</h3>
 <ul>
 <li>Modifica la paraula de pas d'alumne1</li>
@@ -475,8 +473,14 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 </span></code></pre></div>
 <img alt="" src="../img/modificacio6.png" title="" /></p>
 <h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
-<p>adduser gina sudo //afegir usuari al group sudo</p>
-<p>deluser gina sudo //treure a gina del group sudo</p>
+<p>La comanda següent serveix per afegir un usuari al group sudo.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>adduser alumne1 sudo 
+</span></code></pre></div>
+<img alt="" src="../img/sudo.png" title="" /></p>
+<p>D'altra banda, aquesta comanda serveix per treure al alumne1 del group sudo.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>deluser alumne1 sudo 
+</span></code></pre></div>
+<img alt="" src="../img/sudo2.png" title="" /></p>
 <p>deluser gina //borrar usuari</p>
 <p>passwd gina //canviar contrasenya del usuari</p>
 <p>gpasswd -a user group</p>
@@ -484,23 +488,46 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <ul>
 <li>Bloqueja un usuari i comprova que no pots accedir amb ell</li>
 </ul>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>usermod -L alumne3
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>usermod -L alumne3
 </span></code></pre></div>
 <img alt="" src="../img/bloqueig.png" title="" />
 <img alt="" src="../img/bloqueig2.png" title="" /></p>
 <ul>
 <li>Ara desbloqueja'l i comprova que ja pots tornar a accedir amb ell
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>usermod -U alumne3
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>usermod -U alumne3
 </span></code></pre></div>
 <img alt="" src="../img/bloqueig3.png" title="" />
 <img alt="" src="../img/bloqueig4.png" title="" /></li>
-<li>Per a què pot servir bloquejar un usuari? Podem voldre a bloquejar els usuaris per ocultar-los o impedir l'utilització d'aquests per raons de seguretat.</li>
+<li>Per a què pot servir bloquejar un usuari? <strong>Podem voldre a bloquejar els usuaris per ocultar-los o impedir l'utilització d'aquests per raons de seguretat.</strong></li>
 </ul>
+<h3 id="caducitat-de-les-paraules-de-pas">Caducitat de les paraules de pas</h3>
+<ul>
+<li>M (Maximum days): Defineix el nombre màxim de dies abans que la contrasenya caduqui i l’usuari estigui obligat a canviar-la.</li>
+<li>m (Minimum days): Defineix el nombre mínim de dies abans que un usuari pugui canviar la seva contrasenya després d’haver-la canviat.</li>
+<li>W (Warning days): Defineix el nombre de dies d'avís abans de la caducitat, en què el sistema notificarà a l'usuari que ha de canviar la contrasenya.</li>
+<li>E (Expire date): Permet especificar una data exacta per a la caducitat del compte de l'usuari. Per exemple, -E 2024-12-31 caducaria l'usuari el 31 de desembre de 202</li>
+<li>M 30: Estableix la caducitat de la contrasenya a 30 dies. Això vol dir que l’usuari haurà de canviar la seva contrasenya cada 30 dies.</li>
+<li>m 7: Estableix el mínim de dies abans que l’usuari pugui canviar la seva contrasenya de nou, que en aquest cas és 7 dies.</li>
+<li>W 5: Estableix que l’usuari rebrà un avís 5 dies abans que caduqui la seva contrasenya.</li>
+</ul>
+<p>Primer, amb la comanda <code>adduser provachage</code> creem el usuari de proves que utilitzarem.
+<img alt="" src="../img/chage.png" title="" /></p>
+<p>Desprès amb la següent comanda:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>chage -M 30 -m 7 -W 5 provachage
+</span></code></pre></div>
+<img alt="" src="../img/chage2.png" title="" />
+Apliquem la configuració al usuari</p>
+<p>Finalment, amb <code>chage -l provachage</code> verifiquem la configuarció.
+<img alt="" src="../img/chage3.png" title="" /></p>
 <h2 id="borrar-usuaris">Borrar usuaris</h2>
-<p>deluser gina</p>
-<p>userdel -r gina //borrar l'usuari i el seu /home</p>
-<p>deluser gina group</p>
-<p>chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
+<p>Al moment de voldre eliminar un usuari del sistema tenim dues maneres. La primera és amb la següent comanda per borrar l'usuari SENSE LA SEVA /HOME
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>deluser provaborrar
+</span></code></pre></div>
+<img alt="" src="../img/borrar2.png" title="" />
+D'altra banda, amb la següent comanda borrem l'usuari i la seva /home al mateix temps 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>userdel -r provaborrar
+</span></code></pre></div>
+<img alt="" src="../img/borrar.png" title="" /></p>
 <h2 id="modificacio-dels-usuaris-i-grups">Modificació dels usuaris i grups</h2>
 <p>usermod -p contrasenya julia //canvia constrasenya</p>
 <p>usermod -s interprete</p>
@@ -514,6 +541,8 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <p>gpasswd -A user group //afegir un user a un group com admin</p>
 <p>usermod -g group user // afegit al grup principal del usuari</p>
 <p>groupmod -n castanyada halloween // canvia el nom del grup</p>
+<p>deluser gina group</p>
+<p>chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
 
 
 
