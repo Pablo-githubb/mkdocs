@@ -337,8 +337,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprint2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -349,6 +358,176 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-i-identificacio-de-processos" class="md-nav__link">
+    <span class="md-ellipsis">
+      GESTIÓ I IDENTIFICACIÓ DE PROCESSOS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nf4-usuaris-linux-26-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      NF4-USUARIS-LINUX (26-29)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NF4-USUARIS-LINUX (26-29)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exe-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      exe 1-2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versio-grafica-exe3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versió gràfica (exe3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exe-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      exe 4-6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-nous-usuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear nous usuaris
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear nous usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-8-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      7-8-9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovació:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-grups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear grups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-usuaris-al-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir usuaris al sudo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir usuaris al sudo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloqueig-25-26-27-28-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloqueig (25-26-27-28-29)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caducitat-de-les-paraules-de-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caducitat de les paraules de pas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-usuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar usuaris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificacio-dels-usuaris-i-grups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificació dels usuaris i grups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -369,7 +548,7 @@
                   
 
 
-<h1 id="gestio-i-identificacio-de-processos">GESTIÓ I IDENTIFICACIÓ DE PROCESSOS</h1>
+<h2 id="gestio-i-identificacio-de-processos">GESTIÓ I IDENTIFICACIÓ DE PROCESSOS</h2>
 <p>Alhora d'identificar procesos podem utilitzar la comanda <code>pstree</code>. Però, per no tindre incompatibilitats utilitzarem la comanda <code>sudo su</code> per estar en superadmin.
 <img alt="" src="../img/pstree.png" title="terminal en superadmin" /></p>
 <p>Ara si utilitzem <code>pstree -h "usuari"</code> podrem veure els procesos executats per l'usuari indicat (en el meu cas, pmc)
@@ -424,7 +603,7 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>deluser alumne2
 </span></code></pre></div>
 <img alt="" src="../img/deluser2.png" title="" /></p>
-<p>Comprovació:</p>
+<h3 id="comprovacio">Comprovació:</h3>
 <p><img alt="" src="../img/alumne5.png" title="" /></p>
 <h3 id="crear-grups">Crear grups</h3>
 <ul>
@@ -450,33 +629,44 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 </span></code></pre></div></p>
 </li>
 </ul>
-<h3 id="modificacio-13-15">Modificació (13-15)</h3>
+<h3 id="modificacio">Modificació</h3>
 <ul>
+<li>Modifica el nom del grup a "Jocs" a "alumnesASIX"
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>groupmod -n alumnesASIX jocs
+</span></code></pre></div>
+<img alt="" src="../img/modificacio7.png" title="" /></li>
 <li>Modifica la paraula de pas d'alumne1</li>
 </ul>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>usermod -p contrasenya alumne1
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>usermod -p contrasenya alumne1
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cat /etc/shadow | grep alumne1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat /etc/shadow | grep alumne1
 </span></code></pre></div>
 <img alt="" src="../img/modificacio.png" title="" /></p>
 <ul>
 <li>Modifica el nom d'alumne4 per alumne2</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>usermod -l alumne2 alumne4
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>usermod -l alumne2 alumne4
 </span></code></pre></div>
 <p><img alt="" src="../img/modificacio3.png" title="" /></p>
 <ul>
-<li>Assigna una paraula de pas al grup alumnesASIX</li>
+<li>Afegeix dintre del grup alumnesASIX  als 3 alumnes
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>adduser alumne1 alumnesASIX
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>adduser alumne2 alumnesASIX
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>adduser alumne3 alumnesASIX
+</span></code></pre></div>
+<img alt="" src="../img/modificacio8.png" title="" /></li>
+<li>Treu a l'alumne2 del grup
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>deluser alumne2 alumnesASIX
+</span></code></pre></div>
+<img alt="" src="../img/modificacio9.png" title="" /></li>
+<li>
+<p>Afegeix a l'alumne1 al grup de jocs, però com a administrador i alumne2 com a usuari normal</p>
+</li>
+<li>
+<p>Fes que l'alumne1 tingui com a grup principal el grup d'alumneASIX</p>
+</li>
 </ul>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>addgroup alumnesASIX
-</span></code></pre></div>
-<img alt="" src="../img/modificacio4.png" title="" />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>gpasswd alumnesASIX
-</span></code></pre></div>
-<img alt="" src="../img/modificacio5.png" title="" />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cat /etc/gshadow | grep alumnesASIX
-</span></code></pre></div>
-<img alt="" src="../img/modificacio6.png" title="" /></p>
+<p>Quina és la diferència entre el que apareix al fitxer /etc/group i el que apareix al fitxer /etc/gshadow?</p>
 <h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
 <p>La comanda següent serveix per afegir un usuari al group sudo.</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>adduser alumne1 sudo 
