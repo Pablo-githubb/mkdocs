@@ -392,9 +392,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exe-1-2" class="md-nav__link">
+  <a href="#definicions" class="md-nav__link">
     <span class="md-ellipsis">
-      exe 1-2
+      Definicions
     </span>
   </a>
   
@@ -407,7 +407,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Versió gràfica (exe3)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#exe-4-6" class="md-nav__link">
@@ -415,6 +416,11 @@
       exe 4-6
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -446,6 +452,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#crear-grups" class="md-nav__link">
     <span class="md-ellipsis">
@@ -462,21 +473,7 @@
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#afegir-usuaris-al-sudo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Afegir usuaris al sudo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Afegir usuaris al sudo">
+    <nav class="md-nav" aria-label="Modificació">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -503,6 +500,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exe-26-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXE 26-27
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EXE 26-27">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprovacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovació:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-usuaris-al-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir usuaris al sudo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#borrar-usuaris" class="md-nav__link">
     <span class="md-ellipsis">
       Borrar usuaris
@@ -517,6 +547,39 @@
       Modificació dels usuaris i grups
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exe-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      exe 31
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="exe 31">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-enllac" class="md-nav__link">
+    <span class="md-ellipsis">
+      crear un enllaç
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-ruta-terminal-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      editar ruta terminal default
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -556,10 +619,10 @@
 <p>A més a més, utilitzant la comanda <code>pstree -h -p "usuari"</code> podem a més veure els procesos de l'usuari amb el ID de cada proces.
 <img alt="" src="../img/pstreep.png" title="terminal en superadmin" /></p>
 <h1 id="nf4-usuaris-linux-26-29">NF4-USUARIS-LINUX (26-29)</h1>
-<h3 id="exe-1-2">exe 1-2</h3>
+<h2 id="definicions">Definicions</h2>
 <p>Què és un usuari? Podem treballar amb més d'un usuari simultàniament? <strong>Un usuari és una entitat creada per poder gestionar un sistema opertiu, executar comandes, gestionar directoris, etc</strong></p>
 <p>Què és un grup i quina utilitat té agrupar usuaris en grups? <strong>Un grup és una agrupació d'usuaris el qual serveix per aplicar permisos i restricción molts usuaris al mateix temps.</strong></p>
-<h3 id="versio-grafica-exe3">Versió gràfica (exe3)</h3>
+<h2 id="versio-grafica-exe3">Versió gràfica (exe3)</h2>
 <p><img alt="" src="../img/gnome.png" title="ferramentes de gnome-system-tools" />
 <img alt="" src="../img/gnome2.png" title="ferramentes de gnome-system-tools" />
 <img alt="" src="../img/gnome3.png" title="ferramentes de gnome-system-tools" /></p>
@@ -605,7 +668,7 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <img alt="" src="../img/deluser2.png" title="" /></p>
 <h3 id="comprovacio">Comprovació:</h3>
 <p><img alt="" src="../img/alumne5.png" title="" /></p>
-<h3 id="crear-grups">Crear grups</h3>
+<h2 id="crear-grups">Crear grups</h2>
 <ul>
 <li>
 <p>Seguint aquest exemple, crea 2 grups (alumnes i profes) amb la comanda addgroup. 
@@ -629,7 +692,7 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 </span></code></pre></div></p>
 </li>
 </ul>
-<h3 id="modificacio">Modificació</h3>
+<h2 id="modificacio">Modificació</h2>
 <ul>
 <li>Modifica el nom del grup a "Jocs" a "alumnesASIX"
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>groupmod -n alumnesASIX jocs
@@ -658,26 +721,27 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <li>Treu a l'alumne2 del grup
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>deluser alumne2 alumnesASIX
 </span></code></pre></div>
-<img alt="" src="../img/modificacio9.png" title="" /></li>
-<li>
-<p>Afegeix a l'alumne1 al grup de jocs, però com a administrador i alumne2 com a usuari normal</p>
-</li>
-<li>
-<p>Fes que l'alumne1 tingui com a grup principal el grup d'alumneASIX</p>
-</li>
+O tambés es podria utilitzar:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo gpasswd -d alumne2 alumnesASIX
+</span></code></pre></div></li>
 </ul>
-<p>Quina és la diferència entre el que apareix al fitxer /etc/group i el que apareix al fitxer /etc/gshadow?</p>
-<h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
-<p>La comanda següent serveix per afegir un usuari al group sudo.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>adduser alumne1 sudo 
+<p><img alt="" src="../img/modificacio9.png" title="" /></p>
+<ul>
+<li>Afegeix a l'alumne1 al grup de jocs, però com a administrador i alumne2 com a usuari normal</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo usermod -aG jocs alumne1
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo usermod -aG jocs alumne2
 </span></code></pre></div>
-<img alt="" src="../img/sudo.png" title="" /></p>
-<p>D'altra banda, aquesta comanda serveix per treure al alumne1 del group sudo.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>deluser alumne1 sudo 
+<ul>
+<li>Fes que l'alumne1 tingui com a grup principal el grup d'alumneASIX</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo usermod -g alumnesASIX alumne1
 </span></code></pre></div>
-<img alt="" src="../img/sudo2.png" title="" /></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>gpasswd -A user group
-</span></code></pre></div>
+<ul>
+<li>Quina és la diferència entre el que apareix al fitxer /etc/group i el que apareix al fitxer /etc/gshadow?</li>
+</ul>
+<p><strong>/etc/group:</strong> Emmagatzema informació bàsica sobre els grups, el nom del grup, l’identificador de grup (GID) i els membres associats.</p>
+<p><strong>/etc/gshadow:</strong> Emmagatzema la informació confidencial del grup, la contrasenya encriptada del grup i els usuaris que tenen permisos per administrar-lo.</p>
 <h3 id="bloqueig-25-26-27-28-29">Bloqueig (25-26-27-28-29)</h3>
 <ul>
 <li>Bloqueja un usuari i comprova que no pots accedir amb ell</li>
@@ -713,13 +777,42 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 Apliquem la configuració al usuari</p>
 <p>Finalment, amb <code>chage -l provachage</code> verifiquem la configuarció.
 <img alt="" src="../img/chage3.png" title="" /></p>
+<h2 id="exe-26-27">EXE 26-27</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo nano /etc/login.defs
+</span></code></pre></div>
+<p>UID_MIN</p>
+<p>UID_MAX</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo nano /etc/adduser.conf
+</span></code></pre></div>
+Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuari. D'aquesta manera tots el usuaris que creem tindran aplicats els paràmetres que nosaltres hem marcat. Llavors farem una prova modificant els següents paràmetres:</p>
+<p><code>SHELL=/bin/bash</code></p>
+<p><code>HOME=/var</code></p>
+<p><code>SKEL=/etc/skel</code>
+<img alt="" src="../img/adduserconf.png" title="" />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo nano /etc/default/useradd
+</span></code></pre></div>
+<img alt="" src="../img/defaultuser.png" title="" /></p>
+<h3 id="comprovacio_1">Comprovació:</h3>
+<p><img alt="" src="../img/defaultuser2.png" title="" />
+<img alt="" src="../img/defaultuser3.png" title="" /></p>
+<h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
+<p>La comanda següent serveix per afegir un usuari al group sudo.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>adduser alumne1 sudo 
+</span></code></pre></div>
+<img alt="" src="../img/sudo.png" title="" /></p>
+<p>D'altra banda, aquesta comanda serveix per treure al alumne1 del group sudo.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>deluser alumne1 sudo 
+</span></code></pre></div>
+<img alt="" src="../img/sudo2.png" title="" /></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>gpasswd -A user group
+</span></code></pre></div>
 <h2 id="borrar-usuaris">Borrar usuaris</h2>
 <p>Al moment de voldre eliminar un usuari del sistema tenim dues maneres. La primera és amb la següent comanda per borrar l'usuari SENSE LA SEVA /HOME
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>deluser provaborrar
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>deluser provaborrar
 </span></code></pre></div>
-<img alt="" src="../img/borrar2.png" title="" />
-D'altra banda, amb la següent comanda borrem l'usuari i la seva /home al mateix temps 
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>userdel -r provaborrar
+<img alt="" src="../img/borrar2.png" title="" /></p>
+<p>D'altra banda, amb la següent comanda borrem l'usuari i la seva /home al mateix temps 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>userdel -r provaborrar
 </span></code></pre></div>
 <img alt="" src="../img/borrar.png" title="" /></p>
 <h2 id="modificacio-dels-usuaris-i-grups">Modificació dels usuaris i grups</h2>
@@ -736,18 +829,20 @@ D'altra banda, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p>groupmod -n castanyada halloween // canvia el nom del grup</p>
 <p>deluser gina group</p>
 <p>chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
-<p>exe 31= utilitzar la comanda ls -la en l'usuari prova
-cd prova</p>
-<p>cd /etc/skel
-ls -la</p>
-<p>// crear un enllaç
-ln -s /tmp /etc/skel/temporal
-ls -l</p>
-<p>//editar ruta terminal default
-nano /etc/skel/.profile
-    PWD='var'</p>
+<h2 id="exe-31">exe 31</h2>
+<h3 id="crear-un-enllac">crear un enllaç</h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ln -s /tmp /etc/skel/temporalcd 
+</span></code></pre></div>
+ls -l
+<img alt="" src="../img/skel.png" title="" /></p>
+<h3 id="editar-ruta-terminal-default">editar ruta terminal default</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nano /etc/skel/.profile
+</span></code></pre></div>
+<p>Edite'm la fila PWD='var' perquè quan s'obrigue una nova terminal, la ruta per defecte serà /var.</p>
+<p><img alt="" src="../img/skel2.png" title="" /></p>
 <p>nano /etc/skel/.bash_logout
     rm -r /home/$USER/Baixades/*</p>
+<p><img alt="" src="../img/skel3.png" title="" /></p>
 <p>nano /etc/skel/.bashrc
     connexion ssh</p>
 <p>amb ctrl+f4 entrar en prova2
@@ -756,15 +851,6 @@ ls -la</p>
 <p>sudo adduser prova2 proves</p>
 <p>sudo gpasswd proves //ficar contrasenya a un grup
 sudo gpasswd -r proves //treure la contrasenya del grup</p>
-<p>EXE 26-27</p>
-<p>sudo nano /etc/login.defs</p>
-<p>UID_MIN
-UID_MAX</p>
-<p>sudo nano /etc/adduser.conf</p>
-<p>sudo nano /etc/default/useradd
-SHELL=/bin/bash
-HOME=/var
-SKEL=/etc/skel</p>
 
 
 
