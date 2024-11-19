@@ -563,7 +563,7 @@
           <li class="md-nav__item">
   <a href="#crear-un-enllac" class="md-nav__link">
     <span class="md-ellipsis">
-      crear un enllaç
+      Crear un enllaç
     </span>
   </a>
   
@@ -572,7 +572,7 @@
           <li class="md-nav__item">
   <a href="#editar-ruta-terminal-default" class="md-nav__link">
     <span class="md-ellipsis">
-      editar ruta terminal default
+      Editar ruta terminal default
     </span>
   </a>
   
@@ -580,6 +580,51 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-normals-uog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permisos "normals" UOG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      UMASK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-especials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permisos especials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfactl-b-proves-borrar-restriccions" class="md-nav__link">
+    <span class="md-ellipsis">
+      setfactl -b proves/ BORRAR RESTRICCIONS
+    </span>
+  </a>
   
 </li>
         
@@ -830,12 +875,12 @@ Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuar
 <p>deluser gina group</p>
 <p>chown julia:julia julia //canviar de propietari la carpeta creada a un usuari en concret</p>
 <h2 id="exe-31">exe 31</h2>
-<h3 id="crear-un-enllac">crear un enllaç</h3>
+<h3 id="crear-un-enllac">Crear un enllaç</h3>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ln -s /tmp /etc/skel/temporalcd 
 </span></code></pre></div>
 ls -l
 <img alt="" src="../img/skel.png" title="" /></p>
-<h3 id="editar-ruta-terminal-default">editar ruta terminal default</h3>
+<h3 id="editar-ruta-terminal-default">Editar ruta terminal default</h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nano /etc/skel/.profile
 </span></code></pre></div>
 <p>Edite'm la fila PWD='var' perquè quan s'obrigue una nova terminal, la ruta per defecte serà /var.</p>
@@ -851,6 +896,26 @@ ls -la</p>
 <p>sudo adduser prova2 proves</p>
 <p>sudo gpasswd proves //ficar contrasenya a un grup
 sudo gpasswd -r proves //treure la contrasenya del grup</p>
+<p><img alt="" src="../img/pissarra.jpg" title="" /></p>
+<h2 id="permisos-normals-uog">Permisos "normals" UOG</h2>
+<p>Llenguatge octal per calcular permissos</p>
+<p>(-) significa que és un fitxer</p>
+<p>(d) significa que és un directori/carpeta</p>
+<p>(r) read</p>
+<p>(w) write</p>
+<p>(x) execute</p>
+<p>chgrp -R </p>
+<p><img alt="" src="../img/getfacl.png" title="" /></p>
+<h2 id="umask">UMASK</h2>
+<h2 id="permisos-especials">Permisos especials</h2>
+<p>chmod -x arxiu
+chmod u+s arxiu
+mkdir carpeta
+chmod o+t carpeta/</p>
+<h2 id="acls">ACLs</h2>
+<p>getfacl proves/ MOSTRA INFORMACIÓ</p>
+<p>setfactl -m user:prova3:--- proves/ AFEGIR RESTRICCIONS</p>
+<h2 id="setfactl-b-proves-borrar-restriccions">setfactl -b proves/ BORRAR RESTRICCIONS</h2>
 
 
 
