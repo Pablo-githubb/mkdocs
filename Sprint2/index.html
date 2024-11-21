@@ -407,21 +407,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Versió gràfica (exe3)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exe-4-6" class="md-nav__link">
-    <span class="md-ellipsis">
-      exe 4-6
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -433,15 +418,6 @@
   
     <nav class="md-nav" aria-label="Crear nous usuaris">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#7-8-9" class="md-nav__link">
-    <span class="md-ellipsis">
-      7-8-9
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#comprovacio" class="md-nav__link">
@@ -539,16 +515,7 @@
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exe-31" class="md-nav__link">
-    <span class="md-ellipsis">
-      exe 31
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="exe 31">
+    <nav class="md-nav" aria-label="Borrar usuaris">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -664,11 +631,11 @@
 <h2 id="definicions">Definicions</h2>
 <p>Què és un usuari? Podem treballar amb més d'un usuari simultàniament? <strong>Un usuari és una entitat creada per poder gestionar un sistema opertiu, executar comandes, gestionar directoris, etc</strong></p>
 <p>Què és un grup i quina utilitat té agrupar usuaris en grups? <strong>Un grup és una agrupació d'usuaris el qual serveix per aplicar permisos i restricción molts usuaris al mateix temps.</strong></p>
+<hr />
 <h2 id="versio-grafica-exe3">Versió gràfica (exe3)</h2>
 <p><img alt="" src="../img/gnome.png" title="ferramentes de gnome-system-tools" />
 <img alt="" src="../img/gnome2.png" title="ferramentes de gnome-system-tools" />
 <img alt="" src="../img/gnome3.png" title="ferramentes de gnome-system-tools" /></p>
-<h3 id="exe-4-6">exe 4-6</h3>
 <ul>
 <li>
 <p><code>/etc/passwd</code>
@@ -691,8 +658,8 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <p>El * indica que el compte està bloquejat. Quan el sistema troba un * en aquest camp, es considera que no es pot iniciar sessió amb aquest compte.</p>
 <p>El ! també indica que el compte està bloquejat, però en aquest cas la contrasenya encara és present però està desactivada. Això es fa per impedir l'accés sense eliminar la contrasenya completament.</p>
 <p>En el fitxer <code>/etc/shadow</code>, el tercer camp, que correspon a la data de l'últim canvi de contrasenya, s'anomena "epoch". Aquesta data es calcula com el nombre de dies transcorreguts des de l'1 de gener de 1970, una data base coneguda com Unix Epoch.</p>
+<hr />
 <h2 id="crear-nous-usuaris">Crear nous usuaris</h2>
-<h3 id="7-8-9">7-8-9</h3>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>adduser alumne1
 </span></code></pre></div>
 <img alt="" src="../img/alumne1.png" title="" />
@@ -710,6 +677,7 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <img alt="" src="../img/deluser2.png" title="" /></p>
 <h3 id="comprovacio">Comprovació:</h3>
 <p><img alt="" src="../img/alumne5.png" title="" /></p>
+<hr />
 <h2 id="crear-grups">Crear grups</h2>
 <ul>
 <li>
@@ -734,6 +702,7 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 </span></code></pre></div></p>
 </li>
 </ul>
+<hr />
 <h2 id="modificacio">Modificació</h2>
 <ul>
 <li>Modifica el nom del grup a "Jocs" a "alumnesASIX"
@@ -784,6 +753,7 @@ O tambés es podria utilitzar:
 </ul>
 <p><strong>/etc/group:</strong> Emmagatzema informació bàsica sobre els grups, el nom del grup, l’identificador de grup (GID) i els membres associats.</p>
 <p><strong>/etc/gshadow:</strong> Emmagatzema la informació confidencial del grup, la contrasenya encriptada del grup i els usuaris que tenen permisos per administrar-lo.</p>
+<hr />
 <h3 id="bloqueig-25-26-27-28-29">Bloqueig (25-26-27-28-29)</h3>
 <ul>
 <li>Bloqueja un usuari i comprova que no pots accedir amb ell</li>
@@ -800,6 +770,7 @@ O tambés es podria utilitzar:
 <img alt="" src="../img/bloqueig4.png" title="" /></li>
 <li>Per a què pot servir bloquejar un usuari? <strong>Podem voldre a bloquejar els usuaris per ocultar-los o impedir l'utilització d'aquests per raons de seguretat.</strong></li>
 </ul>
+<hr />
 <h3 id="caducitat-de-les-paraules-de-pas">Caducitat de les paraules de pas</h3>
 <ul>
 <li>M (Maximum days): Defineix el nombre màxim de dies abans que la contrasenya caduqui i l’usuari estigui obligat a canviar-la.</li>
@@ -819,6 +790,7 @@ O tambés es podria utilitzar:
 Apliquem la configuració al usuari</p>
 <p>Finalment, amb <code>chage -l provachage</code> verifiquem la configuarció.
 <img alt="" src="../img/chage3.png" title="" /></p>
+<hr />
 <h2 id="exe-26-27">EXE 26-27</h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo nano /etc/login.defs
 </span></code></pre></div>
@@ -837,6 +809,7 @@ Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuar
 <h3 id="comprovacio_1">Comprovació:</h3>
 <p><img alt="" src="../img/defaultuser2.png" title="" />
 <img alt="" src="../img/defaultuser3.png" title="" /></p>
+<hr />
 <h2 id="afegir-usuaris-al-sudo">Afegir usuaris al sudo</h2>
 <p>La comanda següent serveix per afegir un usuari al group sudo.</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>adduser alumne1 sudo 
@@ -848,6 +821,7 @@ Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuar
 <img alt="" src="../img/sudo2.png" title="" /></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>gpasswd -A user group
 </span></code></pre></div>
+<hr />
 <h2 id="borrar-usuaris">Borrar usuaris</h2>
 <p>Al moment de voldre eliminar un usuari del sistema tenim dues maneres. La primera és amb la següent comanda per borrar l'usuari SENSE LA SEVA /HOME
 <div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>deluser provaborrar
@@ -857,12 +831,13 @@ Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuar
 <div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>userdel -r provaborrar
 </span></code></pre></div>
 <img alt="" src="../img/borrar.png" title="" /></p>
-<h2 id="exe-31">exe 31</h2>
+<hr />
 <h3 id="crear-un-enllac">Crear un enllaç</h3>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ln -s /tmp /etc/skel/temporalcd 
 </span></code></pre></div>
 ls -l
 <img alt="" src="../img/skel.png" title="" /></p>
+<hr />
 <h3 id="editar-ruta-terminal-default">Editar ruta terminal default</h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nano /etc/skel/.profile
 </span></code></pre></div>
@@ -873,6 +848,7 @@ ls -l
 <p>Dintre de l'arxiu agregarem la comanada <code>rm -r /home/$USER/Baixades/*</code> per a que quan accedim a un usuari nou, borri directament els arxius de la seva carpeta /Baixades</p>
 <p><img alt="" src="../img/skel3.png" title="" /></p>
 <p><img alt="" src="../img/pissarra.jpg" title="" /></p>
+<hr />
 <h2 id="permisos-normals-uog">Permisos "normals" UOG</h2>
 <p>Llenguatge octal per calcular permissos</p>
 <p>(-) significa que és un fitxer</p>
@@ -884,7 +860,9 @@ ls -l
 <p><img alt="" src="../img/permisos2.png" title="" /></p>
 <p>Amb la comanda <code>chgrp -R group /carpeta</code> podem donar els permisos normals a un grup específic per a la carpeta.</p>
 <p><img alt="" src="../img/permisos3.png" title="" /></p>
+<hr />
 <h2 id="umask">UMASK</h2>
+<hr />
 <h2 id="permisos-especials">Permisos especials</h2>
 <p><img alt="" src="../img/permisos.png" title="" /></p>
 <p>Sabem que amb la comanda <code>chmod ...</code> podem modificar els permisos sobre les posicions dels núemeros en octal.</p>
@@ -898,17 +876,42 @@ ls -l
 <p>Per a aplicar aquest permisos a un arxiu en una carpeta compartida ho podem fer amb:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>chmod -x arxiu
 </span></code></pre></div>
-Desprès, amb:
+<img alt="" src="../img/chmod.png" title="" /></p>
+<p>Desprès, amb:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>chmod u+s arxiu
-</span></code></pre></div></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>mkdir carpeta
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>chmod o+t carpeta/
-</span></code></pre></div></p>
+<img alt="" src="../img/chmod2.png" title="" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>chmod o+t carpeta/
+</span></code></pre></div>
+<img alt="" src="../img/chmod3.png" title="" /></p>
+<hr />
 <h2 id="acls">ACLs</h2>
 <p>getfacl proves/ MOSTRA INFORMACIÓ</p>
 <p>setfactl -m user:prova3:--- proves/ AFEGIR RESTRICCIONS</p>
 <p>setfactl -b proves/ BORRAR RESTRICCIONS</p>
+<ol>
+<li>Amb el teu usuari crea la carpeta exercicis i dóna-li permisos 770 de forma recursiva
+        a. Comprova els permisos de llista acl
+        b. Crea una ACL per a aquesta carpeta de forma recursiva de tal manera que l’usuari vesper tingui tots els permisos
+        c. Comprova-ho
+        d. Torna amb el teu usuari i dintre d’aquesta carpeta crea a ara una altra que es digui repas
+        e. Tornat a posar com a vesper i crea dintre de la carpeta repas un arxiu anomenat ex1</li>
+<li>
+<p>Esborra els permisos ACL per a la carpeta exercicis quedant només els UGO</p>
+</li>
+<li>
+<p>Crea un grup anomenat pugs i afegeix dintre l’usuari vesper</p>
+</li>
+<li>
+<p>Crea un altre usuari anomenat perrete</p>
+</li>
+<li>
+<p>Amb el teu usuari crea un arxiu de text amb permisos 770</p>
+</li>
+<li>
+<p>Crea una ACL per a aquest arxiu de forma que els usuaris del grup pugs puguin llegir-lo i modificar-lo i la resta d’usuaris res. Comprova-ho amb els dos usuaris que tens, vesper i perrete</p>
+</li>
+</ol>
 <p><img alt="" src="../img/getfacl.png" title="" /></p>
 <h3 id="apunts">apunts</h3>
 <p>usermod -p contrasenya julia //canvia constrasenya</p>
