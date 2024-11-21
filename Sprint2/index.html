@@ -884,20 +884,116 @@ ls -l
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>chmod o+t carpeta/
 </span></code></pre></div>
 <img alt="" src="../img/chmod3.png" title="" /></p>
+<ol>
+<li>Situa't al teu directori personal (/home/usuari). Crea utilitzant el teu usuari estàndard (no root) un fitxer buit anomenat ex1.txt.<ul>
+<li>Qui és el usuari propietari del fitxer? Com pots veure aquesta informació?</li>
+<li>Qui és el grup propietari del fitxer? Com pots veure aquesta informació?</li>
+</ul>
+</li>
+<li>Situa't al teu directori personal (/home/usuari). Crea utilitzant amb l'usuari root (executant amb sudo) un fitxer buit anomenat ex2.txt.<ul>
+<li>Qui és el usuari propietari del fitxer? Com pots veure aquesta informació?</li>
+<li>Qui és el grup propietari del fitxer? Com pots veure aquesta informació?</li>
+</ul>
+</li>
+<li>Utilitzant notació octal (000, 010, …), crea un fitxer ex7.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:<ul>
+<li>Permís de lectura i escriptura per a l'usuari.</li>
+<li>Permís de només lectura per al grup.</li>
+<li>Cap permís per a altres.</li>
+</ul>
+</li>
+<li>Utilitzant notació octal (000, 010, …), crea un fitxer ex8.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:<ul>
+<li>Permís de lectura, escriptura i execució per a l'usuari.</li>
+<li>Permís d'escriptura per al grup.</li>
+<li>Permís d'execució per a altres.</li>
+</ul>
+</li>
+<li>Utilitzant notació octal (000, 010, …), crea un fitxer ex9.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:<ul>
+<li>Permís de lectura, escriptura i execució per a l'usuari.</li>
+<li>Permís de lectura i escriptura per al grup.</li>
+<li>Permís de només lectura per a altres.</li>
+</ul>
+</li>
+<li>Utilitzant notació octal (000, 010, …), crea un fitxer ex10.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:<ul>
+<li>Permís activat SUID.</li>
+<li>Permís de lectura i execució per a l'usuari.</li>
+<li>Permís de sols lectura per al grup.</li>
+<li>Cap permís per a altres.</li>
+</ul>
+</li>
+<li>Utilitzant notació octal (000, 010, …), crea un fitxer ex11.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:
+        a. Permisos activats SUID i GUID.
+        b. Permís de lectura per a l'usuari.
+        c. Permís d'escriptura per al grup.
+        d. Permís de lectura per a altres.</li>
+<li>
+<p>Utilitzant notació octal (000, 010, …), crea un fitxer ex12.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:
+        a. Permís sticky bit activat.
+        b. Permís de lectura i execució per a l'usuari.
+        c. Cap permís per al grup.
+        d. Permís de lectura per a altres.</p>
+</li>
+<li>
+<p>Crea una carpeta pt13 al teu directori personal, i crea els fitxers ex13a.txt i ex13b.txt dintre de la carpeta pt13. Utilitzant notació octal (000, 010, …), estableix els següents permisos a la carpeta pt13, de forma que es propaguen automàticament a tots els fitxers, i demostra-ho:</p>
+<ul>
+<li>Permís de lectura, escriptura i execució per a l'usuari.</li>
+<li>Permís de lectura i escriptura per al grup.</li>
+<li>Permís de lectura i escriptura per a altres.</li>
+</ul>
+</li>
+<li>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex14.txt al teu directori personal i fes el següent amb una sola comanda:<ul>
+<li>Afegeix permís d'execució per a l'usuari</li>
+<li>Afegeix permís d'escriptura i execució per al grup.</li>
+</ul>
+</li>
+<li>
+<p>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex15.txt al teu directori personal i fes el següent amb una sola comanda:</p>
+<ul>
+<li>Afegeix permís d'escriptura per a tots els tipus d'usuari.</li>
+</ul>
+</li>
+<li>
+<p>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex16.txt al teu directori personal i fes el següent amb una sola comanda:</p>
+<ul>
+<li>Elimina permís d'escriptura per a l'usuari.</li>
+<li>Elimina permís de lectura per als altres.</li>
+</ul>
+</li>
+<li>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex17.txt al teu directori personal i fes el següent amb una sola comanda:<ul>
+<li>Estableix els permisos d'escriptura i d'execució per a tots els tipus d'usuari.</li>
+</ul>
+</li>
+<li>Crea com a administrador el fitxer pt22.txt (sudo) al teu directori personal i a continuació fes:<ul>
+<li>Que el teu usuari habitual es faci usuari propietari del fitxer.</li>
+<li>Que el teu grup habitual es faci propietari del fitxer.</li>
+</ul>
+</li>
+</ol>
 <hr />
 <h2 id="acls">ACLs</h2>
 <p>getfacl proves/ MOSTRA INFORMACIÓ</p>
-<p>setfactl -m user:prova3:--- proves/ AFEGIR RESTRICCIONS</p>
-<p>setfactl -b proves/ BORRAR RESTRICCIONS</p>
+<p>setfacl -m user:prova3:--- proves/ AFEGIR RESTRICCIONS</p>
+<p>setfacl -b proves/ BORRAR RESTRICCIONS</p>
 <ol>
-<li>Amb el teu usuari crea la carpeta exercicis i dóna-li permisos 770 de forma recursiva
-        a. Comprova els permisos de llista acl
-        b. Crea una ACL per a aquesta carpeta de forma recursiva de tal manera que l’usuari vesper tingui tots els permisos
-        c. Comprova-ho
-        d. Torna amb el teu usuari i dintre d’aquesta carpeta crea a ara una altra que es digui repas
-        e. Tornat a posar com a vesper i crea dintre de la carpeta repas un arxiu anomenat ex1</li>
 <li>
-<p>Esborra els permisos ACL per a la carpeta exercicis quedant només els UGO</p>
+<p>Amb el teu usuari crea la carpeta exercicis i dóna-li permisos 770 de forma recursiva</p>
+<ul>
+<li>
+<p>Comprova els permisos de llista acl</p>
+</li>
+<li>
+<p>Crea una ACL per a aquesta carpeta de forma recursiva de tal  manera que l’usuari vesper tingui tots els permisos</p>
+</li>
+<li>
+<p>Comprova-ho</p>
+</li>
+<li>
+<p>Torna amb el teu usuari i dintre d’aquesta carpeta crea a ara una altra que es digui repas</p>
+</li>
+<li>
+<p>Tornat a posar com a vesper i crea dintre de la carpeta repas un arxiu anomenat ex1</p>
+</li>
+<li>Esborra els permisos ACL per a la carpeta exercicis quedant només els UGO</li>
+</ul>
 </li>
 <li>
 <p>Crea un grup anomenat pugs i afegeix dintre l’usuari vesper</p>
