@@ -1028,11 +1028,16 @@ ls -l
 Tipus de formateig</p>
 <p>Sistemes de fitxers</p>
 <p>La comanda <code>fdisk -l</code> servei per mirar el llistat de partiions muntados i no muntas que tenim al sistema.
-<img alt="alt text" src="../image-4.png" />
-<img alt="alt text" src="../image-3.png" /></p>
-<p>Un sector es la unitat mínima física en la que es guarden les dades (unitat per defecte =512) (sector)
-<img alt="alt text" src="../image-5.png" />
-El sistema operatiu funciona = Mida del blocs (cluster) és la unitat mínima 4.096 bytes // podem canviar la mida dels blocs, però no dels sectors. </p>
+<img alt="alt text" src="../img/fdiskl.png" /></p>
+<p>A continuació, si volem muntar una nova partició ens hem d'adentra al menú de creació de particions. Això ho aconseguim amb la següent comanda (en el meu cas, la ruta del disc es /dev/sda):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>fdisk &quot;ruta del disc&quot;
+</span></code></pre></div>
+<img alt="alt text" src="../img/fdiskdev.png" /></p>
+<p>Al moment de ja estar en el menú, per començar a configurar amb la lletra <code>n</code> creem una nova partició. <strong>utilitzem el elements per defecte menys el tamany del segon sector, fiquem la meitat.</strong></p>
+<p><img alt="alt text" src="../img/fdiskn.png" /></p>
+<p>warn</p>
+<p>Un sector es la unitat mínima física en la que es guarden les dades (unitat per defecte =512) (sector)</p>
+<p>El sistema operatiu funciona = Mida del blocs (cluster) és la unitat mínima 4.096 bytes // podem canviar la mida dels blocs, però no dels sectors. </p>
 <p>du -b arxiu //veure la mida dels arxius
 du -sh arxiu //veure la mida real dels arxius</p>
 <p>df -T //
