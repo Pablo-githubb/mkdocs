@@ -596,6 +596,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tipus-de-formateig" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus de formateig
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipus de formateig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemes-de-fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistemes de fitxers:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muntatge-provisional" class="md-nav__link">
+    <span class="md-ellipsis">
+      MUNTATGE PROVISIONAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muntatge-permanent" class="md-nav__link">
+    <span class="md-ellipsis">
+      MUNTATGE PERMANENT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MUNTATGE PERMANENT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemes-de-fitxers_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SISTEMES DE FITXERS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1020,13 +1077,35 @@ ls -l
 <p><img alt="" src="../img/getfacl.png" title="" /></p>
 <h2 id="creacio-de-particions-i-formats">CREACIÓ DE PARTICIONS I FORMATS</h2>
 <h3 id="teoria">Teoria:</h3>
-<p>Estructura de la informació
-  - Mida sector
-  - Mida block
-  - Fragmentació interna: Espai desaprofitat dels blocks o clusters //solució: fer els bloc més petits
-  - Fragmentación externa: Arixus guardats en molt arxius a la vegada, aixo fa que la velocitat de lectura i escriptura es reduixque. 
-Tipus de formateig</p>
-<p>Sistemes de fitxers</p>
+<p>Estructura de la informació</p>
+<ul>
+<li>
+<p>Mida sector</p>
+</li>
+<li>
+<p>Mida block</p>
+</li>
+<li>
+<p>Fragmentació interna: Espai desaprofitat dels blocks o clusters //solució: fer els bloc més petits</p>
+</li>
+<li>
+<p>Fragmentación externa: Arixus guardats en molt arxius a la vegada, aixo fa que la velocitat de lectura i escriptura es reduixque. </p>
+</li>
+</ul>
+<h3 id="tipus-de-formateig">Tipus de formateig</h3>
+<h4 id="sistemes-de-fitxers">Sistemes de fitxers:</h4>
+<p>Un sector es la unitat mínima física en la que es guarden les dades (unitat per defecte =512) (sector)</p>
+<p>El sistema operatiu funciona = Mida del blocs (cluster) és la unitat mínima 4.096 bytes // podem canviar la mida dels blocs, però no dels sectors. </p>
+<ul>
+<li><code>du -b arxiu</code> veure la mida dels arxius</li>
+<li><code>du -sh arxiu</code> veure la mida real dels arxius</li>
+<li><code>df -T e4defracg -c /dev/sda2</code> comprobar si fa falta defragmentar el disc</li>
+</ul>
+<blockquote>
+<p>Format d'alt nivell: no borra els fitxers, borra els sistema d'arxius (no els borrar pero els oculta per a tu), ignora sectors.</p>
+<p>Format normal: no borra els fitxers, borra els sistema d'arxius. Pero, si hi han sectors defectuosos no els guarda.</p>
+<p>Format baix nivell: borra fitxers, borra sistemes d'arxiu i no comprova res. BORRA TOT, COM SI FOS UN DE FÀBRICA.</p>
+</blockquote>
 <p>La comanda <code>fdisk -l</code> servei per mirar el llistat de partiions muntados i no muntas que tenim al sistema.
 <img alt="alt text" src="../img/fdiskl.png" /></p>
 <p>A continuació, si volem muntar una nova partició ens hem d'adentra al menú de creació de particions. Això ho aconseguim amb la següent comanda (en el meu cas, la ruta del disc es /dev/sda):
@@ -1035,21 +1114,28 @@ Tipus de formateig</p>
 <img alt="alt text" src="../img/fdiskdev.png" /></p>
 <p>Al moment de ja estar en el menú, per començar a configurar amb la lletra <code>n</code> creem una nova partició. <strong>utilitzem el elements per defecte menys el tamany del segon sector, fiquem la meitat.</strong></p>
 <p><img alt="alt text" src="../img/fdiskn.png" /></p>
-<p>warn</p>
-<p>Un sector es la unitat mínima física en la que es guarden les dades (unitat per defecte =512) (sector)</p>
-<p>El sistema operatiu funciona = Mida del blocs (cluster) és la unitat mínima 4.096 bytes // podem canviar la mida dels blocs, però no dels sectors. </p>
-<p>du -b arxiu //veure la mida dels arxius
-du -sh arxiu //veure la mida real dels arxius</p>
-<p>df -T //
-e4defracg -c /dev/sda2 //comprobar si fa falta defragmentar el disc</p>
-<p>Format d'alt nivell: no borra els fitxers, borra els sistema d'arxius (no els borrar pero els oculta per a tu), ignora sectors.</p>
-<p>Format normal: no borra els fitxers, borra els sistema d'arxius. Pero, si hi han sectors defectuosos no els guarda.</p>
-<p>Format baix nivell: borra fitxers, borra sistemes d'arxiu i no comprova res. BORRA TOT, COM SI FOS UN DE FÀBRICA.</p>
-<p>EXPLICAR:
-SISTEMES DE FITXERS
-Tipus:
-ext4</p>
-<p>GPT, MBR DISCS DURS</p>
+<p>Finalment, per aplicar el canvis realitzats hem d'utilitzar la lletra <code>w</code>.</p>
+<p><img alt="alt text" src="../img/fdiskw.png" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>mkfs.ext4 -b 2048 /dev/sdb1
+</span></code></pre></div>
+<img alt="alt text" src="../img/mkfs.png" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>tune2fs -l /dev/sdb1 | grep Block
+</span></code></pre></div>
+<img alt="alt text" src="../img/tune.png" /></p>
+<h3 id="muntatge-provisional">MUNTATGE PROVISIONAL</h3>
+<p>Creem una carpeta qualsevol i muntem la nostra partició provisional que els canvis es desfaran al moment de reiniciar la màquina completament.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>mount -t ext4 (permisos opcional) /dev/sdb1 /var/particio1
+</span></code></pre></div>
+<img alt="alt text" src="../img/mount.png" /></p>
+<p><em>Els archius no desapareixen si fas umount</em> 
+<img alt="alt text" src="../img/umount.png" /></p>
+<h3 id="muntatge-permanent">MUNTATGE PERMANENT</h3>
+<p>Ara, per fer el muntatge permanentment haurem d'editar l'arxiu /etc/fstab. Dintre d'aquest document s'haurà d'editar la línia de la ruta del muntatge. Ho aconseguiran fent-ho d'aquesta manera.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo nano /etc/fstab
+</span></code></pre></div>
+<img alt="alt text" src="../img/fstab.png" /></p>
+<h4 id="sistemes-de-fitxers_1">SISTEMES DE FITXERS</h4>
+<p><strong>ext4:</strong> L'ext4 és un sistema de fitxers utilitzat en Linux que serveix per organitzar i emmagatzemar dades al disc de manera eficient i segura. És ràpid, fiable i capaç de gestionar fitxers molt grans i discs moderns.</p>
 
 
 
