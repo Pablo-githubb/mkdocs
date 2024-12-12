@@ -57,8 +57,9 @@ Tipus de formateig
 
 Sistemes de fitxers
 
+
 Practica
-Creació de particions i formats
+CREACIÓ DE PARTICIONS I FORMATS
 
 
 fdisk -l
@@ -73,14 +74,17 @@ du -sh arxiu //veure la mida real dels arxius
 df -T //
 e4defracg -c /dev/sda2 //comprobar si fa falta defragmentar el disc
 
-Format d'alt nivell: no borra els fitxers, borra els sistema d'arxius.
+Format d'alt nivell: no borra els fitxers, borra els sistema d'arxius (no els borrar pero els oculta per a tu), ignora sectors.
 
 Format normal: no borra els fitxers, borra els sistema d'arxius. Pero, si hi han sectors defectuosos no els guarda.
 
 Format baix nivell: borra fitxers, borra sistemes d'arxiu i no comprova res. BORRA TOT, COM SI FOS UN DE FÀBRICA.
 
 
-
+EXPLICAR:
 SISTEMES DE FITXERS
 Tipus:
 ext4
+
+
+GPT, MBR DISCS DURS

@@ -577,6 +577,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#creacio-de-particions-i-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      CREACIÓ DE PARTICIONS I FORMATS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CREACIÓ DE PARTICIONS I FORMATS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teoria:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -811,7 +835,7 @@ Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuar
 <p>Al moment de voldre eliminar un usuari del sistema tenim dues maneres. La primera és amb la següent comanda per borrar l'usuari SENSE LA SEVA /HOME
 <div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>deluser provaborrar
 </span></code></pre></div>
-<img alt="" src="../img/borrar2.png" title="" /></p>
+<img alt="" src="img/ .png" title="" /></p>
 <p>D'altra banda, amb la següent comanda borrem l'usuari i la seva /home al mateix temps 
 <div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>userdel -r provaborrar
 </span></code></pre></div>
@@ -994,6 +1018,33 @@ ls -l
 </li>
 </ol>
 <p><img alt="" src="../img/getfacl.png" title="" /></p>
+<h2 id="creacio-de-particions-i-formats">CREACIÓ DE PARTICIONS I FORMATS</h2>
+<h3 id="teoria">Teoria:</h3>
+<p>Estructura de la informació
+  - Mida sector
+  - Mida block
+  - Fragmentació interna: Espai desaprofitat dels blocks o clusters //solució: fer els bloc més petits
+  - Fragmentación externa: Arixus guardats en molt arxius a la vegada, aixo fa que la velocitat de lectura i escriptura es reduixque. 
+Tipus de formateig</p>
+<p>Sistemes de fitxers</p>
+<p>La comanda <code>fdisk -l</code> servei per mirar el llistat de partiions muntados i no muntas que tenim al sistema.
+<img alt="alt text" src="../image-4.png" />
+<img alt="alt text" src="../image-3.png" /></p>
+<p>Un sector es la unitat mínima física en la que es guarden les dades (unitat per defecte =512) (sector)
+<img alt="alt text" src="../image-5.png" />
+El sistema operatiu funciona = Mida del blocs (cluster) és la unitat mínima 4.096 bytes // podem canviar la mida dels blocs, però no dels sectors. </p>
+<p>du -b arxiu //veure la mida dels arxius
+du -sh arxiu //veure la mida real dels arxius</p>
+<p>df -T //
+e4defracg -c /dev/sda2 //comprobar si fa falta defragmentar el disc</p>
+<p>Format d'alt nivell: no borra els fitxers, borra els sistema d'arxius (no els borrar pero els oculta per a tu), ignora sectors.</p>
+<p>Format normal: no borra els fitxers, borra els sistema d'arxius. Pero, si hi han sectors defectuosos no els guarda.</p>
+<p>Format baix nivell: borra fitxers, borra sistemes d'arxiu i no comprova res. BORRA TOT, COM SI FOS UN DE FÀBRICA.</p>
+<p>EXPLICAR:
+SISTEMES DE FITXERS
+Tipus:
+ext4</p>
+<p>GPT, MBR DISCS DURS</p>
 
 
 
