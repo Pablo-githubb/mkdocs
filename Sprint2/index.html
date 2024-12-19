@@ -541,7 +541,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#permisos-normals-uog" class="md-nav__link">
     <span class="md-ellipsis">
       Permisos "normals" UOG
@@ -549,8 +554,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#umask" class="md-nav__link">
     <span class="md-ellipsis">
       UMASK
@@ -558,8 +563,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#permisos-especials" class="md-nav__link">
     <span class="md-ellipsis">
       Permisos especials
@@ -567,8 +572,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#acls" class="md-nav__link">
     <span class="md-ellipsis">
       ACLs
@@ -576,8 +581,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#creacio-de-particions-i-formats" class="md-nav__link">
     <span class="md-ellipsis">
       CREACIÓ DE PARTICIONS I FORMATS
@@ -603,22 +608,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tipus de formateig">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sistemes-de-fitxers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sistemes de fitxers:
-    </span>
-  </a>
-  
 </li>
         
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#sistemes-de-fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistemes de fitxers:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemes de fitxers:">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#muntatge-provisional" class="md-nav__link">
@@ -657,9 +662,40 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#copies-de-seguretat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Còpies de seguretat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programes-en-interficie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programes en interfície
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatització
+    </span>
+  </a>
   
 </li>
       
@@ -892,30 +928,26 @@ Dintre d'aquest arxiu podem configurar els paràmetres quan es crea un nou usuar
 <p>Al moment de voldre eliminar un usuari del sistema tenim dues maneres. La primera és amb la següent comanda per borrar l'usuari SENSE LA SEVA /HOME
 <div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>deluser provaborrar
 </span></code></pre></div>
-<img alt="" src="img/ .png" title="" /></p>
-<p>D'altra banda, amb la següent comanda borrem l'usuari i la seva /home al mateix temps 
+<img alt="" src="img/ .png" title="" />
+Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix temps 
 <div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>userdel -r provaborrar
 </span></code></pre></div>
 <img alt="" src="../img/borrar.png" title="" /></p>
-<hr />
 <h3 id="enllacar">Enllaçar</h3>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ln -s /tmp /etc/skel/temporalcd 
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ls -s /tmp /etc/skel/temporalcd 
 </span></code></pre></div>
-ls -l
 <img alt="" src="../img/skel.png" title="" /></p>
-<hr />
 <h3 id="editar-ruta-terminal-per-defecte">Editar ruta terminal per defecte</h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nano /etc/skel/.profile
 </span></code></pre></div>
 <p>Edite'm la fila PWD='var' perquè quan s'obrigue una nova terminal, la ruta per defecte serà /var.</p>
-<p><img alt="" src="../img/skel2.png" title="" />
+<p><img alt="" src="../img/skel2.png" title="" /></p>
+<p>Dintre de l'arxiu agregarem la comanada <code>rm -r /home/$USER/Baixades/*</code> per a que quan accedim a un usuari nou, borri directament els arxius de la seva carpeta /Baixades
 <div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>nano /etc/skel/.bash_logout
 </span></code></pre></div></p>
-<p>Dintre de l'arxiu agregarem la comanada <code>rm -r /home/$USER/Baixades/*</code> per a que quan accedim a un usuari nou, borri directament els arxius de la seva carpeta /Baixades</p>
 <p><img alt="" src="../img/skel3.png" title="" /></p>
 <p><img alt="" src="../img/pissarra.jpg" title="" /></p>
-<hr />
-<h2 id="permisos-normals-uog">Permisos "normals" UOG</h2>
+<h1 id="permisos-normals-uog">Permisos "normals" UOG</h1>
 <p>Llenguatge octal per calcular permissos</p>
 <p>(-) significa que és un fitxer</p>
 <p>(d) significa que és un directori/carpeta</p>
@@ -927,9 +959,9 @@ ls -l
 <p>Amb la comanda <code>chgrp -R group /carpeta</code> podem donar els permisos normals a un grup específic per a la carpeta.</p>
 <p><img alt="" src="../img/permisos3.png" title="" /></p>
 <hr />
-<h2 id="umask">UMASK</h2>
+<h1 id="umask">UMASK</h1>
 <hr />
-<h2 id="permisos-especials">Permisos especials</h2>
+<h1 id="permisos-especials">Permisos especials</h1>
 <p><img alt="" src="../img/permisos.png" title="" /></p>
 <p>Sabem que amb la comanda <code>chmod ...</code> podem modificar els permisos sobre les posicions dels núemeros en octal.</p>
 <ul>
@@ -1035,7 +1067,7 @@ ls -l
 </li>
 </ol>
 <hr />
-<h2 id="acls">ACLs</h2>
+<h1 id="acls">ACLs</h1>
 <p>getfacl proves/ MOSTRA INFORMACIÓ</p>
 <p>setfacl -m user:prova3:--- proves/ AFEGIR RESTRICCIONS</p>
 <p>setfacl -b proves/ BORRAR RESTRICCIONS</p>
@@ -1075,8 +1107,8 @@ ls -l
 </li>
 </ol>
 <p><img alt="" src="../img/getfacl.png" title="" /></p>
-<h2 id="creacio-de-particions-i-formats">CREACIÓ DE PARTICIONS I FORMATS</h2>
-<h3 id="teoria">Teoria:</h3>
+<h1 id="creacio-de-particions-i-formats">CREACIÓ DE PARTICIONS I FORMATS</h1>
+<h2 id="teoria">Teoria:</h2>
 <p>Estructura de la informació</p>
 <ul>
 <li>
@@ -1092,14 +1124,14 @@ ls -l
 <p>Fragmentación externa: Arixus guardats en molt arxius a la vegada, aixo fa que la velocitat de lectura i escriptura es reduixque. </p>
 </li>
 </ul>
-<h3 id="tipus-de-formateig">Tipus de formateig</h3>
-<h4 id="sistemes-de-fitxers">Sistemes de fitxers:</h4>
+<h2 id="tipus-de-formateig">Tipus de formateig</h2>
+<h1 id="sistemes-de-fitxers">Sistemes de fitxers:</h1>
 <p>Un sector es la unitat mínima física en la que es guarden les dades (unitat per defecte =512) (sector)</p>
 <p>El sistema operatiu funciona = Mida del blocs (cluster) és la unitat mínima 4.096 bytes // podem canviar la mida dels blocs, però no dels sectors. </p>
 <ul>
-<li><code>du -b arxiu</code> veure la mida dels arxius</li>
-<li><code>du -sh arxiu</code> veure la mida real dels arxius</li>
-<li><code>df -T e4defracg -c /dev/sda2</code> comprobar si fa falta defragmentar el disc</li>
+<li><code>du -b arxiu</code> veure la mida dels arxius.</li>
+<li><code>du -sh arxiu</code> veure la mida real dels arxius.</li>
+<li><code>df -T e4defracg -c /dev/sda2</code> comprobar si fa falta defragmentar el disc.</li>
 </ul>
 <blockquote>
 <p>Format d'alt nivell: no borra els fitxers, borra els sistema d'arxius (no els borrar pero els oculta per a tu), ignora sectors.</p>
@@ -1122,20 +1154,61 @@ ls -l
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>tune2fs -l /dev/sdb1 | grep Block
 </span></code></pre></div>
 <img alt="alt text" src="../img/tune.png" /></p>
-<h3 id="muntatge-provisional">MUNTATGE PROVISIONAL</h3>
+<h2 id="muntatge-provisional">MUNTATGE PROVISIONAL</h2>
 <p>Creem una carpeta qualsevol i muntem la nostra partició provisional que els canvis es desfaran al moment de reiniciar la màquina completament.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>mount -t ext4 (permisos opcional) /dev/sdb1 /var/particio1
 </span></code></pre></div>
 <img alt="alt text" src="../img/mount.png" /></p>
 <p><em>Els archius no desapareixen si fas umount</em> 
 <img alt="alt text" src="../img/umount.png" /></p>
-<h3 id="muntatge-permanent">MUNTATGE PERMANENT</h3>
+<h2 id="muntatge-permanent">MUNTATGE PERMANENT</h2>
 <p>Ara, per fer el muntatge permanentment haurem d'editar l'arxiu /etc/fstab. Dintre d'aquest document s'haurà d'editar la línia de la ruta del muntatge. Ho aconseguiran fent-ho d'aquesta manera.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo nano /etc/fstab
 </span></code></pre></div>
 <img alt="alt text" src="../img/fstab.png" /></p>
-<h4 id="sistemes-de-fitxers_1">SISTEMES DE FITXERS</h4>
+<h3 id="sistemes-de-fitxers_1">SISTEMES DE FITXERS</h3>
 <p><strong>ext4:</strong> L'ext4 és un sistema de fitxers utilitzat en Linux que serveix per organitzar i emmagatzemar dades al disc de manera eficient i segura. És ràpid, fiable i capaç de gestionar fitxers molt grans i discs moderns.</p>
+<h1 id="copies-de-seguretat">Còpies de seguretat</h1>
+<p><strong>Conceptes bàsics</strong></p>
+<p>S'ha d'establir una bona política de còpia de seguretat</p>
+<p>Completa: És una còpia de seguretat la qual guarda totes les dades d'una vegada de tot el disc. És més fàcil de recuperar les dades, ja que per a restaurar les dades es necessita l'última completa. Finalment, la còpia més lenta, perquè ha de copiar tota la informació del disc dur.</p>
+<p>Diferencial: Solament guarda les diferències que hi ha des dee l'última còpia completa. Aquesta és més ràpida de fer a comparació de la completa perquè ha de guardar molts menys arxius i dades (tot depenent de tots els canvis que has pogut fer en un dia, però sempre serà menys que la completa). Per recuperar les dades necessites l'última còpia completa i diferencial abans de l'error al sistema.</p>
+<p>Incremental: És la còpia que guarda la informació de la seva anterior còpia. És molt més ràpida perquè guarda menys dades que les altres i per recuperar les dades es necessita tot el recorregut de còpies des de l'última completa fins a les anteriors a l'última incremental que has fet abans de l'error del sistema.</p>
+<h1 id="programes-en-interficie">Programes en interfície</h1>
+<p>Deja-dup i Duplicity, Altres</p>
+<h1 id="comandes">Comandes</h1>
+<p>CP: és un còpia simple no intel·ligent que no mira res i ho còpia tot en local.</p>
+<p>Creació partició <code>/dev/sdc</code>
+<img alt="" src="/img/fdisksdc.png" />
+<img alt="" src="/img/fdisksdc2.png" /></p>
+<p>Creació partició <code>/dev/sdd</code>
+<img alt="" src="/img/fdisksdd.png" />
+<img alt="" src="/img/fdisksdc2.png" /></p>
+<p><img alt="alt text" src="../img/mkfssdc1.png" />
+<img alt="alt text" src="../img/mkfssdd1.png" /></p>
+<hr />
+<p>Per provar la funcionalitat de la comanda <code>cp</code>, crearem un fitxer i una carpeta de prova.
+<img alt="alt text" src="../img/touchadeu.png" /></p>
+<p>Amb la comanda <code>sudo cp -R /rutadelsarxiusquevolscopiar /rutadeonvolscopiarelsarxius</code> podràs copiar els arxius d'un dierctori específic a una altre.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo cp -R /home/pmc/Documents/* /var/copia_dades/pablo
+</span></code></pre></div>
+<img alt="alt text" src="../img/cp.png" /></p>
+<p>rsync: és un còpia intel·ligent que només copia els modificat i es pot fer entre màquines remotres per via SSH. </p>
+<p>Creem uns nous arxius i eliminem els altres per fer una prova diferent.
+<img alt="alt text" src="../img/rmrsync.png" /></p>
+<hr />
+<p>El que farà aquesta comanda és borrar els arxius que hi haguín dintre del directori destí i després copiarà els nous fitxers del directori origen.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo rsync -av --delete /home/pmc/Docuements/ /var/copia_dades/pablo/
+</span></code></pre></div></p>
+<p><img alt="alt text" src="../img/rsyncdelete.png" /></p>
+<p>DD: no és propiament per fer còpies d'arxius, treball en local i treballa a nivel de bloc. Serveix molt bé per fer clonacions de disc o particions. Copia tot el sistema d'arxius. Es pot utilitzar per esborrar definitivament les dades dels arixus d'un disc/partició.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>sudo dd if=/dev/sdc1 of=/dev/sdd1 bs=4M status progress
+</span></code></pre></div>
+<img alt="alt text" src="../img/dd.png" />
+Si les dues ids de les particions són la mateixa, significa que el procediment que hem fet ha sigut correcte.
+<img alt="alt text" src="../img/dd2.png" /></p>
+<h1 id="automatitzacio">Automatització</h1>
+<p>Chron, Anacron </p>
 
 
 
