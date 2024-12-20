@@ -947,6 +947,7 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 </span></code></pre></div></p>
 <p><img alt="" src="../img/skel3.png" title="" /></p>
 <p><img alt="" src="../img/pissarra.jpg" title="" /></p>
+<hr />
 <h1 id="permisos-normals-uog">Permisos "normals" UOG</h1>
 <p>Llenguatge octal per calcular permissos</p>
 <p>(-) significa que és un fitxer</p>
@@ -983,11 +984,12 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 </span></code></pre></div>
 <img alt="" src="../img/chmod3.png" title="" /></p>
 <ol>
-<li>Situa't al teu directori personal (/home/usuari). Crea utilitzant el teu usuari estàndard (no root) un fitxer buit anomenat ex1.txt.<ul>
-<li>Qui és el usuari propietari del fitxer? Com pots veure aquesta informació?</li>
-<li>Qui és el grup propietari del fitxer? Com pots veure aquesta informació?</li>
-</ul>
-</li>
+<li>Situa't al teu directori personal (/home/usuari). Crea utilitzant el teu usuari estàndard (no root) un fitxer buit anomenat ex1.txt.
+<img alt="alt text" src="../img/ex1.png" /></li>
+</ol>
+<p><em>Qui és el usuari propietari del fitxer? Com pots veure aquesta informació?</em> L'usuari propietari del fitxer és el propi usuari <strong>pmc</strong>. Aquesta informació la pots veure amb la comanda <code>ls -l</code>.</p>
+<p><em>Qui és el grup propietari del fitxer?</em> Com pots veure aquesta informació? També el grup propietari de l'arxiu ex1 creat és el mateix usuari <strong>pmc</strong>. Aquesta informació la pots veure amb la comanda <code>ls -l</code>.</p>
+<ol>
 <li>Situa't al teu directori personal (/home/usuari). Crea utilitzant amb l'usuari root (executant amb sudo) un fitxer buit anomenat ex2.txt.<ul>
 <li>Qui és el usuari propietari del fitxer? Com pots veure aquesta informació?</li>
 <li>Qui és el grup propietari del fitxer? Com pots veure aquesta informació?</li>
