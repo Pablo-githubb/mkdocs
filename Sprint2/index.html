@@ -574,9 +574,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#acls" class="md-nav__link">
+  <a href="#acl-access-control-list" class="md-nav__link">
     <span class="md-ellipsis">
-      ACLs
+      ACL (Access Control List)
     </span>
   </a>
   
@@ -687,6 +687,30 @@
       Comandes
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Comandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      RSYNC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1069,46 +1093,73 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 </li>
 </ol>
 <hr />
-<h1 id="acls">ACLs</h1>
+<h1 id="acl-access-control-list">ACL (Access Control List)</h1>
 <p>getfacl proves/ MOSTRA INFORMACIÓ</p>
 <p>setfacl -m user:prova3:--- proves/ AFEGIR RESTRICCIONS</p>
 <p>setfacl -b proves/ BORRAR RESTRICCIONS</p>
 <ol>
-<li>
-<p>Amb el teu usuari crea la carpeta exercicis i dóna-li permisos 770 de forma recursiva</p>
-<ul>
-<li>
-<p>Comprova els permisos de llista acl</p>
-</li>
-<li>
-<p>Crea una ACL per a aquesta carpeta de forma recursiva de tal  manera que l’usuari vesper tingui tots els permisos</p>
-</li>
-<li>
-<p>Comprova-ho</p>
-</li>
-<li>
-<p>Torna amb el teu usuari i dintre d’aquesta carpeta crea a ara una altra que es digui repas</p>
-</li>
-<li>
-<p>Tornat a posar com a vesper i crea dintre de la carpeta repas un arxiu anomenat ex1</p>
-</li>
-<li>Esborra els permisos ACL per a la carpeta exercicis quedant només els UGO</li>
-</ul>
-</li>
-<li>
-<p>Crea un grup anomenat pugs i afegeix dintre l’usuari vesper</p>
-</li>
-<li>
-<p>Crea un altre usuari anomenat perrete</p>
-</li>
-<li>
-<p>Amb el teu usuari crea un arxiu de text amb permisos 770</p>
-</li>
-<li>
-<p>Crea una ACL per a aquest arxiu de forma que els usuaris del grup pugs puguin llegir-lo i modificar-lo i la resta d’usuaris res. Comprova-ho amb els dos usuaris que tens, vesper i perrete</p>
-</li>
+<li>Amb el teu usuari crea la carpeta exercicis i dóna-li permisos 770 de forma recursiva</li>
 </ol>
-<p><img alt="" src="../img/getfacl.png" title="" /></p>
+<p>Amb la comanda <code>chmod -R</code> podem donar permisos recursivament.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>chmod -R 770 /exercicis
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls1.png" /></p>
+<p>Amb <code>ls -ld</code> podem veure els permisos de la carpeta.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>ls -ld /exercicis
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls3.png" /></p>
+<p>Ara, amb la comanda <code>setfacl -R -m</code> podem crear una nova llista ACL de manera que l’usuari vesper tingui tots els permisos.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>setfacl -R -m u:vesper:rwx exercicis/
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls4.png" /></p>
+<p>I aqui està la comprovació. Amb la comanda <code>getfacl exercicis/</code>.</p>
+<p><img alt="alt text" src="../img/acls5.png" /></p>
+<p>Dintre de la carpeta <strong>exercicis</strong> creem una altra que es digui <strong>repas</strong>
+<img alt="alt text" src="../img/acls6.png" />
+<img alt="alt text" src="../img/acls7.png" /></p>
+<p>Si volem ara comprovar els permisos de les llistes ACL, podem utilitzar aquestes comandes per accedir amb l'usuari <strong>vespre</strong>, <strong>crear un fitxer dintre</strong> i <strong>sortir</strong>.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo -u vesper bash
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>touch ~/exercicis/repas/ex1  
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>exit 
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls8.png" /></p>
+<p><img alt="alt text" src="../img/acls9.png" /></p>
+<p>La comanda <code>setfacl -R -b</code> esborra els permisos ACL per a la carpeta exercicis quedant només els UGO.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>setfacl -R -b ~/exercicis  
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls10.png" /></p>
+<p>I comprovem i verifiquem que ja no hi han ACL</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>getfacl exercicis/  
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>ls -ld exercicis/ 
+</span></code></pre></div>
+<p><img alt="alt text" src="../img/acls11.png" /></p>
+<p><img alt="alt text" src="../img/acls12.png" /></p>
+<p>Creem un grup anomenat pugs i afegim dintre l’usuari vesper</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>groupadd pugs
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>usermod -aG pugs vesper
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls14.png" /></p>
+<p>Creem un altre usuari anomenat perrete</p>
+<p><img alt="alt text" src="../img/acls13.png" /></p>
+<p>Amb el teu usuari local (pmc) creo un arxiu de text amb permisos 770.</p>
+<p><img alt="alt text" src="../img/acls15.png" />
+<img alt="alt text" src="../img/acls16.png" />    </p>
+<p>Finalment, creo una ACL per a aquest arxiu de forma que els usuaris del grup pugs puguin llegir-lo i modificar-lo i la resta d’usuaris res. Comprovem amb els dos usuaris que tenim, vesper i perrete</p>
+<p>Amb aquesta comanda dono permisos d'escriptura i lectura al grup.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>setfacl -m g:pugs:rw exercicis/fitxerprova.txt  
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls17.png" /></p>
+<p>D'altra banda, amb aquesta denego l'accés a la resta d'usuaris.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>setfacl -m o::--- exercicis/fitxerprova.txt 
+</span></code></pre></div>
+<img alt="alt text" src="../img/acls18.png" /></p>
+<p><img alt="alt text" src="../img/acls19.png" /></p>
+<p><em>Finalment, comprovem l'accés dels dos usuaris vesper i perrete.</em>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>sudo -u vesper nano exercicis/fitxer.txt
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>sudo -u perrete nano exercicis/fitxer.txt
+</span></code></pre></div></p>
 <hr />
 <h1 id="creacio-de-particions-i-formats">CREACIÓ DE PARTICIONS I FORMATS</h1>
 <h2 id="teoria">Teoria:</h2>
@@ -1145,29 +1196,29 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p>La comanda <code>fdisk -l</code> servei per mirar el llistat de partiions muntados i no muntas que tenim al sistema.
 <img alt="alt text" src="../img/fdiskl.png" /></p>
 <p>A continuació, si volem muntar una nova partició ens hem d'adentra al menú de creació de particions. Això ho aconseguim amb la següent comanda (en el meu cas, la ruta del disc es /dev/sda):
-<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>fdisk &quot;ruta del disc&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>fdisk &quot;ruta del disc&quot;
 </span></code></pre></div>
 <img alt="alt text" src="../img/fdiskdev.png" /></p>
 <p>Al moment de ja estar en el menú, per començar a configurar amb la lletra <code>n</code> creem una nova partició. <strong>utilitzem el elements per defecte menys el tamany del segon sector, fiquem la meitat.</strong></p>
 <p><img alt="alt text" src="../img/fdiskn.png" /></p>
 <p>Finalment, per aplicar el canvis realitzats hem d'utilitzar la lletra <code>w</code>.</p>
 <p><img alt="alt text" src="../img/fdiskw.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>mkfs.ext4 -b 2048 /dev/sdb1
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>mkfs.ext4 -b 2048 /dev/sdb1
 </span></code></pre></div>
 <img alt="alt text" src="../img/mkfs.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>tune2fs -l /dev/sdb1 | grep Block
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>tune2fs -l /dev/sdb1 | grep Block
 </span></code></pre></div>
 <img alt="alt text" src="../img/tune.png" /></p>
 <h2 id="muntatge-provisional">MUNTATGE PROVISIONAL</h2>
 <p>Creem una carpeta qualsevol i muntem la nostra partició provisional que els canvis es desfaran al moment de reiniciar la màquina completament.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>mount -t ext4 (permisos opcional) /dev/sdb1 /var/particio1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>mount -t ext4 (permisos opcional) /dev/sdb1 /var/particio1
 </span></code></pre></div>
 <img alt="alt text" src="../img/mount.png" /></p>
 <p><em>Els archius no desapareixen si fas umount</em> 
 <img alt="alt text" src="../img/umount.png" /></p>
 <h2 id="muntatge-permanent">MUNTATGE PERMANENT</h2>
 <p>Ara, per fer el muntatge permanentment haurem d'editar l'arxiu /etc/fstab. Dintre d'aquest document s'haurà d'editar la línia de la ruta del muntatge. Ho aconseguiran fent-ho d'aquesta manera.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo nano /etc/fstab
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>sudo nano /etc/fstab
 </span></code></pre></div>
 <img alt="alt text" src="../img/fstab.png" /></p>
 <h3 id="sistemes-de-fitxers_1">SISTEMES DE FITXERS</h3>
@@ -1185,31 +1236,33 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <hr />
 <h1 id="comandes">Comandes</h1>
 <p>CP: és un còpia simple no intel·ligent que no mira res i ho còpia tot en local.</p>
-<p>Creació partició <code>/dev/sdc</code>
+<p>Creació partició <code>/dev/sdc</code>.
 <img alt="" src="../img/fdisksdc.png" />
 <img alt="" src="../img/fdisksdc2.png" /></p>
-<p>Creació partició <code>/dev/sdd</code>
+<p>Creació partició <code>/dev/sdd</code>.
 <img alt="" src="../img/fdisksdd.png" />
 <img alt="" src="../img/fdisksdc2.png" /></p>
 <p><img alt="alt text" src="../img/mkfssdc1.png" />
 <img alt="alt text" src="../img/mkfssdd1.png" /></p>
 <hr />
+<h2 id="cp">CP</h2>
 <p>Per provar la funcionalitat de la comanda <code>cp</code>, crearem un fitxer i una carpeta de prova.
 <img alt="alt text" src="../img/touchadeu.png" /></p>
 <p>Amb la comanda <code>sudo cp -R /rutadelsarxiusquevolscopiar /rutadeonvolscopiarelsarxius</code> podràs copiar els arxius d'un dierctori específic a una altre.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo cp -R /home/pmc/Documents/* /var/copia_dades/pablo
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>sudo cp -R /home/pmc/Documents/* /var/copia_dades/pablo
 </span></code></pre></div>
 <img alt="alt text" src="../img/cp.png" /></p>
 <p>rsync: és un còpia intel·ligent que només copia els modificat i es pot fer entre màquines remotres per via SSH. </p>
 <p>Creem uns nous arxius i eliminem els altres per fer una prova diferent.
 <img alt="alt text" src="../img/rmrsync.png" /></p>
 <hr />
+<h2 id="rsync">RSYNC</h2>
 <p>El que farà aquesta comanda és borrar els arxius que hi haguín dintre del directori destí i després copiarà els nous fitxers del directori origen.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo rsync -av --delete /home/pmc/Docuements/ /var/copia_dades/pablo/
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>sudo rsync -av --delete /home/pmc/Docuements/ /var/copia_dades/pablo/
 </span></code></pre></div></p>
 <p><img alt="alt text" src="../img/rsyncdelete.png" /></p>
 <p>DD: no és propiament per fer còpies d'arxius, treball en local i treballa a nivel de bloc. Serveix molt bé per fer clonacions de disc o particions. Copia tot el sistema d'arxius. Es pot utilitzar per esborrar definitivament les dades dels arixus d'un disc/partició.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>sudo dd if=/dev/sdc1 of=/dev/sdd1 bs=4M status progress
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>sudo dd if=/dev/sdc1 of=/dev/sdd1 bs=4M status progress
 </span></code></pre></div>
 <img alt="alt text" src="../img/dd.png" />
 Si les dues ids de les particions són la mateixa, significa que el procediment que hem fet ha sigut correcte.
