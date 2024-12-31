@@ -382,16 +382,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nf4-usuaris-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      NF4-USUARIS-LINUX
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="NF4-USUARIS-LINUX">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#definicions" class="md-nav__link">
     <span class="md-ellipsis">
       Definicions
@@ -399,8 +389,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#versio-grafica" class="md-nav__link">
     <span class="md-ellipsis">
       Versió gràfica
@@ -408,8 +398,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#crear-nous-usuaris" class="md-nav__link">
     <span class="md-ellipsis">
       Crear nous usuaris
@@ -432,26 +422,32 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#crear-grups" class="md-nav__link">
     <span class="md-ellipsis">
       Crear grups
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Crear grups">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#modificacio" class="md-nav__link">
+  <a href="#modificacio-grups" class="md-nav__link">
     <span class="md-ellipsis">
-      Modificació
+      Modificació grups
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bloqueig" class="md-nav__link">
     <span class="md-ellipsis">
       Bloqueig
@@ -474,8 +470,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#editar-valors-de-nous-usuaris" class="md-nav__link">
     <span class="md-ellipsis">
       Editar valors de nous usuaris
@@ -498,8 +494,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#afegir-usuaris-al-sudo" class="md-nav__link">
     <span class="md-ellipsis">
       Afegir usuaris al sudo
@@ -507,8 +503,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#borrar-usuaris" class="md-nav__link">
     <span class="md-ellipsis">
       Borrar usuaris
@@ -533,11 +529,6 @@
       Editar ruta terminal per defecte
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -679,6 +670,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Programes en interfície">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deja-dup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deja Dup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeshift
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -753,7 +777,6 @@
 <img alt="" src="../img/pstreeh.png" title="terminal en superadmin" /></p>
 <p>A més a més, utilitzant la comanda <code>pstree -h -p "usuari"</code> podem a més veure els procesos de l'usuari amb el ID de cada proces.
 <img alt="" src="../img/pstreep.png" title="terminal en superadmin" /></p>
-<h1 id="nf4-usuaris-linux">NF4-USUARIS-LINUX</h1>
 <h2 id="definicions">Definicions</h2>
 <p>Què és un usuari? Podem treballar amb més d'un usuari simultàniament? <strong>Un usuari és una entitat creada per poder gestionar un sistema opertiu, executar comandes, gestionar directoris, etc.</strong></p>
 <p>Què és un grup i quina utilitat té agrupar usuaris en grups? <strong>Un grup és una agrupació d'usuaris el qual serveix per aplicar permisos i restricción molts usuaris al mateix temps.</strong></p>
@@ -803,6 +826,7 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <img alt="" src="../img/deluser2.png" title="" /></p>
 <h3 id="comprovacio">Comprovació:</h3>
 <p><img alt="" src="../img/alumne5.png" title="" /></p>
+<hr />
 <h2 id="crear-grups">Crear grups</h2>
 <p>Creem 2 grups (alumnes i profes) amb la comanda addgroup. 
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>addgroup alumens
@@ -810,46 +834,46 @@ Aquest fitxer emmagatzema les contrasenyes dels grups i altres configuracions d'
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>addgroup profes
 </span></code></pre></div>
 <img alt="" src="../img/groups.png" title="" /></p>
-<p>Esborrem el grup de profes
+<p>Esborrem el grup de profes.
 <img alt="" src="../img/groups2.png" title="" /></p>
 <p>Creem el grup jocs
 <img alt="" src="../img/groups3.png" title="" /></p>
-<p>Afegim un usuari a un grup
+<p>Afegim un usuari a un grup.
  <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>usermod -a -G group user
 </span></code></pre></div></p>
-<h2 id="modificacio">Modificació</h2>
-<p>Modifiquem el nom del grup a "Jocs" a "alumnesASIX"
+<h3 id="modificacio-grups">Modificació grups</h3>
+<p>Modifiquem el nom del grup a "Jocs" a "alumnesASIX".
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>groupmod -n alumnesASIX jocs
 </span></code></pre></div>
 <img alt="" src="../img/modificacio7.png" title="" />
-Modifiquem la paraula de pas d'alumne1</p>
+Modifiquem la paraula de pas d'alumne1.</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>usermod -p contrasenya alumne1
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat /etc/shadow | grep alumne1
 </span></code></pre></div>
 <img alt="" src="../img/modificacio.png" title="" /></p>
-<p>Modifiquem el nom d'alumne4 per alumne2</p>
+<p>Modifiquem el nom d'alumne4 per alumne2.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>usermod -l alumne2 alumne4
 </span></code></pre></div>
 <p><img alt="" src="../img/modificacio3.png" title="" /></p>
-<p>Afegim dintre del grup alumnesASIX  als 3 alumnes
+<p>Afegim dintre del grup alumnesASIX  als 3 alumnes.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>adduser alumne1 alumnesASIX
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>adduser alumne2 alumnesASIX
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>adduser alumne3 alumnesASIX
 </span></code></pre></div>
 <img alt="" src="../img/modificacio8.png" title="" />
-Treiem a l'alumne2 del grup
+Treiem a l'alumne2 del grup.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>deluser alumne2 alumnesASIX
 </span></code></pre></div>
 O, també es podria utilitzar:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo gpasswd -d alumne2 alumnesASIX
 </span></code></pre></div></p>
 <p><img alt="" src="../img/modificacio9.png" title="" /></p>
-<p>Afegim a l'alumne1 al grup de jocs, però com a administrador i alumne2 com a usuari normal</p>
+<p>Afegim a l'alumne1 al grup de jocs, però com a administrador i alumne2 com a usuari normal.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo usermod -aG jocs alumne1
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo usermod -aG jocs alumne2
 </span></code></pre></div>
-<p>Fem que l'alumne1 tingui com a grup principal el grup d'alumneASIX</p>
+<p>Fem que l'alumne1 tingui com a grup principal el grup d'alumneASIX.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo usermod -g alumnesASIX alumne1
 </span></code></pre></div>
 <ul>
@@ -857,13 +881,14 @@ O, també es podria utilitzar:
 </ul>
 <p><strong>/etc/group:</strong> Emmagatzema informació bàsica sobre els grups, el nom del grup, l’identificador de grup (GID) i els membres associats.</p>
 <p><strong>/etc/gshadow:</strong> Emmagatzema la informació confidencial del grup, la contrasenya encriptada del grup i els usuaris que tenen permisos per administrar-lo.</p>
+<hr />
 <h2 id="bloqueig">Bloqueig</h2>
-<p>Bloquejem un usuari i comprovem que no pots accedir amb ell</p>
+<p>Bloquejem un usuari i comprovem que no pots accedir amb ell.</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>usermod -L alumne3
 </span></code></pre></div>
 <img alt="" src="../img/bloqueig.png" title="" />
 <img alt="" src="../img/bloqueig2.png" title="" /></p>
-<p>Ara, desbloquejem i comprovem que ja pots tornar a accedir amb ell
+<p>Ara, desbloquejem i comprovem que ja pots tornar a accedir amb ell.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>usermod -U alumne3
 </span></code></pre></div>
 <img alt="" src="../img/bloqueig3.png" title="" />
@@ -939,7 +964,7 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <h3 id="editar-ruta-terminal-per-defecte">Editar ruta terminal per defecte</h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nano /etc/skel/.profile
 </span></code></pre></div>
-<p>Edite'm la fila PWD='var' perquè quan s'obrigue una nova terminal, la ruta per defecte serà /var.</p>
+<p>Editem la fila PWD='var' perquè quan s'obrigue una nova terminal, la ruta per defecte serà /var.</p>
 <p><img alt="" src="../img/skel2.png" title="" /></p>
 <p>Dintre de l'arxiu agregarem la comanada <code>rm -r /home/$USER/Baixades/*</code> per a que quan accedim a un usuari nou, borri directament els arxius de la seva carpeta /Baixades
 <div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>nano /etc/skel/.bash_logout
@@ -960,6 +985,19 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><img alt="" src="../img/permisos3.png" title="" /></p>
 <hr />
 <h1 id="umask">UMASK</h1>
+<p>UMASK (User Mask) és una configuració en Ubuntu i altres sistemes basats en Linux que controla quins permisos tindran per defecte els fitxers i directoris nous que creïs. Podríem dir que actua com un filtre que elimina determinats permisos del que es permet per defecte, ajudant a mantenir la seguretat del sistema.</p>
+<p>Quan crees un fitxer o un directori, el sistema aplica uns permisos base predeterminats. Aquests són:</p>
+<ul>
+<li>Fitxers normals: Tenen permisos base de 666 (lectura i escriptura per a tothom, però sense execució).</li>
+<li>Directoris: Tenen permisos base de 777 (lectura, escriptura i execució per a tothom).</li>
+</ul>
+<p>A continuació, la UMASK es resta d'aquests permisos base. Així, es defineixen els permisos finals del fitxer o directori nou.</p>
+<p>Pots veure la configuració actual de UMASK simplement escrivint: <code>umask</code></p>
+<p><img alt="alt text" src="../image-3.png" /></p>
+<p>Per canviar-la temporalment a un valor com 077, que bloquejaria tots els permisos per als altres:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>umask 077
+</span></code></pre></div>
+Els fitxers creats després d'aquest canvi només tindran permisos per a tu.</p>
 <hr />
 <h1 id="permisos-especials">Permisos especials</h1>
 <p><img alt="" src="../img/permisos.png" title="" /></p>
@@ -972,14 +1010,14 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><img alt="" src="../img/permisosespecials.png" title="" /></p>
 <p>Ara, podem agregar aquests permisos a carpetes compartides amb les comandes següent:</p>
 <p>Per a aplicar aquest permisos a un arxiu en una carpeta compartida ho podem fer amb:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>chmod -x arxiu
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>chmod -x arxiu
 </span></code></pre></div>
 <img alt="" src="../img/chmod.png" title="" /></p>
 <p>Desprès, amb:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>chmod u+s arxiu
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>chmod u+s arxiu
 </span></code></pre></div>
 <img alt="" src="../img/chmod2.png" title="" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>chmod o+t carpeta/
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>chmod o+t carpeta/
 </span></code></pre></div>
 <img alt="" src="../img/chmod3.png" title="" /></p>
 <p>Situa't al teu directori personal (/home/usuari). Crea utilitzant el teu usuari estàndard (no root) un fitxer buit anomenat ex1.txt.
@@ -996,36 +1034,36 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><em>Permís de lectura i escriptura per a l'usuari.</em></p>
 <p><em>Permís de només lectura per al grup.</em></p>
 <p><em>Cap permís per a altres.</em></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>touch ex7.txt
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>chmod 640 ex7.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>touch ex7.txt
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>chmod 640 ex7.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod8.png" /></p>
 <p>Verifiquem el permisos de l'arxiu.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>ls -l ex7.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>ls -l ex7.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod9.png" /></p>
 <p>Utilitzant notació octal (000, 010, …), crea un fitxer ex8.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:</p>
 <p><em>Permís de lectura, escriptura i execució per a l'usuari.</em></p>
 <p><em>Permís d'escriptura per al grup.</em></p>
 <p><em>Permís d'execució per a altres.</em></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>touch ex8.txt
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>chmod 721 ex8.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>touch ex8.txt
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>chmod 721 ex8.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod10.png" /></p>
 <p>Verifiquem el permisos de l'arxiu.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ls -l ex8.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>ls -l ex8.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod11.png" /></p>
 <p>Utilitzant notació octal (000, 010, …), crea un fitxer ex9.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:</p>
 <p><em>Permís de lectura, escriptura i execució per a l'usuari.</em></p>
 <p><em>Permís de lectura i escriptura per al grup.</em></p>
 <p><em>Permís de només lectura per a altres.</em></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>touch ex9.txt
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>chmod 764 ex9.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>touch ex9.txt
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>chmod 764 ex9.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod12.png" /></p>
 <p>Verifiquem el permisos de l'arxiu.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>ls -l ex9.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>ls -l ex9.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod13.png" /></p>
 <p>Utilitzant notació octal (000, 010, …), crea un fitxer ex10.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:</p>
@@ -1033,12 +1071,12 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><em>Permís de lectura i execució per a l'usuari.</em></p>
 <p><em>Permís de sols lectura per al grup.</em></p>
 <p><em>Cap permís per a altres.</em></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>touch ex10.txt
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>chmod 4750 ex10.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>touch ex10.txt
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>chmod 4750 ex10.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod14.png" /></p>
 <p>Verifiquem el permisos de l'arxiu.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>ls -l ex10.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>ls -l ex10.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod15.png" /></p>
 <p>Utilitzant notació octal (000, 010, …), crea un fitxer ex11.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:</p>
@@ -1046,12 +1084,12 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><em>Permís de lectura per a l'usuari.</em></p>
 <p><em>Permís d'escriptura per al grup.</em></p>
 <p><em>Permís de lectura per a altres.</em></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>touch ex11.txt
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>chmod 6754 ex11.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>touch ex11.txt
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>chmod 6754 ex11.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod16.png" /></p>
 <p>Verifiquem el permisos de l'arxiu.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>ls -l ex11.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>ls -l ex11.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod17.png" /></p>
 <p>Utilitzant notació octal (000, 010, …), crea un fitxer ex12.txt al teu directori personal i assigna-li amb una sola execució els següents permisos:</p>
@@ -1059,12 +1097,12 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><em>Permís de lectura i execució per a l'usuari.</em></p>
 <p><em>Cap permís per al grup.</em></p>
 <p><em>Permís de lectura per a altres.</em></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>touch ex12.txt
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>chmod 1754 ex12.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>touch ex12.txt
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>chmod 1754 ex12.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod18.png" /></p>
 <p>Verifiquem el permisos de l'arxiu.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>ls -l ~/ex12.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>ls -l ~/ex12.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod19.png" /></p>
 <p>Crea una carpeta pt13 al teu directori personal, i crea els fitxers ex13a.txt i ex13b.txt dintre de la carpeta pt13. Utilitzant notació octal (000, 010, …), estableix els següents permisos a la carpeta pt13, de forma que es propaguen automàticament a tots els fitxers, i demostra-ho:</p>
@@ -1072,82 +1110,82 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><em>Permís de lectura i escriptura per al grup.</em></p>
 <p><em>Permís de lectura i escriptura per a altres.</em></p>
 <p>Creem la carpeta i els fitxers:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>mkdir pt13
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>touch pt13/ex13a.txt pt13/ex13b.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>mkdir pt13
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>touch pt13/ex13a.txt pt13/ex13b.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod20.png" /></p>
 <p>Assignar permisos a la carpeta:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>chmod 377 pt13  # Heretaran lectura, escriptura i execució per a l&#39;usuari i grup
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>chmod 377 pt13  # Heretaran lectura, escriptura i execució per a l&#39;usuari i grup
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod21.png" /></p>
 <p>Verifiquem el permisos:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>ls -ld pt13
-</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>ls -l pt13
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>ls -ld pt13
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>ls -l pt13
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod22.png" /></p>
 <p>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex14.txt al teu directori personal i fes el següent amb una sola comanda:</p>
 <p><em>Afegeix permís d'execució per a l'usuari</em></p>
 <p><em>Afegeix permís d'escriptura i execució per al grup.</em></p>
 <p>Creem el fitxer i modifiquem els permisos:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>touch ex14.txt
-</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>chmod u+x,g+wx ex14.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>touch ex14.txt
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>chmod u+x,g+wx ex14.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod23.png" /></p>
 <p>Verifiquem el permisos de l'arxiu:</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>ls -l ex14.txt
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>ls -l ex14.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod24.png" /></p>
 <p>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex15.txt al teu directori personal i fes el següent amb una sola comanda:</p>
 <p><em>Afegeix permís d'escriptura per a tots els tipus d'usuari.</em></p>
 <p>Creem el fitxer i modifiquem els permisos:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>touch ex15.txt
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>chmod a+w ex15.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>touch ex15.txt
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>chmod a+w ex15.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod25.png" /></p>
 <p>Verifiquem els permisos de l'arxiu:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>ls -l ex15.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>ls -l ex15.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod26.png" /></p>
 <p>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex16.txt al teu directori personal i fes el següent amb una sola comanda:</p>
 <p><em>Elimina permís d'escriptura per a l'usuari.</em></p>
 <p><em>Elimina permís de lectura per als altres.</em></p>
 <p>Creem el fitxer i modifiquem els permisos:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>touch ex16.txt
-</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>chmod u-w,o-r ex16.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>touch ex16.txt
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>chmod u-w,o-r ex16.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod27.png" /></p>
 <p>Verifiquem els permisos de l'arxiu:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>ls -l ex16.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>ls -l ex16.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod28.png" /></p>
 <p>Utilitzant notació <entitat(s)>[+-=]<permís(os)>, crea un fitxer ex17.txt al teu directori personal i fes el següent amb una sola comanda:</p>
 <p><em>Estableix els permisos d'escriptura i d'execució per a tots els tipus d'usuari.</em></p>
 <p>Creem el fitxer i modifiquem els permisos:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>touch ex17.txt
-</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>chmod ugo+wx ex17.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>touch ex17.txt
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>chmod ugo+wx ex17.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod29.png" /></p>
 <p>Verifiquem els permisos de l'arxiu:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>ls -l ex17.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>ls -l ex17.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod30.png" /></p>
 <p>Crea com a administrador el fitxer pt22.txt (sudo) al teu directori personal i a continuació fes:</p>
 <p><em>Que el teu usuari habitual es faci usuari propietari del fitxer.</em></p>
 <p><em>Que el teu grup habitual es faci propietari del fitxer.</em></p>
 <p>Creem el fitxer com a root:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>touch pt22.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>touch pt22.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod31.png" /></p>
 <p>Canviem el propietari:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>sudo chown pmc pt22.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>sudo chown pmc pt22.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod32.png" /></p>
 <p>Canviem el grup:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>sudo chgrp pmc pt22.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>sudo chgrp pmc pt22.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod33.png" /></p>
 <p>Verifiquem els canvis:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>ls -l pt22.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>ls -l pt22.txt
 </span></code></pre></div>
 <img alt="alt text" src="../img/chmod34.png" /></p>
 <hr />
@@ -1157,15 +1195,15 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p>setfacl -b proves/ BORRAR RESTRICCIONS</p>
 <p>Amb el teu usuari local (pmc) crea la carpeta exercicis i dóna-li permisos 770 de forma recursiva.</p>
 <p>Amb la comanda <code>chmod -R</code> podem donar permisos recursivament.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>chmod -R 770 /exercicis
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>chmod -R 770 /exercicis
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls1.png" /></p>
 <p>Amb <code>ls -ld</code> podem veure els permisos de la carpeta.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>ls -ld /exercicis
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>ls -ld /exercicis
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls3.png" /></p>
 <p>Ara, amb la comanda <code>setfacl -R -m</code> podem crear una nova llista ACL de manera que l’usuari vesper tingui tots els permisos.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>setfacl -R -m u:vesper:rwx exercicis/
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>setfacl -R -m u:vesper:rwx exercicis/
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls4.png" /></p>
 <p>I aqui està la comprovació. Amb la comanda <code>getfacl exercicis/</code>.</p>
@@ -1174,26 +1212,26 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p><img alt="alt text" src="../img/acls6.png" />
 <img alt="alt text" src="../img/acls7.png" /></p>
 <p>Si volem ara comprovar els permisos de les llistes ACL, podem utilitzar aquestes comandes per accedir amb l'usuari <strong>vespre</strong>, <strong>crear un fitxer dintre</strong> i <strong>sortir</strong>.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>sudo -u vesper bash
-</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>touch ~/exercicis/repas/ex1  
-</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>exit 
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>sudo -u vesper bash
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>touch ~/exercicis/repas/ex1  
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>exit 
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls8.png" /></p>
 <p><img alt="alt text" src="../img/acls9.png" /></p>
 <p>La comanda <code>setfacl -R -b</code> esborra els permisos ACL per a la carpeta exercicis quedant només els UGO.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>setfacl -R -b ~/exercicis  
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>setfacl -R -b ~/exercicis  
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls10.png" /></p>
 <p>I comprovem i verifiquem que ja no hi han ACL</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>getfacl exercicis/  
-</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>ls -ld exercicis/ 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>getfacl exercicis/  
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>ls -ld exercicis/ 
 </span></code></pre></div>
 <p><img alt="alt text" src="../img/acls11.png" /></p>
 <p><img alt="alt text" src="../img/acls12.png" /></p>
 <p>Creem un grup anomenat pugs i afegim dintre l’usuari vesper</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>groupadd pugs
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>groupadd pugs
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>usermod -aG pugs vesper
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>usermod -aG pugs vesper
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls14.png" /></p>
 <p>Creem un altre usuari anomenat perrete</p>
@@ -1203,18 +1241,18 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <img alt="alt text" src="../img/acls16.png" />    </p>
 <p>Finalment, creo una ACL per a aquest arxiu de forma que els usuaris del grup pugs puguin llegir-lo i modificar-lo i la resta d’usuaris res. Comprovem amb els dos usuaris que tenim, vesper i perrete</p>
 <p>Amb aquesta comanda dono permisos d'escriptura i lectura al grup.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>setfacl -m g:pugs:rw exercicis/fitxerprova.txt  
+<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>setfacl -m g:pugs:rw exercicis/fitxerprova.txt  
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls17.png" /></p>
 <p>D'altra banda, amb aquesta denego l'accés a la resta d'usuaris.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>setfacl -m o::--- exercicis/fitxerprova.txt 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>setfacl -m o::--- exercicis/fitxerprova.txt 
 </span></code></pre></div>
 <img alt="alt text" src="../img/acls18.png" /></p>
 <p><img alt="alt text" src="../img/acls19.png" /></p>
 <p><em>Finalment, comprovem l'accés dels dos usuaris vesper i perrete.</em>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>sudo -u vesper nano exercicis/fitxer.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>sudo -u vesper nano exercicis/fitxer.txt
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>sudo -u perrete nano exercicis/fitxer.txt
+<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>sudo -u perrete nano exercicis/fitxer.txt
 </span></code></pre></div></p>
 <hr />
 <h1 id="creacio-de-particions-i-formats">CREACIÓ DE PARTICIONS I FORMATS</h1>
@@ -1252,29 +1290,29 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p>La comanda <code>fdisk -l</code> servei per mirar el llistat de partiions muntados i no muntas que tenim al sistema.
 <img alt="alt text" src="../img/fdiskl.png" /></p>
 <p>A continuació, si volem muntar una nova partició ens hem d'adentra al menú de creació de particions. Això ho aconseguim amb la següent comanda (en el meu cas, la ruta del disc es /dev/sda):
-<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>fdisk &quot;ruta del disc&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>fdisk &quot;ruta del disc&quot;
 </span></code></pre></div>
 <img alt="alt text" src="../img/fdiskdev.png" /></p>
 <p>Al moment de ja estar en el menú, per començar a configurar amb la lletra <code>n</code> creem una nova partició. <strong>utilitzem el elements per defecte menys el tamany del segon sector, fiquem la meitat.</strong></p>
 <p><img alt="alt text" src="../img/fdiskn.png" /></p>
 <p>Finalment, per aplicar el canvis realitzats hem d'utilitzar la lletra <code>w</code>.</p>
 <p><img alt="alt text" src="../img/fdiskw.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>mkfs.ext4 -b 2048 /dev/sdb1
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>mkfs.ext4 -b 2048 /dev/sdb1
 </span></code></pre></div>
 <img alt="alt text" src="../img/mkfs.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>tune2fs -l /dev/sdb1 | grep Block
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>tune2fs -l /dev/sdb1 | grep Block
 </span></code></pre></div>
 <img alt="alt text" src="../img/tune.png" /></p>
 <h2 id="muntatge-provisional">MUNTATGE PROVISIONAL</h2>
 <p>Creem una carpeta qualsevol i muntem la nostra partició provisional que els canvis es desfaran al moment de reiniciar la màquina completament.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>mount -t ext4 (permisos opcional) /dev/sdb1 /var/particio1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>mount -t ext4 (permisos opcional) /dev/sdb1 /var/particio1
 </span></code></pre></div>
 <img alt="alt text" src="../img/mount.png" /></p>
 <p><em>Els archius no desapareixen si fas umount</em> 
 <img alt="alt text" src="../img/umount.png" /></p>
 <h2 id="muntatge-permanent">MUNTATGE PERMANENT</h2>
 <p>Ara, per fer el muntatge permanentment haurem d'editar l'arxiu /etc/fstab. Dintre d'aquest document s'haurà d'editar la línia de la ruta del muntatge. Ho aconseguiran fent-ho d'aquesta manera.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>sudo nano /etc/fstab
+<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo nano /etc/fstab
 </span></code></pre></div>
 <img alt="alt text" src="../img/fstab.png" /></p>
 <h3 id="sistemes-de-fitxers_1">SISTEMES DE FITXERS</h3>
@@ -1288,7 +1326,56 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p>Incremental: És la còpia que guarda la informació de la seva anterior còpia. És molt més ràpida perquè guarda menys dades que les altres i per recuperar les dades es necessita tot el recorregut de còpies des de l'última completa fins a les anteriors a l'última incremental que has fet abans de l'error del sistema.</p>
 <hr />
 <h1 id="programes-en-interficie">Programes en interfície</h1>
-<p>Deja-dup i Duplicity, Altres</p>
+<h2 id="deja-dup">Deja Dup</h2>
+<p>Deja Dup és una interfície gràfica d'usuari (GUI) que simplifica les còpies de seguretat mitjançant Duplicity com a motor. És molt fàcil d'utilitzar, ja que està dissenyat per a usuaris que busquen una solució senzilla i fiable.
+Característiques principals:</p>
+<ul>
+<li>Interfície intuïtiva: Pots configurar còpies de seguretat en només uns pocs passos.</li>
+<li>Xifratge: Les dades es poden xifrar per protegir-les de l'accés no autoritzat.</li>
+<li>Còpies incrementals: Només copia els canvis des de l'última còpia de seguretat, estalviant espai i temps.</li>
+<li>Integració amb serveis al núvol: Suporta serveis com Google Drive i altres llocs remots via FTP, SFTP, WebDAV, etc.</li>
+<li>Planificació automàtica: Pots programar còpies de seguretat regulars.</li>
+</ul>
+<p><strong>Per utilitzar-lo seguim els següents pasos:</strong></p>
+<ol>
+<li>L'instal·lem (si no el tenim ja):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>sudo apt install deja-dup
+</span></code></pre></div></li>
+<li>L'obrim des del menú d’aplicacions.</li>
+<li>Seleccionem què volem incloure a la còpia de seguretat i on desar-la (pot ser un disc local, extern o al núvol).</li>
+<li>Configurem la freqüència i si volem activar el xifratge.</li>
+</ol>
+<h2 id="duplicity">Duplicity</h2>
+<p>Duplicity és una eina de línia de comandes que està darrere de Deja Dup. És ideal per a usuaris avançats que volen més control sobre les seves còpies de seguretat.
+Característiques principals:</p>
+<ul>
+<li>Suport per a llocs remots: Funciona amb serveis al núvol i servidors remots.</li>
+<li>Còpies de seguretat xifrades: Utilitza GPG per protegir les dades.</li>
+<li>Còpies incrementals i compressió: Guarda només els canvis des de l'última còpia, utilitzant espai mínim.</li>
+<li>Altament configurable: Pots ajustar cada detall del procés de còpia.</li>
+</ul>
+<p><strong>Creem una còpia de seguretat amb la següent comanda:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>duplicity /carpeta/a/còpia file:///ruta/còpia
+</span></code></pre></div></p>
+<p><strong>Restaurem la còpia de seguretat amb la següent comanda:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>duplicity restore file:///ruta/còpia /carpeta/de/restauració
+</span></code></pre></div></p>
+<h2 id="timeshift">Timeshift</h2>
+<p>Timeshift és una eina especialment dissenyada per fer còpies de seguretat del sistema, similar als punts de restauració de Windows. És perfecte per restaurar el sistema en cas d'errors greus.
+Característiques principals:</p>
+<ul>
+<li>Snapshots (instantànies): Guarda l’estat complet del sistema.</li>
+<li>Suport per a Btrfs i Rsync: Pot utilitzar diferents sistemes de còpia de seguretat.</li>
+<li>Automatització: Pots programar instantànies automàtiques.</li>
+<li>Fàcil d’utilitzar: La seva interfície és molt senzilla i s’integra bé en sistemes com Ubuntu i Linux Mint.</li>
+</ul>
+<p><img alt="x" src="../img/timeshift1.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift3.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift4.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift5.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift6.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift7.png" title="" /></p>
+<p><img alt="x" src="../img/timeshift8.png" title="" /></p>
 <hr />
 <h1 id="comandes">Comandes</h1>
 <p>CP: és un còpia simple no intel·ligent que no mira res i ho còpia tot en local.</p>
@@ -1305,7 +1392,7 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <p>Per provar la funcionalitat de la comanda <code>cp</code>, crearem un fitxer i una carpeta de prova.
 <img alt="alt text" src="../img/touchadeu.png" /></p>
 <p>Amb la comanda <code>sudo cp -R /rutadelsarxiusquevolscopiar /rutadeonvolscopiarelsarxius</code> podràs copiar els arxius d'un dierctori específic a una altre.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo cp -R /home/pmc/Documents/* /var/copia_dades/pablo
+<div class="language-text highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>sudo cp -R /home/pmc/Documents/* /var/copia_dades/pablo
 </span></code></pre></div>
 <img alt="alt text" src="../img/cp.png" /></p>
 <p>rsync: és un còpia intel·ligent que només copia els modificat i es pot fer entre màquines remotres per via SSH. </p>
@@ -1314,11 +1401,11 @@ Pe'l contrari, amb la següent comanda borrem l'usuari i la seva /home al mateix
 <hr />
 <h2 id="rsync">RSYNC</h2>
 <p>El que farà aquesta comanda és borrar els arxius que hi haguín dintre del directori destí i després copiarà els nous fitxers del directori origen.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>sudo rsync -av --delete /home/pmc/Docuements/ /var/copia_dades/pablo/
+<div class="language-text highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>sudo rsync -av --delete /home/pmc/Docuements/ /var/copia_dades/pablo/
 </span></code></pre></div></p>
 <p><img alt="alt text" src="../img/rsyncdelete.png" /></p>
 <p>DD: no és propiament per fer còpies d'arxius, treball en local i treballa a nivel de bloc. Serveix molt bé per fer clonacions de disc o particions. Copia tot el sistema d'arxius. Es pot utilitzar per esborrar definitivament les dades dels arixus d'un disc/partició.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>sudo dd if=/dev/sdc1 of=/dev/sdd1 bs=4M status progress
+<div class="language-text highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>sudo dd if=/dev/sdc1 of=/dev/sdd1 bs=4M status progress
 </span></code></pre></div>
 <img alt="alt text" src="../img/dd.png" />
 Si les dues ids de les particions són la mateixa, significa que el procediment que hem fet ha sigut correcte.
