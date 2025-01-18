@@ -830,9 +830,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#47-unir-equips-domini" class="md-nav__link">
+  <a href="#47-crear-server-ldap" class="md-nav__link">
     <span class="md-ellipsis">
-      4.7 UNIR EQUIPS DOMINI
+      4.7 CREAR SERVER LDAP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#471-crear-una-uo" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.1 Crear una UO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#472-crear-usuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.2 Crear Usuaris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#473-crear-grup" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.3 Crear Grup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#474-comprovacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.4 Comprovació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-unir-equips-domini" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8 UNIR EQUIPS DOMINI
     </span>
   </a>
   
@@ -1562,13 +1607,72 @@ D'altra banda, els altres 3 digits són per indicar <strong>dia del mes, mes i d
 <p>Com podem veure, la copia s'ha creat.</p>
 <p><img alt="alt text" src="../img/cron7.png" /></p>
 <p>Dintre de l'arxiu `/var/spool/anacron/cron.daily i fiquem una data específica, <strong>al reiniciar la màquina tindre la còpia de seguretat feta dintre del directori.</strong></p>
-<p><img alt="alt text" src="../img/anacron1.png" /></p>
-<h2 id="47-unir-equips-domini">4.7 UNIR EQUIPS DOMINI</h2>
+<p><img alt="alt text" src="../img/anacron1.png" /> </p>
+<hr />
+<h2 id="47-crear-server-ldap">4.7 CREAR SERVER LDAP</h2>
+<p><img alt="alt text" src="../img/slap.png" /></p>
+<p>per a fer la base del domini (arbre de directori), a traves dels arxius .ldif o a traves de comanda.
+<img alt="alt text" src="img/slap1.png" /></p>
+<p>Fem un ping a google per comprovar la conexió ethernet.</p>
+<p><img alt="at text" src="../img/slap2.png" />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>sudo nano /etc/hostname
+</span></code></pre></div>
+<img alt="alt text" src="../img/slap3.png" /></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>sudo nano /etc/hosts
+</span></code></pre></div>
+<p><img alt="alt text" src="../img/slap4.png" /></p>
+<p>Desprès, fem un <code>sudo apt update</code> per actualitzar els canvis.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>sudo apt install sladp ldap-utils
+</span></code></pre></div>
+<p><img alt="alt text" src="../img/slap5.png" /></p>
+<p>Configurem amb una contrasenya per l'administrador:</p>
+<p><img alt="alt text" src="../img/slap6.png" /></p>
+<p>Confirmem la contrasenya:</p>
+<p><img alt="alt text" src="../img/slap7.png" /></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>sudo slapcat
+</span></code></pre></div>
+<p><img alt="alt text" src="../img/slap8.png" /></p>
+<p>Hem d'executar aquesta comanda en root, sinò ens enviarà un error d'insuficients permisos.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>dpkg-reconfigure slapd
+</span></code></pre></div></p>
+<p><img alt="alt text" src="../img/slap9.png" /></p>
+<p><img alt="alt text" src="../img/slap10.png" /></p>
+<p><img alt="alt text" src="../img/slap11.png" /></p>
+<p><img alt="alt text" src="../img/slap12.png" /></p>
+<p><img alt="alt text" src="../img/slap13.png" /></p>
+<p><img alt="alt text" src="../img/slap14.png" /></p>
+<p><img alt="alt text" src="../img/slap15.png" /></p>
+<h2 id="471-crear-una-uo">4.7.1 Crear una UO</h2>
+<p>Amb crearem el nostre arxiu de l'unitat organitzativa dels usuaris
+<div class="language-text highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>nano uo.ldif
+</span></code></pre></div>
+<img alt="alt text" src="../img/uo1.png" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>ldapadd -c -x -D &quot;cn=admin,dc=sekiro,dc=cat&quot; -W -f uo.ldif
+</span></code></pre></div>
+<img alt="alt text" src="../img/uo2.png" /></p>
+<h2 id="472-crear-usuaris">4.7.2 Crear Usuaris</h2>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>nano usu.ldif
+</span></code></pre></div>
+<img alt="alt text" src="../img/uo3.png" /></p>
+<p>Utilitzem la mateixa comanda amb el nou arxiu .ldif
+<div class="language-text highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>ldapadd -c -x -D &quot;cn=admin,dc=sekiro,dc=cat&quot; -W -f usu.ldif
+</span></code></pre></div>
+<img alt="alt text" src="../img/uo6.png" /></p>
+<h2 id="473-crear-grup">4.7.3 Crear Grup</h2>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>nano grup.ldif
+</span></code></pre></div>
+<img alt="alt text" src="../img/grupuo1.png" /></p>
+<p><img alt="alt text" src="../img/grupuo2.png" /></p>
+<h2 id="474-comprovacio">4.7.4 Comprovació</h2>
+<p>Finalment, fem la comprovacio amb <code>sudo slapcat</code>.</p>
+<p><img alt="alt text" src="../img/slapcat.png" /></p>
+<hr />
+<h2 id="48-unir-equips-domini">4.8 UNIR EQUIPS DOMINI</h2>
 <p>Amb la comanda <code>sudo su</code> abrim la nostra terminal amb l'usuari root.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>apt install nscd
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>apt install nscd
 </span></code></pre></div>
 <img alt="alt text" src="../img/ldap.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>apt install libnss-ldap
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>apt install libnss-ldap
 </span></code></pre></div>
 <img alt="alt text" src="../img/ldap1.png" /></p>
 <p><img alt="alt text" src="../img/ldap2.png" /></p>
@@ -1580,13 +1684,13 @@ D'altra banda, els altres 3 digits són per indicar <strong>dia del mes, mes i d
 <p><img alt="alt text" src="../img/ldap7.png" /></p>
 <p><img alt="alt text" src="../img/ldap8.png" /></p>
 <p>Sempre que quan lo client no es pugui validar al domini a part de comprovar fitxers, també farem sempre un reconfigure.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>dpkg-reconfigure ldap-auth-config
+<div class="language-text highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>dpkg-reconfigure ldap-auth-config
 </span></code></pre></div></p>
 <p><img alt="alt text" src="../img/ldap9.png" /></p>
 <p>Reconfigurem els paràmetre que vulguem de cada pas i al final fem clic a "Ok" per continuar.</p>
 <p><img alt="alt text" src="../img/ldap10.png" /></p>
 <p><img alt="alt text" src="../img/ldap11.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>nano /etc/nsswitch.conf
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>nano /etc/nsswitch.conf
 </span></code></pre></div>
 <img alt="alt text" src="../img/ldap121.png" /></p>
 <p><img alt="alt text" src="../img/ldap13.png" /></p>
