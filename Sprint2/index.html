@@ -829,6 +829,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#47-unir-equips-domini" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 UNIR EQUIPS DOMINI
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1554,6 +1563,35 @@ D'altra banda, els altres 3 digits són per indicar <strong>dia del mes, mes i d
 <p><img alt="alt text" src="../img/cron7.png" /></p>
 <p>Dintre de l'arxiu `/var/spool/anacron/cron.daily i fiquem una data específica, <strong>al reiniciar la màquina tindre la còpia de seguretat feta dintre del directori.</strong></p>
 <p><img alt="alt text" src="../img/anacron1.png" /></p>
+<h2 id="47-unir-equips-domini">4.7 UNIR EQUIPS DOMINI</h2>
+<p>Amb la comanda <code>sudo su</code> abrim la nostra terminal amb l'usuari root.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>apt install nscd
+</span></code></pre></div>
+<img alt="alt text" src="../img/ldap.png" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>apt install libnss-ldap
+</span></code></pre></div>
+<img alt="alt text" src="../img/ldap1.png" /></p>
+<p><img alt="alt text" src="../img/ldap2.png" /></p>
+<p><img alt="alt text" src="../img/ldap3.png" /></p>
+<p><img alt="alt text" src="../img/ldap3.png" /></p>
+<p><img alt="alt text" src="../img/ldap4.png" /></p>
+<p><img alt="alt text" src="../img/ldap5.png" /></p>
+<p><img alt="alt text" src="../img/ldap6.png" /></p>
+<p><img alt="alt text" src="../img/ldap7.png" /></p>
+<p><img alt="alt text" src="../img/ldap8.png" /></p>
+<p>Sempre que quan lo client no es pugui validar al domini a part de comprovar fitxers, també farem sempre un reconfigure.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>dpkg-reconfigure ldap-auth-config
+</span></code></pre></div></p>
+<p><img alt="alt text" src="../img/ldap9.png" /></p>
+<p>Reconfigurem els paràmetre que vulguem de cada pas i al final fem clic a "Ok" per continuar.</p>
+<p><img alt="alt text" src="../img/ldap10.png" /></p>
+<p><img alt="alt text" src="../img/ldap11.png" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>nano /etc/nsswitch.conf
+</span></code></pre></div>
+<img alt="alt text" src="../img/ldap121.png" /></p>
+<p><img alt="alt text" src="../img/ldap13.png" /></p>
+<p><img alt="alt text" src="../img/ldap14.png" /></p>
+<p><img alt="alt text" src="../img/ldap15.png" /></p>
 
 
 
