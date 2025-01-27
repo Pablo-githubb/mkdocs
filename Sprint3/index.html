@@ -480,11 +480,26 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gestio-del-domini" class="md-nav__link">
+  <a href="#21-gestio-del-domini" class="md-nav__link">
     <span class="md-ellipsis">
-      GESTIÓ DEL DOMINI
+      2.1 GESTIÓ DEL DOMINI
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.1 GESTIÓ DEL DOMINI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-fitxers-i-comandes-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.1 Fitxers i comandes ldap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -603,7 +618,49 @@ Per comprovar els canvis la comanda:
 <p><img alt="alt text" src="../img/ldap13.png" /></p>
 <p><img alt="alt text" src="../img/ldap14.png" /></p>
 <p><img alt="alt text" src="../img/ldap15.png" /></p>
-<h2 id="gestio-del-domini">GESTIÓ DEL DOMINI</h2>
+<h2 id="21-gestio-del-domini">2.1 GESTIÓ DEL DOMINI</h2>
+<h3 id="211-fitxers-i-comandes-ldap">2.1.1 Fitxers i comandes ldap</h3>
+<p>• Descarrega l'arxiu dades_pt10.ldif del moodle i amb la comanda ldapadd carrega els usuaris, grups i uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)</p>
+<p><img alt="alt text" src="../img/ldapadd1.png" /></p>
+<p><img alt="alt text" src="../img/ldapadd2.png" /></p>
+<p><img alt="alt text" src="image-5.png" /></p>
+<p>• Fes un altre slapcat per tal de comprovar que les dades s'han carregat correctament <code>slapcat</code>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>slapcat
+</span></code></pre></div></p>
+<p><img alt="alt text" src="../img/ldapadd3.png" /></p>
+<ol>
+<li>Quantes uos hi ha? Quants usuaris hi ha al domini?
+<strong>Podem veure que amb la comanda <code><code>ldapsearch -xLLL -b "dc=domini,dc=domini" cn sn</code></code> hem buscat filtrant el nom i cognom dels nostres usuaris al nostre domini on podem veure que tenim molts usuaris per contar manualment i un tota de 2 uo (People i Groups).</strong></li>
+</ol>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; cn sn
+</span></code></pre></div>
+<img alt="alt text" src="../img/ldapadd4.png" /></p>
+<ol>
+<li>
+<p>Crea una nova uo anomenada asix
+<img alt="alt text" src="img/ldapadd5.png" />
+<img alt="alt text" src="../img/ldapadd6.png" /></p>
+</li>
+<li>
+<p>Esborra l’atribut roomnumber i homeDirectory de l’usuari ejohnson    </p>
+</li>
+<li>L’usuari kvaughan en quants grups el trobem com a uniqueMember i quins són?</li>
+<li>Trau de la uo People a 3 usuaris i afegeix-los a la uo asix</li>
+<li>Quants grups hi ha dintre de la uo Groups?</li>
+<li>Esborra la uo People</li>
+<li>Modifica el uid de l’usuari hmiller a hamiller</li>
+<li>Crea un nou usuari amb dos atributs opcionals per a  la classe posixAccount</li>
+<li>Afegeix un parell més d’opcionals a l’usuari anterior</li>
+<li>Modifica el mail de l’usuari jburrell per jburrell@gmail.com</li>
+<li>Crea un nou grup dintre de la uo Groups i afegeix 3 usuaris</li>
+<li>Treu del grup creat anteriorment a un usuari</li>
+<li>Mostra tots els usuaris de la uo People que el seu uid comenci per la lletra k i formin part també de la uo Recursos Humans</li>
+<li>Mostra tots els usuaris del domini on el seu uidNumber estigui entre 1010 i 1030 (inclosos). Quants en son?</li>
+<li>Usuaris on el seu telèfon acabi en un 2 o el seu cognom en una n. Quants?</li>
+<li>D’un sol cop, a l’usuari que tu vulguis, esborra un atribut, afegeix-ne un altre i modifica un tercer.</li>
+</ol>
+<p>QUÈ CAL ENTREGAR I COM?
+    • Tots els exercicis en captures de pantalla i amb la comanda per tal de poder fer un copia/pegar</p>
 
 
 
