@@ -503,6 +503,153 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#22-entorns-grafics" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Entorns gràfics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Entorns gràfics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache-directory-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Directory Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache Directory Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jxplorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      JXplorer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JXplorer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpldapadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      phpLDAPadmin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="phpLDAPadmin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-account-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      LDAP Account Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP Account Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -720,6 +867,225 @@ Modifica el uid de l’usuari hmiller a hamiller</p>
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar36.png" /></p>
 <p><img alt="alt text" src="../img/modificar37.png" /></p>
+<hr />
+<h2 id="22-entorns-grafics">2.2 Entorns gràfics</h2>
+<h3 id="apache-directory-studio">Apache Directory Studio</h3>
+<h4 id="installacio">Instal·lació</h4>
+<ol>
+<li>
+<p>Descarrega'l des de https://directory.apache.org/studio/.
+<img alt="alt text" src="../img/apachedirectory1.png" /></p>
+</li>
+<li>
+<p>Instal·la'l seguint les instruccions del sistema operatiu.</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../img/apachedirectory2.png" /></p>
+<p><img alt="alt text" src="../img/apachedirectory3.png" /></p>
+<p><img alt="alt text" src="../img/apachedirectory4.png" /></p>
+<h4 id="configuracio">Configuració</h4>
+<ol>
+<li>
+<p>Obre Apache Directory Studio.</p>
+</li>
+<li>
+<p>Crea una nova connexió LDAP:</p>
+<ul>
+<li>
+<p>Servidor: ldap://IP_SERVIDOR</p>
+</li>
+<li>
+<p>Port: 389 (o 636 per a connexions segures)</p>
+</li>
+<li>
+<p>Bind DN: cn=admin,dc=exemple,dc=com</p>
+</li>
+<li>
+<p>Contrasenya corresponent.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Comprovació de l'arbre de directori</p>
+<ol>
+<li>Navega per l'arbre de directori i comprova que les entrades existeixen.</li>
+</ol>
+<p>Creació d'unitat organitzativa, grup i usuari</p>
+<ol>
+<li>
+<p>Crea una nova unitat organitzativa (OU): <code>ou=usuaris,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Crea un nou grup: <code>cn=grup_treball,ou=usuaris,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Afegeix un usuari: <code>uid=usuari1,ou=usuaris,dc=exemple,dc=com.</code></p>
+</li>
+</ol>
+<p>Accés des del client</p>
+<ol>
+<li>Utilitza ldapsearch o un client LDAP per autenticar-se amb l'usuari creat.</li>
+</ol>
+<hr />
+<h3 id="jxplorer">JXplorer</h3>
+<h4 id="installacio_1">Instal·lació</h4>
+<ol>
+<li>Descarrega'l des de https://jxplorer.org/.</li>
+</ol>
+<p><img alt="alt text" src="../img/jxp1.png" /></p>
+<p><img alt="alt text" src="../img/jxp2.png" /></p>
+<p><img alt="alt text" src="../img/jxp3.png" /></p>
+<ol>
+<li>Instal·la'l seguint les instruccions.</li>
+</ol>
+<h4 id="configuracio_1">Configuració</h4>
+<ol>
+<li>
+<p>Obre JXplorer.</p>
+</li>
+<li>
+<p>Afegeix una connexió:</p>
+<ul>
+<li>
+<p>Servidor: ldap://IP_SERVIDOR</p>
+</li>
+<li>
+<p>Port: 389</p>
+</li>
+<li>
+<p>DN d'autenticació: cn=admin,dc=exemple,dc=com</p>
+</li>
+<li>
+<p>Contrasenya.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Comprovació de l'arbre de directori</p>
+<ol>
+<li>Navega per l'arbre i revisa les entrades.</li>
+</ol>
+<p>Creació d'OU, grup i usuari</p>
+<ol>
+<li>
+<p>Afegeix <code>ou=departament,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Crea <code>cn=grup_dev,ou=departament,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Afegeix <code>uid=usuari2,ou=departament,dc=exemple,dc=com.</code></p>
+</li>
+</ol>
+<p>Accés des del client</p>
+<ol>
+<li>Inicia sessió amb usuari2 mitjançant un client LDAP.</li>
+</ol>
+<hr />
+<h3 id="phpldapadmin">phpLDAPadmin</h3>
+<h4 id="installacio_2">Instal·lació</h4>
+<ol>
+<li>
+<p>Instal·la'l amb:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt install phpldapadmin
+</code></pre></div>
+</li>
+<li>
+<p>Edita /etc/phpldapadmin/config.php i defineix el servidor LDAP.</p>
+</li>
+</ol>
+<p>Edita el fitxer de configuració amb un editor de text:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo nano /etc/phpldapadmin/config.php
+</code></pre></div>
+<p>Modifica la secció de configuració del servidor. Busca la línia:</p>
+<div class="language-text highlight"><pre><span></span><code>$servers-&gt;setValue(&#39;server&#39;,&#39;host&#39;,&#39;127.0.0.1&#39;);
+</code></pre></div>
+<p>i canvia 127.0.0.1 per la IP o el nom del teu servidor LDAP, en el meu cas:</p>
+<div class="language-text highlight"><pre><span></span><code>$servers-&gt;setValue(&#39;server&#39;,&#39;host&#39;,&#39;ldap://10.0.2.15&#39;);
+</code></pre></div>
+<p><img alt="alt text" src="../img/php1.png" /></p>
+<p>Configura el DN d’administrador i el base DN. Busca aquestes línies i edita-les segons la teva configuració LDAP:</p>
+<div class="language-text highlight"><pre><span></span><code>$servers-&gt;setValue(&#39;login&#39;,&#39;bind_id&#39;,&#39;cn=admin,dc=Pmc,dc=cat&#39;);
+$servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#39;));
+</code></pre></div>
+<p><img alt="alt text" src="../img/php2.png" /></p>
+<p>Permet autenticació amb contrasenya (opcional, si necessites autenticació per login):</p>
+<div class="language-text highlight"><pre><span></span><code>$servers-&gt;setValue(&#39;login&#39;,&#39;auth_type&#39;,&#39;session&#39;);
+</code></pre></div>
+<p>Guarda els canvis i surt de l'editor (CTRL+X, després Y i ENTER en nano)</p>
+<p>Reinicia el servidor web perquè els canvis tinguin efecte:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo systemctl restart apache2
+</code></pre></div>
+<p>Accedeix a phpLDAPadmin a través del navegador:</p>
+<div class="language-text highlight"><pre><span></span><code>http://10.0.2.15/phpldapadmin
+</code></pre></div>
+<h4 id="configuracio_2">Configuració</h4>
+<ol>
+<li>Accedeix a http://IP_SERVIDOR/phpldapadmin.</li>
+</ol>
+<p><img alt="alt text" src="../img/php3.png" /></p>
+<ol>
+<li>Autentica't amb <code>cn=admin,dc=exemple,dc=com.</code></li>
+</ol>
+<p><img alt="alt text" src="../img/php4.png" /></p>
+<p>Comprovació de l'arbre de directori</p>
+<ol>
+<li>Explora les entrades del directori des de la interfície web.</li>
+</ol>
+<p>Creació d'OU, grup i usuari</p>
+<ol>
+<li>
+<p>Afegeix <code>ou=serveis,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Crea <code>cn=grup_hr,ou=serveis,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Afegeix <code>uid=usuari3,ou=serveis,dc=exemple,dc=com.</code></p>
+</li>
+</ol>
+<p>Accés des del client</p>
+<ol>
+<li>Prova d'autenticar-se amb usuari3.</li>
+</ol>
+<hr />
+<h3 id="ldap-account-manager">LDAP Account Manager</h3>
+<h4 id="installacio_3">Instal·lació</h4>
+<ol>
+<li>
+<p>Instal·la'l amb:</p>
+<p>sudo apt install ldap-account-manager</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../img/ldapac1.png" /></p>
+<ol>
+<li>Accedeix a http://IP_SERVIDOR/lam.</li>
+</ol>
+<p><img alt="alt text" src="../img/ldapac2.png" /></p>
+<h4 id="configuracio_3">Configuració</h4>
+<ol>
+<li>Configura els paràmetres d'accés al servidor LDAP.</li>
+</ol>
+<p>Comprovació de l'arbre de directori</p>
+<ol>
+<li>Explora les dades LDAP des de la interfície de LAM.</li>
+</ol>
+<p>Creació d'OU, grup i usuari</p>
+<ol>
+<li>
+<p>Afegeix <code>ou=projectes,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Crea <code>cn=grup_it,ou=projectes,dc=exemple,dc=com.</code></p>
+</li>
+<li>
+<p>Afegeix <code>uid=usuari4,ou=projectes,dc=exemple,dc=com.</code></p>
+</li>
+</ol>
+<p>Accés des del client</p>
+<ol>
+<li>Intenta autenticar-se amb usuari4 per comprovar el funcionament.</li>
+</ol>
 
 
 
