@@ -514,13 +514,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#apache-directory-studio" class="md-nav__link">
+  <a href="#phpldapadmin" class="md-nav__link">
     <span class="md-ellipsis">
-      Apache Directory Studio
+      phpLDAPadmin
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Apache Directory Studio">
+    <nav class="md-nav" aria-label="phpLDAPadmin">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -541,100 +541,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#jxplorer" class="md-nav__link">
+  <a href="#creacio-dou-grup-i-usuari" class="md-nav__link">
     <span class="md-ellipsis">
-      JXplorer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="JXplorer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installacio_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instal·lació
+      Creació d'OU, grup i usuari
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuracio_1" class="md-nav__link">
+  <a href="#acces-des-del-client" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuració
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phpldapadmin" class="md-nav__link">
-    <span class="md-ellipsis">
-      phpLDAPadmin
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="phpLDAPadmin">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installacio_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instal·lació
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracio_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuració
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ldap-account-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      LDAP Account Manager
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="LDAP Account Manager">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installacio_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instal·lació
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuracio_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuració
+      Accés des del client
     </span>
   </a>
   
@@ -681,8 +600,7 @@
 <h2 id="installacio-domini-ldap-i-unir-client-al-domini">INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI</h2>
 <h1 id="1-installacio-domini-ldap">1. INSTAL·LACIÓ DOMINI LDAP</h1>
 <p><img alt="alt text" src="../img/slap.png" /></p>
-<p>per a fer la base del domini (arbre de directori), a traves dels arxius .ldif o a traves de comanda.
-<img alt="alt text" src="img/slap1.png" /></p>
+<p>per a fer la base del domini (arbre de directori), a traves dels arxius .ldif o a traves de comanda.</p>
 <p>Fem un ping a google per comprovar la conexió ethernet.</p>
 <p><img alt="at text" src="../img/slap2.png" />
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo nano /etc/hostname
@@ -761,8 +679,10 @@ Per comprovar els canvis la comanda:
 <p><img alt="alt text" src="../img/ldap33.png" /></p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nano /etc/nsswitch.conf
 </span></code></pre></div>
-<img alt="alt text" src="../img/ldap12.png" /></p>
-<p><img alt="alt text" src="../img/ldap13.png" /></p>
+<img alt="alt text" src="../img/ldap121.png" /></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nano /etc/pam.d/common-session
+</span></code></pre></div>
+<img alt="alt text" src="../img/ldap13.png" /></p>
 <p><img alt="alt text" src="../img/ldap14.png" /></p>
 <p><img alt="alt text" src="../img/ldap15.png" /></p>
 <h2 id="21-gestio-del-domini">2.1 GESTIÓ DEL DOMINI</h2>
@@ -771,17 +691,16 @@ Per comprovar els canvis la comanda:
 <p><img alt="alt text" src="../img/ldapadd1.png" /></p>
 <p><img alt="alt text" src="../img/ldapadd2.png" /></p>
 <p>• Fes un altre slapcat per tal de comprovar que les dades s'han carregat correctament <code>slapcat</code>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>slapcat
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>slapcat
 </span></code></pre></div></p>
 <p><img alt="alt text" src="../img/ldapadd3.png" /></p>
-<p>Quantes uos hi ha? Quants usuaris hi ha al domini?
-<strong>Podem veure que amb la comanda <code><code>ldapsearch -xLLL -b "dc=domini,dc=domini" cn sn</code></code> hem buscat filtrant el nom i cognom dels nostres usuaris al nostre domini on podem veure que tenim molts usuaris per contar manualment i un tota de 2 uo (People i Groups).</strong></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; cn sn
+<p>Quantes uos hi ha? Quants usuaris hi ha al domini?</p>
+<p><strong>Podem veure que amb la comanda <code><code>ldapsearch -xLLL -b "dc=domini,dc=domini" cn sn</code></code> hem buscat filtrant el nom i cognom dels nostres usuaris al nostre domini on podem veure que tenim molts usuaris per contar manualment i un tota de 2 uo (People i Groups).</strong></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; cn sn
 </span></code></pre></div>
 <img alt="alt text" src="../img/ldapadd4.png" /></p>
-<p>Crea una nova uo anomenada asix
-<img alt="alt text" src="img/ldapadd5.png" />
-<img alt="alt text" src="../img/ldapadd6.png" /></p>
+<p>Crea una nova uo anomenada asix</p>
+<p><img alt="alt text" src="../img/ldapadd6.png" /></p>
 <p>Esborra l’atribut roomnumber i homeDirectory de l’usuari ejohnson   </p>
 <p><img alt="alt text" src="../img/modificar1.png" /></p>
 <p><img alt="alt text" src="../img/modificar2.png" /></p>
@@ -790,24 +709,24 @@ Per comprovar els canvis la comanda:
 <p>L’usuari kvaughan en quants grups el trobem com a uniqueMember i quins són? 
 <strong>Amb la comanda <code>ldapsearch -xLLL -b "dc=Pmc,dc=cat" uniqueMember=uid=kvaughan,ou=People,dc=Pmc,dc=cat</code> podem buscar al usuari kvaughan per el seu uid i en quants grups el podem trobar com uniqueMember.</strong>
 <img alt="alt text" src="../img/modificar5.png" /></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uniqueMember=uid=kvaughan,ou=People,dc=Pmc,dc=cat
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uniqueMember=uid=kvaughan,ou=People,dc=Pmc,dc=cat
 </span></code></pre></div>
 <p>Trau de la uo People a 3 usuaris i afegeix-los a la uo asix
 <strong>Si utilitzo la comanda <code>ldapsearch -xLLL -b "dc=Pmc,dc=cat" dn ou=People</code>, trobaré més fàcilement 3 usuaris per esborar</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; dn ou=People
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; dn ou=People
 </span></code></pre></div></p>
 <p><img alt="alt text" src="../img/modificar6.png" /></p>
 <p>dn: uid=rdaugherty,ou=People,dc=Pmc,dc=cat
 <img alt="alt text" src="../img/modificar7.png" /></p>
 <p>Com podem veure, si busquem per el seu uid, no surt la seva ou: People.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=rdaugherty
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=rdaugherty
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar8.png" /></p>
 <p>dn= uid=wlutz, ou=People,dc=Pmc,dc=cat</p>
 <p><img alt="alt text" src="../img/modificar9.png" /></p>
 <p><img alt="alt text" src="../img/modificar10.png" /></p>
 <p>Com podem veure, si busquem per el seu uid, no surt la seva ou: People.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=wlutz
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=wlutz
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar11.png" /></p>
 <p>dn= uid=tward, ou=People,dc=Pmc,dc=cat</p>
@@ -817,7 +736,7 @@ Per comprovar els canvis la comanda:
 <p>Quants grups hi ha dintre de la uo Groups?</p>
 <p><img alt="alt text" src="../img/modificar15.png" /></p>
 <p>Esborra la uo People
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ldapdelete -xLLL -b &quot;cn=admin,dc=Pmc,dc=cat&quot; -W &quot;ou=People,dc=Pmc,dc=cat&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ldapdelete -xLLL -b &quot;cn=admin,dc=Pmc,dc=cat&quot; -W &quot;ou=People,dc=Pmc,dc=cat&quot;
 </span></code></pre></div>
 Modifica el uid de l’usuari hmiller a hamiller</p>
 <p><img alt="alt text" src="../img/modificar16.png" /></p>
@@ -826,23 +745,23 @@ Modifica el uid de l’usuari hmiller a hamiller</p>
 <p><img alt="alt text" src="../img/modificar18.png" /></p>
 <p>Afegeix un parell més d’opcionals a l’usuari anterior</p>
 <p><img alt="alt text" src="../img/modificar19.png" />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ldapmodify -x -D &quot;cn=admin,dc=Pmc,dc=cat&quot; -w contrasenya -f modificar.ldif
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ldapmodify -x -D &quot;cn=admin,dc=Pmc,dc=cat&quot; -w contrasenya -f modificar.ldif
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar20.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=pmasoc
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=pmasoc
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar21.png" /></p>
 <p>Modifica el mail de l’usuari jburrell per jburrell@gmail.com</p>
 <p><img alt="alt text" src="../img/modificar22.png" /></p>
 <p><img alt="alt text" src="../img/modificar23.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=jburrell
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=jburrell
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar24.png" /></p>
 <p>Crea un nou grup dintre de la uo Groups i afegeix 3 usuaris</p>
 <p><img alt="alt text" src="../img/modificar25.png" /></p>
 <p><img alt="alt text" src="../img/modificar26.png" /></p>
 <p><img alt="alt text" src="../img/modificar27.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; cn=DAM
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; cn=DAM
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar28.png" /></p>
 <p>Treu del grup creat anteriorment a un usuari</p>
@@ -850,140 +769,27 @@ Modifica el uid de l’usuari hmiller a hamiller</p>
 <p><img alt="alt text" src="../img/modificar30.png" /></p>
 <p><img alt="alt text" src="../img/modificar31.png" /></p>
 <p>Mostra tots els usuaris de la uo People que el seu uid comenci per la lletra k i formin part també de la uo Recursos Humans
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ldapsearch -xLLL -b &quot;ou=People,dc=Pmc,dc=cat&quot; &quot;(&amp;(uid=k*)(ou=Human Resources))&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ldapsearch -xLLL -b &quot;ou=People,dc=Pmc,dc=cat&quot; &quot;(&amp;(uid=k*)(ou=Human Resources))&quot;
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar32.png" /></p>
 <p>Mostra tots els usuaris del domini on el seu uidNumber estigui entre 1010 i 1030 (inclosos). Quants en son?
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; &quot;(&amp;(uidNumber&gt;=1010)(uidNumber&lt;=1030))&quot; | grep -c &quot;^dn:&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; &quot;(&amp;(uidNumber&gt;=1010)(uidNumber&lt;=1030))&quot; | grep -c &quot;^dn:&quot;
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar33.png" /></p>
 <p>Usuaris on el seu telèfon acabi en un 2 o el seu cognom en una n. Quants?
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; &quot;(&amp;(telephoneNumber=*-2)(sn=*n))&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; &quot;(&amp;(telephoneNumber=*-2)(sn=*n))&quot;
 </span></code></pre></div></p>
 <p><img alt="alt text" src="../img/modificar34.png" /></p>
 <p>D’un sol cop, a l’usuari que tu vulguis, esborra un atribut, afegeix-ne un altre i modifica un tercer.
 <img alt="alt text" src="../img/modificar35.png" /></p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=pmasoc
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>ldapsearch -xLLL -b &quot;dc=Pmc,dc=cat&quot; uid=pmasoc
 </span></code></pre></div>
 <img alt="alt text" src="../img/modificar36.png" /></p>
 <p><img alt="alt text" src="../img/modificar37.png" /></p>
 <hr />
 <h2 id="22-entorns-grafics">2.2 Entorns gràfics</h2>
-<h3 id="apache-directory-studio">Apache Directory Studio</h3>
-<h4 id="installacio">Instal·lació</h4>
-<ol>
-<li>
-<p>Descarrega'l des de https://directory.apache.org/studio/.
-<img alt="alt text" src="../img/apachedirectory1.png" /></p>
-</li>
-<li>
-<p>Instal·la'l seguint les instruccions del sistema operatiu.</p>
-</li>
-</ol>
-<p><img alt="alt text" src="../img/apachedirectory2.png" /></p>
-<p><img alt="alt text" src="../img/apachedirectory3.png" /></p>
-<p><img alt="alt text" src="../img/apachedirectory4.png" /></p>
-<h4 id="configuracio">Configuració</h4>
-<ol>
-<li>
-<p>Obre Apache Directory Studio.</p>
-</li>
-<li>
-<p>Crea una nova connexió LDAP:</p>
-<ul>
-<li>
-<p>Servidor: ldap://IP_SERVIDOR</p>
-</li>
-<li>
-<p>Port: 389 (o 636 per a connexions segures)</p>
-</li>
-<li>
-<p>Bind DN: cn=admin,dc=exemple,dc=com</p>
-</li>
-<li>
-<p>Contrasenya corresponent.</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>Comprovació de l'arbre de directori</p>
-<ol>
-<li>Navega per l'arbre de directori i comprova que les entrades existeixen.</li>
-</ol>
-<p>Creació d'unitat organitzativa, grup i usuari</p>
-<ol>
-<li>
-<p>Crea una nova unitat organitzativa (OU): <code>ou=usuaris,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Crea un nou grup: <code>cn=grup_treball,ou=usuaris,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Afegeix un usuari: <code>uid=usuari1,ou=usuaris,dc=exemple,dc=com.</code></p>
-</li>
-</ol>
-<p>Accés des del client</p>
-<ol>
-<li>Utilitza ldapsearch o un client LDAP per autenticar-se amb l'usuari creat.</li>
-</ol>
-<hr />
-<h3 id="jxplorer">JXplorer</h3>
-<h4 id="installacio_1">Instal·lació</h4>
-<ol>
-<li>Descarrega'l des de https://jxplorer.org/.</li>
-</ol>
-<p><img alt="alt text" src="../img/jxp1.png" /></p>
-<p><img alt="alt text" src="../img/jxp2.png" /></p>
-<p><img alt="alt text" src="../img/jxp3.png" /></p>
-<ol>
-<li>Instal·la'l seguint les instruccions.</li>
-</ol>
-<h4 id="configuracio_1">Configuració</h4>
-<ol>
-<li>
-<p>Obre JXplorer.</p>
-</li>
-<li>
-<p>Afegeix una connexió:</p>
-<ul>
-<li>
-<p>Servidor: ldap://IP_SERVIDOR</p>
-</li>
-<li>
-<p>Port: 389</p>
-</li>
-<li>
-<p>DN d'autenticació: cn=admin,dc=exemple,dc=com</p>
-</li>
-<li>
-<p>Contrasenya.</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>Comprovació de l'arbre de directori</p>
-<ol>
-<li>Navega per l'arbre i revisa les entrades.</li>
-</ol>
-<p>Creació d'OU, grup i usuari</p>
-<ol>
-<li>
-<p>Afegeix <code>ou=departament,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Crea <code>cn=grup_dev,ou=departament,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Afegeix <code>uid=usuari2,ou=departament,dc=exemple,dc=com.</code></p>
-</li>
-</ol>
-<p>Accés des del client</p>
-<ol>
-<li>Inicia sessió amb usuari2 mitjançant un client LDAP.</li>
-</ol>
-<hr />
 <h3 id="phpldapadmin">phpLDAPadmin</h3>
-<h4 id="installacio_2">Instal·lació</h4>
+<h4 id="installacio">Instal·lació</h4>
 <ol>
 <li>
 <p>Instal·la'l amb:</p>
@@ -1016,10 +822,14 @@ $servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#
 <p>Reinicia el servidor web perquè els canvis tinguin efecte:</p>
 <div class="language-text highlight"><pre><span></span><code>sudo systemctl restart apache2
 </code></pre></div>
+<p>Desprès comprovem si el servei s'ha iniciat correctament.</p>
+<div class="language-text highlight"><pre><span></span><code>sudo systemctl status apache2
+</code></pre></div>
+<p><img alt="alt text" src="../img/php5.png" />  </p>
 <p>Accedeix a phpLDAPadmin a través del navegador:</p>
 <div class="language-text highlight"><pre><span></span><code>http://10.0.2.15/phpldapadmin
 </code></pre></div>
-<h4 id="configuracio_2">Configuració</h4>
+<h4 id="configuracio">Configuració</h4>
 <ol>
 <li>Accedeix a http://IP_SERVIDOR/phpldapadmin.</li>
 </ol>
@@ -1029,62 +839,37 @@ $servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#
 </ol>
 <p><img alt="alt text" src="../img/php4.png" /></p>
 <p>Comprovació de l'arbre de directori</p>
+<p><img alt="alt text" src="../img/php6.png" /></p>
+<h4 id="creacio-dou-grup-i-usuari">Creació d'OU, grup i usuari</h4>
 <ol>
-<li>Explora les entrades del directori des de la interfície web.</li>
+<li>Afegeix <code>ou=serveis,dc=exemple,dc=com.</code></li>
 </ol>
-<p>Creació d'OU, grup i usuari</p>
+<p><img alt="alt text" src="../img/php7.png" /></p>
+<p>Fem clic a <code>Generic: Organisational Unit</code>.</p>
+<p><img alt="alt text" src="../img/php8.png" /></p>
+<p>Fem clic a crear.
+<img alt="alt text" src="../img/php9.png" /></p>
+<p>Finalment, realitzem un commit.
+<img alt="alt text" src="../img/php10.png" /></p>
 <ol>
-<li>
-<p>Afegeix <code>ou=serveis,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Crea <code>cn=grup_hr,ou=serveis,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Afegeix <code>uid=usuari3,ou=serveis,dc=exemple,dc=com.</code></p>
-</li>
+<li>Crea <code>cn=grup_hr,ou=serveis,dc=exemple,dc=com.</code></li>
 </ol>
-<p>Accés des del client</p>
+<p>Aquesta vegada fem clic a <code>Generic: Posix Group</code> damunt de la ou=serveis.
+<img alt="alt text" src="../img/php11.png" /></p>
+<p>I afegim dintre del grup l'usuari <code>alu1</code>.
+<img alt="alt text" src="../img/php12.png" /></p>
+<ol>
+<li>Afegeix <code>uid=usuari3,ou=serveis,dc=exemple,dc=com.</code></li>
+</ol>
+<p>Aquesta vegada utilitzem el <code>Generic: User Account</code>.</p>
+<p><img alt="alt text" src="../img/php13.png" /></p>
+<p><img alt="alt text" src="../img/php14.png" /></p>
+<p><img alt="alt text" src="../img/php15.png" /></p>
+<p>I ja tenim creat l'usuari:</p>
+<p><img alt="alt text" src="../img/php16.png" /></p>
+<h4 id="acces-des-del-client">Accés des del client</h4>
 <ol>
 <li>Prova d'autenticar-se amb usuari3.</li>
-</ol>
-<hr />
-<h3 id="ldap-account-manager">LDAP Account Manager</h3>
-<h4 id="installacio_3">Instal·lació</h4>
-<ol>
-<li>
-<p>Instal·la'l amb:</p>
-<p>sudo apt install ldap-account-manager</p>
-</li>
-</ol>
-<p><img alt="alt text" src="../img/ldapac1.png" /></p>
-<ol>
-<li>Accedeix a http://IP_SERVIDOR/lam.</li>
-</ol>
-<p><img alt="alt text" src="../img/ldapac2.png" /></p>
-<h4 id="configuracio_3">Configuració</h4>
-<ol>
-<li>Configura els paràmetres d'accés al servidor LDAP.</li>
-</ol>
-<p>Comprovació de l'arbre de directori</p>
-<ol>
-<li>Explora les dades LDAP des de la interfície de LAM.</li>
-</ol>
-<p>Creació d'OU, grup i usuari</p>
-<ol>
-<li>
-<p>Afegeix <code>ou=projectes,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Crea <code>cn=grup_it,ou=projectes,dc=exemple,dc=com.</code></p>
-</li>
-<li>
-<p>Afegeix <code>uid=usuari4,ou=projectes,dc=exemple,dc=com.</code></p>
-</li>
-</ol>
-<p>Accés des del client</p>
-<ol>
-<li>Intenta autenticar-se amb usuari4 per comprovar el funcionament.</li>
 </ol>
 
 
