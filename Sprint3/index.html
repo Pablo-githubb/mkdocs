@@ -600,6 +600,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.2 Instal·lació Samba server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-configuracio-de-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 Configuració de Samba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-creacio-dels-usuaris-per-a-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Creació dels usuaris per a Samba
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Creació dels usuaris per a Samba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-afegir-usuaris-a-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.1 Afegir usuaris a Samba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-comprovacio-amb-el-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Comprovació amb el client
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -878,8 +926,11 @@ $servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#
 <li>Afegeix <code>ou=serveis,dc=exemple,dc=com.</code></li>
 </ol>
 <p><img alt="alt text" src="../img/php7.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Fem clic a <code>Generic: Organisational Unit</code>.</p>
 <p><img alt="alt text" src="../img/php8.png" /></p>
+</div>
 <p>Fem clic a crear.
 <img alt="alt text" src="../img/php9.png" /></p>
 <p>Finalment, realitzem un commit.
@@ -889,15 +940,18 @@ $servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#
 </ol>
 <p>Aquesta vegada fem clic a <code>Generic: Posix Group</code> damunt de la ou=serveis.
 <img alt="alt text" src="../img/php11.png" /></p>
-<p>I afegim dintre del grup l'usuari <code>alu1</code>.
-<img alt="alt text" src="../img/php12.png" /></p>
+<p>I afegim dintre del grup l'usuari <code>alu1</code>.</p>
+<p><img alt="alt text" src="../img/php12.png" /></p>
 <ol>
 <li>Afegeix <code>uid=usuari3,ou=serveis,dc=exemple,dc=com.</code></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Aquesta vegada utilitzem el <code>Generic: User Account</code>.</p>
+<p><img alt="alt text" src="../img/php15.png" /></p>
+</div>
 <p><img alt="alt text" src="../img/php13.png" /></p>
 <p><img alt="alt text" src="../img/php14.png" /></p>
-<p><img alt="alt text" src="../img/php15.png" /></p>
 <p>I ja tenim creat l'usuari:</p>
 <p><img alt="alt text" src="../img/php16.png" /></p>
 <h3 id="414-acces-des-del-client">4.1.4 Accés des del client</h3>
@@ -911,7 +965,11 @@ $servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#
 <p>Samba pot treballar conjuntament amb LDAP per utilitzar els usuaris per a la validació</p>
 <p>Samba permet clients de Windows i Linux.</p>
 <h2 id="52-installacio-samba-server">5.2 Instal·lació Samba server</h2>
-<p><img alt="alt text" src="../image.png" /></p>
+<p>En primer lloc, utilitzem la comanda:</p>
+<div class="language-text highlight"><pre><span></span><code>apt install samba
+</code></pre></div>
+<p><img alt="alt text" src="../img/sambaserver1.png" /></p>
+<h3 id="521-configuracio-de-samba">5.2.1 Configuració de Samba</h3>
 <p>Al acabar d'instal·lar el servei de Samba ens dirigim a la carpeta <code>/etc/samba/smb.conf</code> al final de tot de l'arxiu i afegim aquests paràmetres.</p>
 <div class="language-text highlight"><pre><span></span><code>[perfils]
     path= /perfils
@@ -927,17 +985,56 @@ $servers-&gt;setValue(&#39;server&#39;,&#39;base&#39;,array(&#39;dc=Pmc,dc=cat&#
 <div class="language-text highlight"><pre><span></span><code>systemctl restart smbd nmbd
 systemctl status smbd nmbd
 </code></pre></div>
-<p><img alt="alt text" src="../image-4.png" />    </p>
+<p><img alt="alt text" src="../img/sambaserver2.png" />    </p>
+<h2 id="53-creacio-dels-usuaris-per-a-samba">5.3 Creació dels usuaris per a Samba</h2>
 <p>A continuació, creem els usuaris que hem definit als paràmetres de configuració.</p>
 <div class="language-text highlight"><pre><span></span><code>useradd -M -s /sbin/nologin raul
 useradd -M -s /sbin/nologin enric
 useradd -M -s /sbin/nologin walid
 </code></pre></div>
-<p><img alt="alt text" src="../image-5.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver3.png" /></p>
 <p>Amb <code>tail -3 /etc/passwd</code> podem veure els nous 3 usuaris creats recentment.</p>
 <div class="language-text highlight"><pre><span></span><code>tail -3 /etc/passwd
 </code></pre></div>
+<p><img alt="alt text" src="../img/sambaserver4.png" /></p>
+<p>Seguint amb la configuració, creem un grup anomenat "dam" amb la comanda <code>addgroup dam</code>. Tot seguit, afegim als usuaris creats al grup dam amb la comanda <code>adduser usuari dam</code>.</p>
+<div class="language-text highlight"><pre><span></span><code>adduser raul dam
+adduser enric dam
+adduser walid dam
+</code></pre></div>
+<p><strong>Per comprovar els canvis, utilitzem al comanda <code>tail -1 /etc/group</code> per veure si els usuaris s'han afegit correctament.</strong></p>
+<p><img alt="alt text" src="../image.png" /></p>
+<h3 id="531-afegir-usuaris-a-samba">5.3.1 Afegir usuaris a Samba</h3>
+<p>Finalment, per afegir els usuaris creats a la màquina local per a Samba hem d'utilitzar la comanda <code>smbpasswd -a usuari</code>. Haurèm de canviar la contrasenya.</p>
+<div class="language-text highlight"><pre><span></span><code>smbpasswd -a raul
+smbpasswd -a enric
+smbpasswd -a walid
+</code></pre></div>
+<h2 id="54-comprovacio-amb-el-client">5.4 Comprovació amb el client</h2>
+<p>Per vincular el client amb el servidor Samba s'utilitza <code>apt install smbclient</code>.</p>
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p>Obrim l'explorador d'arxius i ens dirigim a l'apartat de <strong>Otras ubicaciones</strong>. Dintre d'aqui, buscarem el nostres servidor amb la carpeta /perfils amb l'adreça <code>smb://ipservidor/perfils</code> (<strong>en el meu cas és smb://10.0.2.15/perfils</strong>).</p>
+<div class="language-text highlight"><pre><span></span><code>smb://10.0.2.15/perfils
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>En iniciar sessió amb un usuari recorda no modificar cap apartat que no sigui Nombre usuario o Contraseña i selecciona sempre Olvidar contraseña immediatamente per no tindre futurs problemes.</p>
+</div>
+<p>Com anteriorment he ficat als paràmetres que pot haver-hi un usuari anònim provem a accedir amb ell.</p>
+<p><img alt="alt text" src="../image-5.png" /></p>
+<p>Provem a crear una nova carpeta i ens dona accès denegat:</p>
 <p><img alt="alt text" src="../image-6.png" /></p>
+<p><img alt="alt text" src="../image-7.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Si accedim amb un altre usuari que no tingui restriccions així podrem crear arxius i modificar-los al nostre plaer. D'altra banda, altres usuaris que tinguin restringits l'accés a la carpeta podran intentar iniciar sessió. Però no podran accedir a la carpeta compartida.</p>
+</div>
+<p><img alt="alt text" src="../image-8.png" /></p>
+<p><img alt="alt text" src="../image-9.png" /></p>
+<p>Com podem veure, al utilitzar <code>ls -l</code> podem veure que el creador de la carpeta compartida de Samba és l'usuari raul:</p>
+<div class="language-text highlight"><pre><span></span><code>ls -l
+</code></pre></div>
+<p><img alt="alt text" src="../image-10.png" /></p>
 
 
 
