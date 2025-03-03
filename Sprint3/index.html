@@ -655,6 +655,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6-perfils-mobils" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Perfils mòbils
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Perfils mòbils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-configuracio-en-el-servidor-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Configuració en el servidor LDAP:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-configuracio-del-client-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Configuració del client LDAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -766,6 +799,7 @@ Per comprovar els canvis la comanda:
 <img alt="alt text" src="../img/ldap13.png" /></p>
 <p><img alt="alt text" src="../img/ldap14.png" /></p>
 <p><img alt="alt text" src="../img/ldap15.png" /></p>
+<hr />
 <h1 id="3-gestio-del-domini">3. GESTIÓ DEL DOMINI</h1>
 <h2 id="31-fitxers-i-comandes-ldap">3.1 Fitxers i comandes ldap</h2>
 <p><img alt="alt text" src="../img/imageldap.png" /></p>
@@ -1003,7 +1037,7 @@ adduser enric dam
 adduser walid dam
 </code></pre></div>
 <p><strong>Per comprovar els canvis, utilitzem al comanda <code>tail -1 /etc/group</code> per veure si els usuaris s'han afegit correctament.</strong></p>
-<p><img alt="alt text" src="../image.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver5.png" /></p>
 <h3 id="531-afegir-usuaris-a-samba">5.3.1 Afegir usuaris a Samba</h3>
 <p>Finalment, per afegir els usuaris creats a la màquina local per a Samba hem d'utilitzar la comanda <code>smbpasswd -a usuari</code>. Haurèm de canviar la contrasenya.</p>
 <div class="language-text highlight"><pre><span></span><code>smbpasswd -a raul
@@ -1012,7 +1046,7 @@ smbpasswd -a walid
 </code></pre></div>
 <h2 id="54-comprovacio-amb-el-client">5.4 Comprovació amb el client</h2>
 <p>Per vincular el client amb el servidor Samba s'utilitza <code>apt install smbclient</code>.</p>
-<p><img alt="alt text" src="../image-4.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver6.png" /></p>
 <p>Obrim l'explorador d'arxius i ens dirigim a l'apartat de <strong>Otras ubicaciones</strong>. Dintre d'aqui, buscarem el nostres servidor amb la carpeta /perfils amb l'adreça <code>smb://ipservidor/perfils</code> (<strong>en el meu cas és smb://10.0.2.15/perfils</strong>).</p>
 <div class="language-text highlight"><pre><span></span><code>smb://10.0.2.15/perfils
 </code></pre></div>
@@ -1021,20 +1055,72 @@ smbpasswd -a walid
 <p>En iniciar sessió amb un usuari recorda no modificar cap apartat que no sigui Nombre usuario o Contraseña i selecciona sempre Olvidar contraseña immediatamente per no tindre futurs problemes.</p>
 </div>
 <p>Com anteriorment he ficat als paràmetres que pot haver-hi un usuari anònim provem a accedir amb ell.</p>
-<p><img alt="alt text" src="../image-5.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver7.png" /></p>
 <p>Provem a crear una nova carpeta i ens dona accès denegat:</p>
-<p><img alt="alt text" src="../image-6.png" /></p>
-<p><img alt="alt text" src="../image-7.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver8.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver9.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Si accedim amb un altre usuari que no tingui restriccions així podrem crear arxius i modificar-los al nostre plaer. D'altra banda, altres usuaris que tinguin restringits l'accés a la carpeta podran intentar iniciar sessió. Però no podran accedir a la carpeta compartida.</p>
 </div>
-<p><img alt="alt text" src="../image-8.png" /></p>
-<p><img alt="alt text" src="../image-9.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver10.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver11.png" /></p>
 <p>Com podem veure, al utilitzar <code>ls -l</code> podem veure que el creador de la carpeta compartida de Samba és l'usuari raul:</p>
 <div class="language-text highlight"><pre><span></span><code>ls -l
 </code></pre></div>
-<p><img alt="alt text" src="../image-10.png" /></p>
+<p><img alt="alt text" src="../img/sambaserver12.png" /></p>
+<hr />
+<h1 id="6-perfils-mobils">6. Perfils mòbils</h1>
+<h2 id="61-configuracio-en-el-servidor-ldap">6.1 Configuració en el servidor LDAP:</h2>
+<p>Comanda inicial: </p>
+<div class="language-text highlight"><pre><span></span><code>apt install nfs-kernel-server
+</code></pre></div>
+<p>Seguidament:</p>
+<div class="language-text highlight"><pre><span></span><code>cd /
+mkdir perfils
+chmod 777
+</code></pre></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>chown nobody:nogroup
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ls -l | grep perfils
+</span></code></pre></div></p>
+<p>Obrim el fixer <code>/etc/exports</code></p>
+<div class="language-text highlight"><pre><span></span><code>nano /etc/exports
+</code></pre></div>
+<p>I afegim aquesta línia dintre:</p>
+<div class="language-text highlight"><pre><span></span><code>/perfils *(rw,sync,no_root_squash,no_subtree_check)
+</code></pre></div>
+<p>Per reiniciar el servei del kernel, utilitzem la comanda:</p>
+<div class="language-text highlight"><pre><span></span><code>systemctl restart nfs-kernel-server
+</code></pre></div>
+<p>Dintre de l'arxiu <code>usu.ldif</code> afegim les següents línies:</p>
+<p>PER CREAR GRUP:</p>
+<div class="language-text highlight"><pre><span></span><code>alu54 cn=dam,dc,dc  cn=dam  gidNumber: 1100
+</code></pre></div>
+<p>PER CREAR USUARI DINTRE DE GRUP: </p>
+<div class="language-text highlight"><pre><span></span><code>alumne54 per ex.
+homeDirectory: /perfils/alu54
+</code></pre></div>
+<p>Finalment, per carregar l'arxiu ldap fem:</p>
+<div class="language-text highlight"><pre><span></span><code>ldap -c -x -D “cn=admin,dc,dc” -W -f grup | usuari
+</code></pre></div>
+<h2 id="62-configuracio-del-client-ldap">6.2 Configuració del client LDAP</h2>
+<p>Les comandes inicials:</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt update
+sudo apt install nfs-common rpcbind
+</code></pre></div>
+<p>Seguidament:</p>
+<div class="language-text highlight"><pre><span></span><code>cd /
+mkdir perfils
+chmod 777
+</code></pre></div>
+<p>Comanda final:</p>
+<div class="language-text highlight"><pre><span></span><code>ls -l | grep perfils
+
+nano /etc/fstab
+10.0.2.15:/perfils /perfils nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+</code></pre></div>
+<p>Per acabar, reiniciem la màquina per comprovar si s'han aplicat els canvis.</p>
 
 
 
