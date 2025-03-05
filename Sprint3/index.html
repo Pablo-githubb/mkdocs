@@ -1111,9 +1111,16 @@ smbpasswd -a walid
 <hr />
 <h1 id="6-perfils-mobils">6. Perfils mòbils</h1>
 <h2 id="61-configuracio-en-el-servidor-ldap">6.1 Configuració en el servidor LDAP:</h2>
-<p>Comanda inicial: </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Abans fer qualsevol instal·lació, utilitzem la comanda</p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt update
+</code></pre></div>
+</div>
+<p>Comanda inicial per instal·lar el servei de kernel: </p>
 <div class="language-text highlight"><pre><span></span><code>apt install nfs-kernel-server
 </code></pre></div>
+<p><img alt="alt text" src="../img/kernelserver1.png" /></p>
 <p>Seguidament:</p>
 <div class="language-text highlight"><pre><span></span><code>cd /
 mkdir perfils
@@ -1123,43 +1130,91 @@ chmod 777
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ls -l | grep perfils
 </span></code></pre></div></p>
-<p>Obrim el fixer <code>/etc/exports</code></p>
+<p><img alt="alt text" src="../img/kernelserver2.png" /></p>
+<p>Obrim el fixer <code>/etc/exports</code>:</p>
 <div class="language-text highlight"><pre><span></span><code>nano /etc/exports
 </code></pre></div>
 <p>I afegim aquesta línia dintre:</p>
 <div class="language-text highlight"><pre><span></span><code>/perfils *(rw,sync,no_root_squash,no_subtree_check)
 </code></pre></div>
-<p>Per reiniciar el servei del kernel, utilitzem la comanda:</p>
+<p><img alt="alt text" src="../img/kernelserver3.png" /></p>
+<p><strong>Molt important</strong>, per reiniciar el servei del kernel, utilitzem la comanda:</p>
 <div class="language-text highlight"><pre><span></span><code>systemctl restart nfs-kernel-server
+systemctl status nfs-kernel-server
 </code></pre></div>
-<p>Dintre de l'arxiu <code>usu.ldif</code> afegim les següents línies:</p>
+<p><img alt="alt text" src="../img/kernelserver4.png" /></p>
+<p>Dintre de l'arxiu <code>grup.ldif</code> afegim les següents línies (en el meu cas):</p>
 <p>PER CREAR GRUP:</p>
-<div class="language-text highlight"><pre><span></span><code>alu54 cn=dam,dc,dc  cn=dam  gidNumber: 1100
+<div class="language-text highlight"><pre><span></span><code>dn: cn=dam,dc=Pmc,dc=cat
+objectClass: posixGroup
+objectClass: top
+cn: dam
+gidNumber: 1100
+memberUid: alu54
+</code></pre></div>
+<p><img alt="alt text" src="../img/kernelserver5.png" /></p>
+<p>Finalment, per aplicar els canvis utilitzem la següent comanda (jo amb els meus paràmetres)</p>
+<div class="language-text highlight"><pre><span></span><code>ldapadd -c -x -D &quot;cn=admin,dc=Pmc,dc=cat&quot; -W -f grup.ldif
+</code></pre></div>
+<p><img alt="alt text" src="../img/kernelserver6.png" /></p>
+<p>Ara, dintre de l'arxiu <code>usu.ldif</code> afegim les següents línies (en el meu cas):</p>
+<div class="language-text highlight"><pre><span></span><code>dn: uid=alu54, ou=dam,dc=Pmc,dc=cat
+objectClass: inetOrgPerson
+objectClass: organitzationalPerson
+objectClass: person
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: top
+userPassword: ablso330
+cn: Alumne54
+gidNumber: 1100
+homeDirectory: /perfils/alu54
+loginShell: /bin/bash
+sn: Alumne1
+uidNumber: 1100
+shadowExpire: -1
+shadowLastChange: 16431
+shadowMax: 999999
+shadowMin: 0
+shadowWarning: 7
+</code></pre></div>
+<p><img alt="alt text" src="../img/kernelserver7.png" /></p>
+<p>Per acabar, per aplicar els canvis utilitzem la següent comanda (jo amb els meus paràmetres)</p>
+<div class="language-text highlight"><pre><span></span><code>ldapadd -c -x -D &quot;cn=admin,dc=Pmc,dc=cat&quot; -W -f usu.ldif
 </code></pre></div>
 <p>PER CREAR USUARI DINTRE DE GRUP: </p>
-<div class="language-text highlight"><pre><span></span><code>alumne54 per ex.
+<div class="language-text highlight"><pre><span></span><code>alumne54 per exemple.
 homeDirectory: /perfils/alu54
 </code></pre></div>
 <p>Finalment, per carregar l'arxiu ldap fem:</p>
 <div class="language-text highlight"><pre><span></span><code>ldap -c -x -D “cn=admin,dc,dc” -W -f grup | usuari
 </code></pre></div>
+<p><img alt="alt text" src="../img/kernelserver8.png" /></p>
 <h2 id="62-configuracio-del-client-ldap">6.2 Configuració del client LDAP</h2>
-<p>Les comandes inicials:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Abans fer qualsevol instal·lació, utilitzem la comanda</p>
 <div class="language-text highlight"><pre><span></span><code>sudo apt update
-sudo apt install nfs-common rpcbind
 </code></pre></div>
+</div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo apt install nfs-common rpcbind
+</span></code></pre></div>
+<p><img alt="alt text" src="../img/rpcbin1.png" /></p>
 <p>Seguidament:</p>
 <div class="language-text highlight"><pre><span></span><code>cd /
 mkdir perfils
 chmod 777
+ls -l | grep perfils
 </code></pre></div>
-<p>Comanda final:</p>
-<div class="language-text highlight"><pre><span></span><code>ls -l | grep perfils
-
-nano /etc/fstab
-10.0.2.15:/perfils /perfils nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+<p><img alt="alt text" src="../img/rpcbin2.png" /></p>
+<p>Entrem a configurar l'arxiu <code>/etc/fstab</code> amb la comanda:</p>
+<div class="language-text highlight"><pre><span></span><code>nano /etc/fstab
 </code></pre></div>
-<p>Per acabar, reiniciem la màquina per comprovar si s'han aplicat els canvis.</p>
+<p>A més, dintre de l'arxiu afegim la següent llínea: <br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>10.0.2.15:/perfils /perfils nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+</span></code></pre></div>
+<img alt="alt text" src="../img/rpcbin3.png" /></p>
+<p><strong>Per acabar, reiniciem la màquina per comprovar si s'han aplicat els canvis.</strong></p>
 
 
 
