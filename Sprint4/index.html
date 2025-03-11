@@ -519,6 +519,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Connexió remota">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-installacio-i-execucio" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Instal·lació i execució
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configuracio-del-teamviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configuració del TeamViewer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-connectar-se-remotament" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Connectar-se remotament
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -620,9 +653,57 @@ logger -i -s -p mail.err Ha fallat el mail
 <h2 id="12-filtrar-per-serveix-amb-journalctl">1.2 Filtrar per serveix amb journalctl</h2>
 <h2 id="13-enviar-un-log-personalitzat-via-ip-al-servidor">1.3 Enviar un log personalitzat via IP al servidor</h2>
 <h1 id="2-connexio-remota">2. Connexió remota</h1>
-<p>Instal·lació, configuració i prova
-VNC o TeamViewer</p>
+<h2 id="21-installacio-i-execucio">2.1 Instal·lació i execució</h2>
+<p>Els passos per descarregar el TeamViewer son els següents:</p>
+<ul>
+<li>
+<p>Ves a la pàgina oficial: https://www.teamviewer.com/en/download/linux/</p>
+</li>
+<li>
+<p>Baixa el paquet .deb corresponent a la teva arquitectura (64-bit normalment).</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../img/teamviewer1.png" /></p>
+<p>Instal·lar TeamViewer:</p>
+<ul>
+<li>Obre un terminal i ves a la carpeta on has descarregat el fitxer (Downloads per defecte).<div class="language-text highlight"><pre><span></span><code>cd ~/Downloads
+sudo dpkg -i teamviewer_amd64.deb
+sudo apt --fix-broken install  # Si hi ha errors de dependències
+</code></pre></div>
+</li>
+</ul>
+<p><img alt="alt text" src="../img/teamviewer2.png" /></p>
+<p>Finalment, per excutar el TeamViewer, <strong>executem l'aplicació amb l'icona</strong> on escrivim:</p>
+<div class="language-text highlight"><pre><span></span><code>teamviewer
+</code></pre></div>
+<p><img alt="alt text" src="../img/teamviewer3.png" /></p>
+<h2 id="22-configuracio-del-teamviewer">2.2 Configuració del TeamViewer</h2>
+<ol>
+<li>Acceptar els termes i condicions en iniciar el programa.</li>
+<li>Obtenir l'ID i la contrasenya generats per TeamViewer.</li>
+<li>
+<p>Opcional (si vols accés sense necessitat de contrasenya cada cop):</p>
+</li>
+<li>
+<p>Clica a Extras → Opcions → Control d'accés</p>
+</li>
+<li>Activa Accés fàcil o Configura una contrasenya personal</li>
+</ol>
+<p>En el meus cas, no ho he fet.</p>
+<p><img alt="alt text" src="../img/teamviewer4.png" /></p>
+<h2 id="23-connectar-se-remotament">2.3 Connectar-se remotament</h2>
+<p>Per conncatar-se remotament solament falten uns pocs pasos. Instal·la i obre TeamViewer a l'ordinador des del qual et vols connectar. Despres, introdueix l'ID de l'altre equip a la secció de "Control Remot". Al final, prem "Connectar" i introdueix la contrasenya.</p>
+<p><img alt="alt text" src="../img/teamviewer5.png" /></p>
+<p><img alt="alt text" src="../img/teamviewer6.png" /></p>
+<p><img alt="alt text" src="../img/teamviewer7.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si tens dubtes o errors, revisa que TeamViewer s'estigui executant en segon pla (teamviewer daemon enable) i que el tallafoc no el bloquegi (sudo ufw allow 5938/tcp).</p>
+</div>
 <h1 id="3-llicenciament">3. Llicenciament</h1>
+<ul>
+<li>[] quina llicència puc aplicar a una aplicació que jo programe per el propi cas, quins tipus hi han i com podria aplicarla. </li>
+</ul>
 
 
 
