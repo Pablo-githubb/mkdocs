@@ -561,6 +561,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Llicenciament">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-teoria-llicenciament" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Teoría llicenciament
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Teoría llicenciament">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-llicencies-programari-lliureopen-source-foss" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 Llicències programari lliure/open source (FOSS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-llicencies-programari-propietari" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 Llicències programari propietari
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aplicacio-de-la-llicencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Aplicació de la llicència
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -700,10 +748,69 @@ sudo apt --fix-broken install  # Si hi ha errors de dependències
 <p class="admonition-title">Note</p>
 <p>Si tens dubtes o errors, revisa que TeamViewer s'estigui executant en segon pla (teamviewer daemon enable) i que el tallafoc no el bloquegi (sudo ufw allow 5938/tcp).</p>
 </div>
+<hr />
 <h1 id="3-llicenciament">3. Llicenciament</h1>
+<h2 id="31-teoria-llicenciament">3.1 Teoría llicenciament</h2>
+<h3 id="311-llicencies-programari-lliureopen-source-foss">3.1.1 Llicències programari lliure/open source (FOSS)</h3>
+<p>Aquestes permeten que altres persones usin, modifiquin i redistribueixin el teu codi, amb certes condicions.</p>
 <ul>
-<li>[] quina llicència puc aplicar a una aplicació que jo programe per el propi cas, quins tipus hi han i com podria aplicarla. </li>
+<li>
+<p>Copyleft (Obliguen a mantenir la llicència en derivats)</p>
+<blockquote>
+<p>GPL (GNU General Public License): Qualsevol que modifiqui el codi ha de distribuir-lo també amb la mateixa llicència.</p>
+<p>AGPL (Affero GPL): Igual que la GPL, però també aplica a serveis web.</p>
+<p>LGPL (Lesser GPL): Permet que biblioteques siguin usades en programari privatiu.</p>
+</blockquote>
+</li>
+<li>
+<p>Permissives (No obliguen a mantenir la llicència en derivats)</p>
+<blockquote>
+<p>MIT: Molt flexible, només exigeix reconeixement a l'autor.</p>
+<p>Apache 2.0: Similar a MIT, però protegeix contra patents.</p>
+<p>BSD (Berkeley Software Distribution): Similar a MIT, amb algunes variacions.</p>
+</blockquote>
+</li>
 </ul>
+<h3 id="312-llicencies-programari-propietari">3.1.2 Llicències programari propietari</h3>
+<p>Les llicències de programari propietari no permeten modificar ni redistribuir el codi sense permís del creador d'aquest.</p>
+<ul>
+<li>
+<p><strong>EULA</strong> (End-User License Agreement): Com les que tenen Windows o Adobe.</p>
+</li>
+<li>
+<p><strong>Llicència personalitzada</strong>: Pots definir les teves pròpies restriccions.</p>
+</li>
+</ul>
+<h2 id="32-aplicacio-de-la-llicencia">3.2 Aplicació de la llicència</h2>
+<ul>
+<li>
+<p>Si vols que sigue completament lliure i obligar a compartir modificacions: <strong>GPL</strong></p>
+</li>
+<li>
+<p>Si vols que sigue lliure pero sense restriccions/obligacions per als altres: <strong>MIT / Apache</strong></p>
+</li>
+<li>
+<p>Si vols que sigui privativa i restringitada: <strong>Llicència personalitzada</strong></p>
+</li>
+</ul>
+<p>Finalment, si ja hem el·legit quina llicència, amb aquins paràmetres volem utilitzar. En dirigim a la pàgina web de <em>chooselicense.com</em> per escollir i afegir el fitxer <code>LICENSE</code> amb el text de la llicència dintre del nostre projecte.</p>
+<p><a href="https://www.markdownguide.org" target="_blank">https://choosealicense.com/</a></p>
+<p>Podem incloure un comentari al codi font amb un avís legal. Exemple de MIT:</p>
+<div class="language-text highlight"><pre><span></span><code># Copyright (c) 2025, [El teu nom o empresa]
+# Aquest programari es distribueix sota la llicència MIT.  
+# Vegeu el fitxer LICENSE per a més informació.
+</code></pre></div>
+<p><img alt="alt text" src="../img/license.png" /></p>
+<p><img alt="alt text" src="../img/license1.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Si vols màxima llibertat i compatibilitat: <strong>MIT</strong></li>
+<li>Si vols protegir modificacions i forçar que segueixin obertes: <strong>GPL</strong></li>
+<li>Si vols protegir patents: <strong>Apache 2.0</strong></li>
+<li>Si no vols que ningú modifiqui el codi: <strong>Llicència privativa</strong></li>
+</ul>
+</div>
 
 
 
