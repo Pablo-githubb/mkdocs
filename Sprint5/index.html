@@ -602,30 +602,47 @@
 <h2 id="sprint-5-projecte-2-sprint1">Sprint 5 (Projecte 2 Sprint1)</h2>
 <h1 id="1-installacio-windows-10windows-server">1. Instal·lació Windows 10/Windows Server</h1>
 <h2 id="11-installacio-basica-windows-10-enterprise">1.1 Instal·lació bàsica Windows 10 Enterprise</h2>
+<p>Al iniciar la nostra màquina, ens arribarà automàticament a aquesta finestra per sel·leccionar l'idioma, el format de moneda i la distribució del teclat.</p>
 <p><img alt="alt text" src="../img/instalaciowindows1.png" /></p>
+<p>Següent, fem clic al botó central d'instal·lar.</p>
 <p><img alt="alt text" src="../img/instalaciowindows2.png" /></p>
+<p>Ara, sel·leccionem la segona opció <strong>Personalizada solo instalar Windows (avanzado)</strong>. </p>
 <p><img alt="alt text" src="../img/instalaciowindows3.png" /></p>
+<p>Dintre d'aqui, creem una partició sense formatar amb la meitat de disc de la nostra partició principal (en el meu cas era de 50gb. Llavors, utilitzo 25gb).</p>
 <p><img alt="alt text" src="../img/instalaciowindows4.png" /></p>
 <p><img alt="alt text" src="../img/instalaciowindows5.png" /></p>
-<p><img alt="alt text" src="../img/configuracioxarxa6.png" /></p>
-<p><img alt="alt text" src="../img/configuracioxarxa7.png" /></p>
+<p>Ja amb el procès d'instal·lació finalitzat, solament falta configurar l'usuari principal, li fiquem un <strong>nom d'usuari</strong>:
+<img alt="alt text" src="../img/configuracioxarxa6.png" /></p>
+<p>Li fiquem una <strong>constrasenya</strong>.
+<img alt="alt text" src="../img/configuracioxarxa7.png" /></p>
 <p><img alt="alt text" src="../img/configuracioxarxa8.png" /></p>
-<p><img alt="alt text" src="../img/configuracioxarxa9.png" /></p>
+<p>Finalment, unes <strong>preguntes de seguretat</strong> per l'usuari.
+<img alt="alt text" src="../img/configuracioxarxa9.png" /></p>
 <h2 id="12-installacio-basica-windows-server-2022">1.2 Instal·lació bàsica Windows Server 2022</h2>
+<p>Al començar l'instal·lació del Windows Server, ens obrirà la mateixa finestra sobre l'idioma, distribució de teclat, etc.</p>
 <p><img alt="alt text" src="../img/instalaciowindowserver1.png" /></p>
+<p>A continuació, sel·leccionem el la versió <code>Standard Evaluation</code> amb <strong>experiencia de escritorio</strong>.</p>
 <p><img alt="alt text" src="../img/instalaciowindowserver2.png" /></p>
+<p>Com amb el Windows 10, sel·leccionem també <strong>Personalizada</strong>. Però, no separem la partició principal.</p>
 <p><img alt="alt text" src="../img/instalaciowindowserver3.png" /></p>
-<p><img alt="alt text" src="../img/instalaciowindowserver4.png" /></p>
+<p>Al acabar l'instal·lació, configurem l'usuari <code>Administrador</code> amb una <strong>constrasenya</strong> i ja tindrem el Windows Server 2022 configura't.
+<img alt="alt text" src="../img/instalaciowindowserver4.png" /></p>
 <p><img alt="alt text" src="../img/instalaciowindowserver5.png" /></p>
 <p><img alt="alt text" src="../img/instalaciowindowserver6.png" /></p>
 <h1 id="2-configuracio-de-la-xarxa">2. Configuració de la xarxa</h1>
 <h2 id="21-configuracio-de-la-xarxa-windows-server">2.1 Configuració de la xarxa Windows Server</h2>
+<p>Obrim la configuració de xarxa:</p>
 <p><img alt="alt text" src="../img/configuracioxarxa1.png" /></p>
-<p><img alt="alt text" src="../img/configuracioxarxa2.png" /></p>
+<p>Prenem <strong>cambiar opciones de adaptador</strong>.</p>
 <p><img alt="alt text" src="../img/configuracioxarxa3.png" /></p>
+<p>Entrem dintre de la configuració d'adaptador i en les seves <strong>propietats</strong>.</p>
 <p><img alt="alt text" src="../img/configuracioxarxa4.png" /></p>
+<p>Dintre de <strong>Protocolo de Internet version 4 (TCP/IPv4)</strong>.</p>
 <p><img alt="alt text" src="../img/configuracioxarxa5.png" /></p>
+<p>Configurem la ip estàtica amb la xarxa NAT <code>10.0.2.15/24</code> i <code>10.0.2.1</code>. El DNS serà el propi servidor <code>10.0.2.15</code>.</p>
+<p><img alt="alt text" src="../img/configuracioxarxa2.png" /></p>
 <h2 id="22-configuracio-de-la-xarxa-windows-enterprise">2.2 Configuració de la xarxa Windows Enterprise</h2>
+<p>Finalment, en l'apartat de DNS en el Windows 10, assignem la IP del Windows Server com DNS principal. L'altra podem ficar per exemple Google (8.8.8.8).</p>
 <p><img alt="alt text" src="../img/configuracioxarxa10.png" /></p>
 <h1 id="3-comandes-generals">3. Comandes generals</h1>
 <h1 id="4-installacio-aplicacio">4. Instal·lació aplicació</h1>
