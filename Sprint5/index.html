@@ -576,6 +576,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-dual-boot-ubuntuwindows" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Dual boot Ubuntu&amp;Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-installacio-dual-windowubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Instal·lació dual (Window&amp;Ubuntu)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Instal·lació dual (Window&Ubuntu)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-intallacio-gparted" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Intal·lació GParted
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,6 +700,28 @@
 <p><img alt="alt text" src="../img/app2.png" /></p>
 <p>Així, ja tindriem l'aplicació descarregada i preparada per funcionar.</p>
 <p><img alt="alt text" src="../img/app3.png" /></p>
+<h1 id="5-dual-boot-ubuntuwindows">5. Dual boot Ubuntu&amp;Windows</h1>
+<h1 id="51-installacio-dual-windowubuntu">5.1 Instal·lació dual (Window&amp;Ubuntu)</h1>
+<p>En primer lloc, hem de col·locar la nostra ISO d'Ubuntu24 a la nostra màquina virutal de Windows 10 Enterprise</p>
+<p>Podem veure que tenim la ISO del Ubuntu conjuntament amb el disc dur on està instal·lat el Windows 10.</p>
+<p><img alt="alt text" src="../img/dual1.png" /></p>
+<p>Al moment d'iniciar la màquina ja ens surt el gestor d'arrancada d'Ubuntu (GRUB).</p>
+<p><img alt="alt text" src="../img/dual2.png" /></p>
+<p>Continuem configurant el sistema i sel·leccionem <strong>Intalar Ubuntu junto a Windows 10</strong>. També conegut com instal·lació dual.
+<img alt="alt text" src="../img/dual3.png" /></p>
+<p>Com a últim pas hem de configurar el nostre <strong>usuari principal</strong> pel Ubuntu 24.</p>
+<p><img alt="alt text" src="../img/dual4.png" /></p>
+<p>Finalment, solament fa falta fer clic al botó <strong>Instalar</strong>.</p>
+<p><img alt="alt text" src="../img/dual5.png" /></p>
+<p><img alt="alt text" src="../img/dual6.png" /></p>
+<h2 id="52-intallacio-gparted">5.2 Intal·lació GParted</h2>
+<p><img alt="alt text" src="../img/dual7.png" /></p>
+<p>Per poder instal·lar el GParted hem d'obrir la nostra terminal i escriure la comanda <code>sudo apt-get install gparted</code></p>
+<div class="language-text highlight"><pre><span></span><code>sudo apt install gparted
+</code></pre></div>
+<p><img alt="alt text" src="../img/dual8.png" /></p>
+<p>Al moment d'entrar al gparted, hem de destruïr la partició del nostre Ubuntu24 ext4.</p>
+<p><img alt="alt text" src="../img/dual9.png" /></p>
 
 
 
