@@ -604,6 +604,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#54-recuperacio-sistema-darranc-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Recuperació sistema d'arranc Windows
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -715,13 +724,65 @@
 <p><img alt="alt text" src="../img/dual5.png" /></p>
 <p><img alt="alt text" src="../img/dual6.png" /></p>
 <h2 id="52-intallacio-gparted">5.2 Intal·lació GParted</h2>
-<p><img alt="alt text" src="../img/dual7.png" /></p>
-<p>Per poder instal·lar el GParted hem d'obrir la nostra terminal i escriure la comanda <code>sudo apt-get install gparted</code></p>
-<div class="language-text highlight"><pre><span></span><code>sudo apt install gparted
+<p>Per exectuar el GParted hem de descarregar la ISO del GParted Live.</p>
+<p>Ens dirigim a la pàgina oficial de GParted a <strong>Downloads</strong> i descarreguem la versió que es mostra a la captura de pantalla:</p>
+<p><img alt="alt text" src="../img/gparted1.png" /></p>
+<p>Més endavant, col·loquem la ISO del GParted a la nostra màquina virtual substituïnt la ISO del Ubuntu24.</p>
+<p><img alt="alt text" src="../img/gparted2.png" /></p>
+<p>Ara ja estem dintre de la ISO Gparted Live.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Següim els pasos mostrats en les captures següents:</p>
+</div>
+<p><img alt="alt text" src="../img/gparted3.png" /></p>
+<p><img alt="alt text" src="../img/gparted4.png" /></p>
+<p>Configurem en quin idioma volem el sistema de Gparted Live.</p>
+<p><img alt="alt text" src="../img/gparted5.png" /></p>
+<p><img alt="alt text" src="../img/gparted6.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Totes les nostres dades s'esborran parmanenment. S'ha d'anar amb compte!</p>
+</div>
+<p><img alt="alt text" src="../img/gparted7.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Per aplicar els canvis del Gparted hem de fer clic al tic verd.</p>
+</div>
+<p>Podem veure que hem destruit satisfactoriament la partició amb Ubuntu24 i s'ens ha obert el gestor <strong>GRUB en rescute mode.</strong></p>
+<p><img alt="alt text" src="../img/gparted8.png" /></p>
+<h2 id="54-recuperacio-sistema-darranc-windows">5.4 Recuperació sistema d'arranc Windows</h2>
+<p>Seguidament, el que hem de fer per recuperar el sistema d'arranc de Windows es tornar a col·locar la ISO del Windows 10 a la nostra màquina virtual.</p>
+<p><img alt="alt text" src="../img/gparted9.png" /></p>
+<p>Fem clic a <strong>Reparar l'equip</strong>.</p>
+<p><img alt="alt text" src="../img/gparted10.png" /></p>
+<p>En la següent pantalla, prem en les següents opcions: Solucionar problemes, Opcions avançades, Símbol del sistema.</p>
+<p><img alt="alt text" src="../img/gparted11.png" /></p>
+<p>Quan s'obri la consola del símbol del sistema, escriu aquest comando i prem Intro:</p>
+<p><img alt="alt text" src="../img/gparted12.png" /></p>
+<p>Primerament executem la comanda:</p>
+<div class="language-text highlight"><pre><span></span><code>diskpart
 </code></pre></div>
-<p><img alt="alt text" src="../img/dual8.png" /></p>
-<p>Al moment d'entrar al gparted, hem de destruïr la partició del nostre Ubuntu24 ext4.</p>
-<p><img alt="alt text" src="../img/dual9.png" /></p>
+<p>escriu a continuació:</p>
+<div class="language-text highlight"><pre><span></span><code>list disk
+</code></pre></div>
+<p>et mostrarà els discos. Si només tens un disc, només apareixerà el disc 0. Selecciona-ho d'aquesta manera:</p>
+<div class="language-text highlight"><pre><span></span><code>select disk 0
+</code></pre></div>
+<p>A continuació, escriu:</p>
+<div class="language-text highlight"><pre><span></span><code>list partition
+</code></pre></div>
+<p>Et mostrarà les particions existents en el disc 0. Si vas eliminar les altres particions, només quedarà una, on està instal·lat Windows 10, segurament te la mostrarà com la partició Principal. Localitza el núm. de partició de la Principal i escriu aquesta comanda (suposant que la Principal sigui la núm. 1):</p>
+<div class="language-text highlight"><pre><span></span><code>select partition 1
+</code></pre></div>
+<p>Escriu a continuació:</p>
+<div class="language-text highlight"><pre><span></span><code>active
+</code></pre></div>
+<p>Amb això s'haurà creat la partició C:\ com a activa. Escriu a continuació per a sortir de Diskpart:</p>
+<div class="language-text highlight"><pre><span></span><code>exit
+</code></pre></div>
+<p><img alt="alt text" src="../img/gparted13.png" /></p>
+<p>Finalment, apaquem l'equip i el tornem a iniciar. D'aquesta manera ja tonariem a tindre com el sistema principal el Windows 10. Com podem veure, ho hem aconseguit.</p>
+<p><img alt="alt text" src="../img/gparted14.png" /></p>
 
 
 
