@@ -1157,19 +1157,19 @@ net user alumne2 ablso330 /add
 <p>Clica <code>Añadir</code> → afegeix usuari (ex: alumne1)</p>
 </li>
 </ul>
-<p><img alt="alt text" src="../image.png" /></p>
-<p><img alt="alt text" src="../image-4.png" /></p>
+<p><img alt="alt text" src="../img/afegiradmins1.png" /></p>
+<p><img alt="alt text" src="../img/afegiradmins2.png" /></p>
 <h3 id="263-comandes">2.6.3 Comandes</h3>
 <div class="language-text highlight"><pre><span></span><code>net localgroup Administrators alumne1 /add
 </code></pre></div>
-<p><img alt="alt text" src="../image-5.png" /></p>
+<p><img alt="alt text" src="../img/afegiradmins3.png" /></p>
 <hr />
 <h3 id="enllacar">Enllaçar</h3>
 <p>Windows utilitza enllaços simbòlics:</p>
 <div class="language-text highlight"><pre><span></span><code>New-Item -ItemType SymbolicLink -Path &quot;C:\Users\Default\temporalcd&quot; -Target &quot;C:\Temp&quot;
 </code></pre></div>
-<p><img alt="alt text" src="../image-6.png" />
-<img alt="alt text" src="../image-7.png" /></p>
+<p><img alt="alt text" src="../img/enlla%C3%A7ar1.png" />
+<img alt="alt text" src="../img/enlla%C3%A7ar2.png" /></p>
 <hr />
 <h2 id="27-permisos-normals-uog">2.7 Permisos "normals" UOG</h2>
 <p>Llenguatge octal per calcular permissos</p>
@@ -1181,15 +1181,15 @@ net user alumne2 ablso330 /add
 <p>Llistar permisos:</p>
 <div class="language-text highlight"><pre><span></span><code>icacls C:\Users\alumne1
 </code></pre></div>
-<p><img alt="alt text" src="../image-8.png" /></p>
+<p><img alt="alt text" src="../img/permissos1.png" /></p>
 <p>Canviar propietari:</p>
 <div class="language-text highlight"><pre><span></span><code>takeown /F &quot;C:\Ruta\Fitxer&quot;
 </code></pre></div>
-<p><img alt="alt text" src="../image-9.png" /></p>
+<p><img alt="alt text" src="../img/permissos2.png" /></p>
 <p>Assignar permisos:</p>
 <div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\Ruta&quot; /grant alumne1:(R,W)
 </code></pre></div>
-<p><img alt="alt text" src="../image-10.png" /></p>
+<p><img alt="alt text" src="../img/permissos3.png" /></p>
 <hr />
 <h2 id="28-umask">2.8 UMASK</h2>
 <p>No existeix literalment, però pots aplicar permisos per defecte a carpetes base amb <code>icacls</code> i perfils d’usuari predeterminats (<code>C:\Users\Default</code>) amb la comanda següent.</p>
@@ -1205,36 +1205,51 @@ net user alumne2 ablso330 /add
 <hr />
 <h2 id="29-permisos-especials">2.9 Permisos especials</h2>
 <ul>
+<li>Crea una carpeta (ex: <code>C:\exercicis</code>)</li>
+</ul>
+<p><img alt="alt text" src="../img/permissos4.png" /></p>
+<ul>
 <li>
-<p>Crea una carpeta (ex: <code>C:\exercicis</code>)</p>
-</li>
-<li>
-<p>Botó dret → Properties → pestanya Security</p>
+<p>Botó dret → Properties → pestanya Seguretat</p>
 </li>
 <li>
 <p>Clica <code>Edit</code></p>
 </li>
-<li>
-<p>Clica <code>Add</code> → afegeix usuari o grup</p>
-</li>
+</ul>
+<p><img alt="alt text" src="../img/permissos5.png" /></p>
+<ul>
+<li>Clica <code>Add</code> → afegeix usuari o grup</li>
 </ul>
 <p>Assigna permisos: <strong>Read / Write / Modify / Full Control</strong></p>
+<p><img alt="alt text" src="../img/permissos6.png" /></p>
+<p><img alt="alt text" src="../img/permissos7.png" /></p>
 <h3 id="291-comandes">2.9.1 Comandes</h3>
 <p>Windows no té <code>chmod</code>, però sí:</p>
 <div class="language-text highlight"><pre><span></span><code>icacls ex7.txt /grant alumne1:(R,W)
 icacls ex8.txt /grant grup:(W)
 </code></pre></div>
+<p><img alt="alt text" src="../img/permissos8.png" /></p>
 <hr />
 <h2 id="210-acl-access-control-list">2.10 ACL (Access Control List)</h2>
-<p>Afegir permisos:</p>
-<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\exercicis&quot; /grant vesper:(F)
+<ul>
+<li>Afegir permisos:<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\exercicis&quot; /grant vesper:(F)
 </code></pre></div>
-<p>Treure permisos:</p>
-<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\exercicis&quot; /remove perrete
+</li>
+</ul>
+<p><img alt="alt text" src="../img/permissos9.png" /></p>
+<p><img alt="alt text" src="../img/permissos10.png" /></p>
+<ul>
+<li>Treure permisos:<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\exercicis&quot; /remove vesper
 </code></pre></div>
-<p>Veure ACLs:</p>
-<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\exercicis&quot;
+</li>
+</ul>
+<p><img alt="alt text" src="../img/permissos11.png" /></p>
+<ul>
+<li>Veure ACLs:<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\exercicis&quot;
 </code></pre></div>
+</li>
+</ul>
+<p><img alt="alt text" src="../img/permissos12.png" /></p>
 <hr />
 <h1 id="3-sistemes-de-fitxers-i-particions">3. Sistemes de fitxers i particions</h1>
 <h2 id="31-teoria">3.1 Teoria:</h2>
@@ -1255,9 +1270,11 @@ icacls ex8.txt /grant grup:(W)
 </ul>
 <h2 id="32-tipus-de-formateig-de-particions">3.2 Tipus de formateig de particions</h2>
 <p>Obre <strong>Disk Management</strong> (<code>diskmgmt.msc</code>)</p>
-<p>Clic dret a l'espai no assignat → New Simple Volume</p>
+<p>Clic dret a l'espai no assignat → Nuevo Volumen Simple</p>
 <p>Escull la mida → Assigna una lletra → Format amb <strong>NTFS</strong></p>
-<p>Marca "Perform a quick format" → Finish</p>
+<p>Marca "Perform a quick format" → Finaliza</p>
+<p><img alt="alt text" src="../img/particions1.png" /></p>
+<p><img alt="alt text" src="../img/particions2.png" /></p>
 <p>Finalment, per assignar o canviar la lletra d'unitat:</p>
 <ol>
 <li>
@@ -1267,6 +1284,7 @@ icacls ex8.txt /grant grup:(W)
 <p>Afegeix o canvia la lletra</p>
 </li>
 </ol>
+<p><img alt="alt text" src="../img/particions3.png" /></p>
 <h3 id="321-comandes">3.2.1 Comandes</h3>
 <p>En primer lloc, utilitzem:</p>
 <ul>
@@ -1277,17 +1295,19 @@ icacls ex8.txt /grant grup:(W)
 <p>diskpart (en PowerShell/CMD)</p>
 <div class="language-text highlight"><pre><span></span><code>diskpart
 list disk
-select disk 1
+select disk 0
 create partition primary
 format fs=ntfs quick
 </code></pre></div>
 </li>
 </ul>
+<p><img alt="alt text" src="../img/particions4.png" /></p>
 <p>Windows munta automàticament les particions. Pots assignar una lletra amb:</p>
 <div class="language-text highlight"><pre><span></span><code>diskpart
 select volume 3
 assign letter=Z
 </code></pre></div>
+<p><img alt="alt text" src="../img/particions5.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Es fa amb Gestió de discs o amb el registre (no cal tocar <code>/etc/fstab</code> com en Linux).</p>
@@ -1296,18 +1316,21 @@ assign letter=Z
 <h2 id="33-sistemes-de-fitxers">3.3 Sistemes de fitxers:</h2>
 <ul>
 <li>
-<p>Botó dret sobre el fitxer → Properties</p>
+<p>Botó dret sobre el fitxer → Propiedades</p>
 </li>
 <li>
-<p>Pestanya Security → Advanced</p>
+<p>Pestanya Security → Opciones Avanzadas</p>
 </li>
 <li>
-<p>Clica Change al costat de Owner</p>
+<p>Clica on fica cambiar</p>
 </li>
 <li>
-<p>Escriu el nom del nou usuari → Check Names → OK</p>
+<p>Escriu el nom del nou usuari → Check Names → Finalizar</p>
 </li>
 </ul>
+<p><img alt="alt text" src="../img/particions6.png" /></p>
+<p><img alt="alt text" src="../img/particions7.png" /></p>
+<p><img alt="alt text" src="../img/particions8.png" /></p>
 <hr />
 <h1 id="4-copies-de-seguretat-i-automatitzacio-de-tasques">4. Còpies de seguretat i automatització de tasques</h1>
 <h2 id="41-conceptes-basics">4.1 <strong>Conceptes bàsics</strong></h2>
@@ -1333,9 +1356,10 @@ assign letter=Z
 <p>Canvia el nom del fitxer amb data</p>
 </li>
 </ol>
+<p><img alt="alt text" src="../img/particions9.png" /></p>
 <h4 id="punts-de-restauracio">Punts de restauració</h4>
 <ol>
-<li><strong>Obrim l'eina de restauració:</strong> Prem les tecles <code>Win + S</code>, escriu "Crear un punt de restauració" i obre l'aplicació del panell de control.</li>
+<li><strong>Obrim l'eina de restauració:</strong> Prem les tecles <code>Win + S</code>, escriu "<strong>Crear un punt de restauració</strong>" i obre l'aplicació del panell de control.</li>
 </ol>
 <p><img alt="alt text" src="../img/puntrestauracio1.png" /></p>
 <ol>
@@ -1363,7 +1387,7 @@ assign letter=Z
 </ul>
 </li>
 </ul>
-<p><strong>Comandese equivalents</strong></p>
+<p><strong>Comandes equivalents</strong></p>
 <div class="language-text highlight"><pre><span></span><code># Copiar
 robocopy C:\Origen C:\Destinacio /MIR
 
@@ -1373,6 +1397,7 @@ robocopy C:\Origen C:\Destinacio /MIR
 # Clonació dd equivalent:
 Use Macrium Reflect o Clonezilla
 </code></pre></div>
+<p><img alt="alt text" src="../img/particions10.png" /></p>
 <h2 id="46-automatitzacio">4.6 Automatització</h2>
 <h3 id="461-teoria">4.6.1 Teoría</h3>
 <p>L’automatització a Windows consisteix en programar tasques perquè s’executin de manera automàtica, sense intervenció manual. S’utilitza per fer <strong>còpies de seguretat, manteniment, informes, neteja de fitxers temporals</strong>, etc.</p>
@@ -1412,7 +1437,7 @@ Eina gràfica per programar scripts o programes.</p>
 <h3 id="462-practica">4.6.2 Pràctica</h3>
 <ol>
 <li>
-<p>Obre Task Scheduler (taskschd.msc)</p>
+<p>Obre Task Scheduler (<code>taskschd.msc</code>)</p>
 </li>
 <li>
 <p>Afegeix una nova tasca:</p>
@@ -1437,6 +1462,10 @@ Eina gràfica per programar scripts o programes.</p>
 </ul>
 </li>
 </ol>
+<p><img alt="alt text" src="../img/particions11.png" /></p>
+<p><img alt="alt text" src="../img/particions12.png" /></p>
+<p><img alt="alt text" src="../img/particions13.png" /></p>
+<p><img alt="alt text" src="../img/particions14.png" /></p>
 <h4 id="comandes">Comandes</h4>
 <p>Creem el script <code>.ps1</code>:</p>
 <div class="language-text highlight"><pre><span></span><code>$timestamp = Get-Date -Format &quot;yyyyMMdd_HHmmss&quot;
