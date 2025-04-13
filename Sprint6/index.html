@@ -548,15 +548,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#112-interficie-grafica" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1.2 Interfície gràfica
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -983,19 +974,6 @@
 
 <h2 id="sprint-6-projecte-2-sprint2">Sprint 6 (Projecte 2 Sprint2)</h2>
 <h1 id="1-gestio-de-processos">1. Gestió de processos</h1>
-<h2 id="111-comandes">1.1.1 Comandes</h2>
-<p>Obre el Gestor de tasques (Task Manager) Ctrl + Shift + Esc</p>
-<p>O a través de PowerShell:</p>
-<div class="language-text highlight"><pre><span></span><code>Get-Process
-</code></pre></div>
-<p><strong>Visualització jeràrquica com</strong> <code>pstree</code>:
-No hi ha comanda directa, però pots veure pares/fills així:</p>
-<div class="language-text highlight"><pre><span></span><code>Get-Process | Sort-Object -Property Id | Format-Table -Property Id, Parent, ProcessName
-</code></pre></div>
-<p>Per matar els processos utilitzem la comanda:</p>
-<div class="language-text highlight"><pre><span></span><code>Stop-Process -Id &lt;PID&gt; -Force
-</code></pre></div>
-<h2 id="112-interficie-grafica">1.1.2 Interfície gràfica</h2>
 <ol>
 <li>
 <p>Obre el Gestor del servidor.</p>
@@ -1003,6 +981,9 @@ No hi ha comanda directa, però pots veure pares/fills així:</p>
 <li>
 <p>Ves a Tools &gt; Task Manager.</p>
 </li>
+</ol>
+<p><img alt="alt text" src="../img/gestioprocessos1.png" /></p>
+<ol>
 <li>
 <p>A la pestanya Details:</p>
 <ul>
@@ -1018,36 +999,47 @@ No hi ha comanda directa, però pots veure pares/fills així:</p>
 </ul>
 </li>
 </ol>
+<p><img alt="alt text" src="../img/gestioprocessos2.png" /></p>
+<p><img alt="alt text" src="../img/gestioprocessos3.png" /></p>
+<h2 id="111-comandes">1.1.1 Comandes</h2>
+<p>Obre el Gestor de tasques (Task Manager) <code>Ctrl + Shift + Esc</code></p>
+<p>O a través de PowerShell:</p>
+<div class="language-text highlight"><pre><span></span><code>Get-Process
+</code></pre></div>
+<p><img alt="alt text" src="../img/gestioprocessos4.png" /></p>
+<p><strong>Visualització jeràrquica com</strong> <code>pstree</code>:
+No hi ha comanda directa, però pots veure pares/fills així:</p>
+<div class="language-text highlight"><pre><span></span><code>Get-Process | Sort-Object -Property Id | Format-Table -Property Id, Parent, ProcessName
+</code></pre></div>
+<p><img alt="alt text" src="../img/gestioprocessos5.png" /></p>
+<p>Per matar els processos utilitzem la comanda:</p>
+<div class="language-text highlight"><pre><span></span><code>Stop-Process -Id &lt;PID&gt; -Force
+</code></pre></div>
+<p><img alt="alt text" src="../img/gestioprocessos6.png" /></p>
+<p><img alt="alt text" src="../img/gestioprocessos7.png" /></p>
 <hr />
 <h1 id="2-gestio-dusuaris-i-grups-i-permisos">2. Gestió d'usuaris i grups i permisos</h1>
 <h2 id="21-crear-nous-usuaris">2.1 Crear nous usuaris</h2>
 <p>En client local:</p>
-<div class="language-text highlight"><pre><span></span><code>net user alumne1 P@ssword1 /add
-net user alumne2 P@ssword2 /add
+<div class="language-text highlight"><pre><span></span><code>net user alumne1 ablso330 /add
+net user alumne2 ablso330 /add
 </code></pre></div>
-<p>En servidor AD:
-Obre <strong>Active Directory</strong> Users and Computers:</p>
-<ul>
-<li>
-<p>Crea usuaris dins d'una OU</p>
-</li>
-<li>
-<p>Ex: clic dret → New &gt; User</p>
-</li>
-</ul>
+<p><img alt="alt text" src="../img/usuaris1.png" /></p>
 <h2 id="212-versio-grafica">2.1.2 Versió gràfica</h2>
 <ol>
-<li>
-<p>Obre <code>lusrmgr.msc</code></p>
-</li>
+<li>Obre <code>Usuarios y equipos de Active Directory</code></li>
+</ol>
+<p><img alt="alt text" src="../img/usuaris2.png" /></p>
+<p><img alt="alt text" src="../img/usuaris3.png" /></p>
+<ol>
 <li>
 <p>A l’arbre de l'esquerra selecciona Users</p>
 </li>
 <li>
-<p>Clic dret → <strong>New User...</strong></p>
+<p>Clic dret → <strong>Nuevo usuario</strong></p>
 <ul>
 <li>
-<p>Escriu el nom (<code>alumne1</code>), contrasenya, i marca o desmarca "User must change password at next logon"</p>
+<p>Escriu el nom (<code>alumne1</code>), contrasenya, i marca o desmarca <em>"El usuario debe cambiar la constraseña en el siguiente inicio de sessión"</em></p>
 </li>
 <li>
 <p>Clica OK.</p>
@@ -1055,60 +1047,84 @@ Obre <strong>Active Directory</strong> Users and Computers:</p>
 </ul>
 </li>
 </ol>
+<p><img alt="alt text" src="../img/usuaris4.png" /></p>
+<p><img alt="alt text" src="../img/usuaris5.png" /></p>
+<p><img alt="alt text" src="../img/usuaris6.png" /></p>
+<p><img alt="alt text" src="../img/usuaris7.png" /></p>
 <h3 id="213-borrar-usuaris">2.1.3 Borrar usuaris</h3>
-<p>A <code>lusrmgr.msc</code>, selecciona Users o Groups</p>
-<p>Clic dret sobre l’objecte → Delete</p>
+<p>A <code>Usuarios y equipos de Active Directory</code>, selecciona Users o Groups</p>
+<p>Clic dret sobre l’objecte → Eliminar</p>
+<p><img alt="alt text" src="../img/usuaris8.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Amb la comanda <code>net user provaborrar /delete</code> també podem esborrar un usuari en específic.</p>
 </div>
+<p><img alt="alt text" src="../img/usuaris9.png" /></p>
 <hr />
 <h2 id="23-crear-grups">2.3 Crear grups</h2>
 <h3 id="231-interficie-grafica">2.3.1 Interfície gràfica</h3>
-<p>A <code>lusrmgr.msc</code>, selecciona <strong>Groups</strong></p>
-<p>Clic dret → New Group...</p>
+<p>A <code>Usuarios y equipos de Active Directory</code>, selecciona <strong>Groups</strong></p>
+<p>Clic dret → Nuevo Grupo </p>
+<p><img alt="alt text" src="../img/grups1.png" /></p>
 <p>Escriu el nom (ex: <code>alumnesASIX</code>)</p>
-<p>Clica <strong>Add...</strong> → escriu el nom de l’usuari → OK</p>
+<p>Clica <strong>Add</strong> → escriu el nom de l’usuari → OK</p>
+<p><img alt="alt text" src="../img/grups2.png" /></p>
 <h3 id="232-comandes">2.3.2 Comandes</h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>net localgroup alumnes /add
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>net localgroup profes /add
 </span></code></pre></div>
+<p><img alt="alt text" src="../img/grups3.png" /></p>
 <p>Afegir usuaris al grup:</p>
 <div class="language-text highlight"><pre><span></span><code>net localgroup alumnes alumne1 /add
 </code></pre></div>
+<p><img alt="alt text" src="../img/grups4.png" /></p>
 <p>Esborrar grup:</p>
 <div class="language-text highlight"><pre><span></span><code>net localgroup profes /delete
 </code></pre></div>
+<p><img alt="alt text" src="../img/grups5.png" /></p>
 <h3 id="24-modificacio-grups-o-usuaris">2.4 Modificació grups o usuaris</h3>
 <ul>
-<li>
-<p>Renombrar: clic dret sobre l’usuari → Rename</p>
-</li>
-<li>
-<p>Canviar contrasenya: clic dret → Set Password</p>
-<p>Afegir a grups:</p>
+<li>Renombrar: clic dret sobre l’usuari → Cambiar nombre</li>
+</ul>
+<p><img alt="alt text" src="../img/grups6.png" /></p>
 <ul>
-<li>Doble clic → Member Of → Add..</li>
+<li>Canviar contrasenya: clic dret → Restablecer constraseña</li>
 </ul>
-</li>
+<p><img alt="alt text" src="../img/grups7.png" /></p>
+<ul>
+<li>Afegir a grups: Doble clic → Miembro de → Añadir</li>
 </ul>
+<p><img alt="alt text" src="../img/grups8.png" /></p>
 <h3 id="241-comandes">2.4.1 Comandes</h3>
 <p>Canviar nom d'usuari:</p>
-<div class="language-text highlight"><pre><span></span><code>Rename-LocalUser -Name &quot;alumne4&quot; -NewName &quot;alumne2&quot;
+<div class="language-text highlight"><pre><span></span><code>Rename-LocalUser -Name &quot;alumne2&quot; -NewName &quot;alumne4&quot;
 </code></pre></div>
+<p><img alt="alt text" src="../img/grups9.png" /></p>
 <p>Canviar contrasenya:</p>
 <div class="language-text highlight"><pre><span></span><code>net user alumne1 NovaPass123
 </code></pre></div>
+<p><img alt="alt text" src="../img/grups10.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Assignar grup principal: no aplica com a Linux, però pots fer-ho amb permisos ACL.</p>
 </div>
 <hr />
 <h2 id="25-bloqueig">2.5 Bloqueig</h2>
+<ol>
+<li>
 <p>Torna a Users</p>
+</li>
+<li>
 <p>Doble clic a l’usuari → desmarca o marca "Account is disabled"</p>
+</li>
+<li>
 <p>Marca per bloquejar</p>
+</li>
+<li>
 <p>Desmarca per desbloquejar</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../img/grups11.png" /></p>
 <h3 id="251-comandes">2.5.1 Comandes</h3>
 <p>Per bloquejar utilitzem la comanda: </p>
 <div class="language-text highlight"><pre><span></span><code>net user alumne3 /active:no
@@ -1116,6 +1132,7 @@ Obre <strong>Active Directory</strong> Users and Computers:</p>
 <p>Al contrari, per desbloquejar fem la comanda:</p>
 <div class="language-text highlight"><pre><span></span><code>net user alumne3 /active:yes
 </code></pre></div>
+<p><img alt="alt text" src="../img/grups12.png" /></p>
 <hr />
 <h2 id="26-editar-valors-de-nous-usuaris">2.6 Editar valors de nous usuaris</h2>
 <h3 id="261-editar-ruta-per-defecte-de-terminal">2.6.1 Editar ruta per defecte de terminal</h3>
@@ -1131,23 +1148,28 @@ Obre <strong>Active Directory</strong> Users and Computers:</p>
 <h3 id="262-afegir-usuaris-al-grup-dadministradors-sudoers">2.6.2 Afegir usuaris al grup d'administradors (sudoers)</h3>
 <ul>
 <li>
-<p>Obre <code>lusrmgr.msc</code></p>
+<p>Obre <code>Usuarios y equipos de Active Directory</code></p>
 </li>
 <li>
-<p>A <code>Groups</code> → doble clic a Administrators</p>
+<p>A <code>Groups</code> → doble clic a Admins. del dominio</p>
 </li>
 <li>
-<p>Clica <code>Add</code> → afegeix usuari (ex: alumne1)</p>
+<p>Clica <code>Añadir</code> → afegeix usuari (ex: alumne1)</p>
 </li>
 </ul>
+<p><img alt="alt text" src="../image.png" /></p>
+<p><img alt="alt text" src="../image-4.png" /></p>
 <h3 id="263-comandes">2.6.3 Comandes</h3>
 <div class="language-text highlight"><pre><span></span><code>net localgroup Administrators alumne1 /add
 </code></pre></div>
+<p><img alt="alt text" src="../image-5.png" /></p>
 <hr />
 <h3 id="enllacar">Enllaçar</h3>
 <p>Windows utilitza enllaços simbòlics:</p>
 <div class="language-text highlight"><pre><span></span><code>New-Item -ItemType SymbolicLink -Path &quot;C:\Users\Default\temporalcd&quot; -Target &quot;C:\Temp&quot;
 </code></pre></div>
+<p><img alt="alt text" src="../image-6.png" />
+<img alt="alt text" src="../image-7.png" /></p>
 <hr />
 <h2 id="27-permisos-normals-uog">2.7 Permisos "normals" UOG</h2>
 <p>Llenguatge octal per calcular permissos</p>
@@ -1159,15 +1181,27 @@ Obre <strong>Active Directory</strong> Users and Computers:</p>
 <p>Llistar permisos:</p>
 <div class="language-text highlight"><pre><span></span><code>icacls C:\Users\alumne1
 </code></pre></div>
+<p><img alt="alt text" src="../image-8.png" /></p>
 <p>Canviar propietari:</p>
 <div class="language-text highlight"><pre><span></span><code>takeown /F &quot;C:\Ruta\Fitxer&quot;
 </code></pre></div>
+<p><img alt="alt text" src="../image-9.png" /></p>
 <p>Assignar permisos:</p>
 <div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\Ruta&quot; /grant alumne1:(R,W)
 </code></pre></div>
+<p><img alt="alt text" src="../image-10.png" /></p>
 <hr />
 <h2 id="28-umask">2.8 UMASK</h2>
-<p>No existeix literalment, però pots aplicar permisos per defecte a carpetes base amb <code>icacls</code> i perfils d’usuari predeterminats (<code>C:\Users\Default</code>).</p>
+<p>No existeix literalment, però pots aplicar permisos per defecte a carpetes base amb <code>icacls</code> i perfils d’usuari predeterminats (<code>C:\Users\Default</code>) amb la comanda següent.</p>
+<div class="language-text highlight"><pre><span></span><code>icacls &quot;C:\Users\Default&quot; /grant &quot;Users:(OI)(CI)(RX)&quot; /T
+</code></pre></div>
+<p><code>C:\Users\Default</code>: carpeta base de nous perfils d’usuari.</p>
+<p><code>/grant</code>: afegeix permisos a un usuari o grup.</p>
+<p><code>"Users:(OI)(CI)(RX)"</code>: dona permisos de Lectura i Execució recursivament:</p>
+<p><code>OI</code> = Object Inherit (fitxers dins)</p>
+<p><code>CI</code> = Container Inherit (carpetes dins)</p>
+<p><code>RX</code> = Read &amp; Execute</p>
+<p><code>/T</code>: aplica els canvis recursivament a totes les subcarpetes i fitxers.</p>
 <hr />
 <h2 id="29-permisos-especials">2.9 Permisos especials</h2>
 <ul>
