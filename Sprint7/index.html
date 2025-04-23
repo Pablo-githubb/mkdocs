@@ -677,7 +677,7 @@
 <p><img alt="alt text" src="../img/domini3.png" /></p>
 <p>Per últim, ignorem les advertencies que ens mostre l'instal·lador i fem clic al botó d'instal·lar (també podem ficar que es reinicie la màquina <strong>opcionalment</strong>).</p>
 <p><img alt="alt text" src="../img/domini4.png" /></p>
-<p>Al reiniciar la màquina, haurèm de configurar l'Active Directory desde 0.</p>
+<p>Al reiniciar la màquina, haurèm de configurar el domini de l'Active Directory desde 0.</p>
 <p><img alt="alt text" src="../img/domini5.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -688,14 +688,27 @@
 <p><img alt="alt text" src="../img/domini7.png" /></p>
 <p>Podem canviar el nom que es mostrarà del nostre domini publicament per un altre si volem.</p>
 <p><img alt="alt text" src="../img/domini8.png" /></p>
-<p>Per acabar, cal reinicar la màquina.</p>
+<p>Per acabar, cal reinicar la màquina per aplicar tots els canvis.</p>
 <p><img alt="alt text" src="../img/domini9.png" /></p>
-<p>Finalment, al reinicar la màquina haurèm de canviar la IP del nostre DNS de <code>127.0.0.1</code> a la IP estàtica de la màquina: <code>10.0.2.15</code>.</p>
+<p>Finalment, al reinicar la màquina haurèm de canviar la IP DNS de la nostra configuració de xarxa <code>127.0.0.1</code> a la IP estàtica de la màquina: <code>10.0.2.15</code>.</p>
 <p><img alt="alt text" src="../img/domini10.png" /></p>
 <h1 id="2-unir-equips-al-domini">2. Unir equips al domini</h1>
 <h2 id="21-configurar-usuari-per-vincular">2.1 Configurar usuari per vincular</h2>
-<p>Crearem un usuari de prova per entrar dintre del domini.</p>
+<p>Crearem un usuari de prova dintre del servidor per poder unir el client amb el domini.</p>
+<p><img alt="alt text" src="../img/domini13.png" /></p>
+<p>Anomenarem l'usuari amb un nom fàcil i una contrasenya fàcil de ficar.</p>
+<p><img alt="alt text" src="../img/domini14.png" /></p>
+<p><img alt="alt text" src="../img/domini15.png" /></p>
+<p>Per últim pas, configurarem el DNS amb la IP del nostre servidor: <code>10.0.2.15</code>.</p>
+<p><img alt="alt text" src="../img/domini16.png" /></p>
 <h2 id="22-vincular-al-domini">2.2 Vincular al domini</h2>
+<p>Per vincular el windows client al domini ens hem de dirigir a la configuració avançada del sistema i fer clic al botó de configuració del sistema.</p>
+<p><img alt="alt text" src="../img/domini17.png" /></p>
+<p>Dintre de d'aquesta pestanya <code>Nombre de equipo</code> fem clic al botó de <code>Cambiar</code>.</p>
+<p><img alt="alt text" src="../img/domini18.png" /></p>
+<p>Pasare'm de l'opció de <code>Grupo de trabajo</code> a <code>Dominio</code>. Al moment de ficar el nostre domini (<strong>en el meu cas <code>pmasoc</code></strong>), s'ens obrirà una finestra on ficarem un usuari que estigui dintre del domini. Aqui dintre ficarèm l'usuari de prova amb la seva contrasenya.</p>
+<p><img alt="alt text" src="../img/domini20.png" /></p>
+<p><img alt="alt text" src="../img/domini21.png" /></p>
 <h1 id="3-gestio-del-domini-ad">3. Gestió del Domini AD.</h1>
 
 
