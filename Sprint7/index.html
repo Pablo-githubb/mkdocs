@@ -709,7 +709,49 @@
 <p>Pasare'm de l'opció de <code>Grupo de trabajo</code> a <code>Dominio</code>. Al moment de ficar el nostre domini (<strong>en el meu cas <code>pmasoc</code></strong>), s'ens obrirà una finestra on ficarem un usuari que estigui dintre del domini. Aqui dintre ficarèm l'usuari de prova amb la seva contrasenya.</p>
 <p><img alt="alt text" src="../img/domini20.png" /></p>
 <p><img alt="alt text" src="../img/domini21.png" /></p>
+<p>Finalments, s'ens mostrará el missatge sobre que la nostra màquina ha accedit correctament al domini.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>He intentat unirme al domini Mireia pero no em deixa encara que les dues màquines virtuals es veuen i estàn en la mateixa xarxa NAT.
+<img alt="alt text" src="../img/domini22.png" /></p>
+<p><img alt="alt text" src="../img/domini23.png" /></p>
+</div>
+<p><img alt="alt text" src="../img/domini24.png" /></p>
 <h1 id="3-gestio-del-domini-ad">3. Gestió del Domini AD.</h1>
+<ol>
+<li>Crea un nou bosc amb un nou domini. El domini s'ha de dir elteunom.cat, elteunom.com...</li>
+</ol>
+<p>Utilitzem els mateixos pasos que amb els controlador de domini de <code>pmasoc</code>.</p>
+<p><img alt="alt text" src="../img/gestiodomini1.png" /></p>
+<p><img alt="alt text" src="../img/gestiodomini2.png" /></p>
+<p><img alt="alt text" src="img/gestiodomini3.png" /></p>
+<p><img alt="alt text" src="../img/gestiodomini4.png" /></p>
+<ol>
+<li>Crea una UO anomenada recursos_humans i dintre dos grups anomenats alumnes i professors</li>
+<li>Modifica les directives que fan referència a la política de paraules de pas</li>
+<li>Crea dos usuaris dintre de cada grup, prova la política de paraules de pas establerta en el pas anterior i decideix quin poden modificar la paraula de pas, si aquesta caduca...</li>
+<li>Valida un equip client al domini</li>
+<li>Fes que un usuari només es pugui connectar uns dies determinats. Què passa si l’usuari està connectat i finalitza el seu temps de connexió? </li>
+<li>Fes que un usuari normal del domini pugui ser administrador d’un equip local. Hi ha diverses formes de fer-ho. Bàsicament és fer el mateix, però des de l’equip local o des del servidor. La diferència seria si ho ha de fer l’administrador del servidor o un usuari operador. Entre elles:
+       ◦ Cal entrar a l’equip localment, amb un usuari que tingui permisos i dir-li que l’usuari X que pertany al domini formi part del grup d’administradors locals de l’equip. 
+       ◦ Des del Windows Server, clic dret a sobre l’equip i Administrar.</li>
+<li>Carpetes dels usuaris que es connecten al domini. Quan un usuari es connecta al domini ha de tenir la seva carpeta amb els seus arxius (tot emmagatzemat al servidor, no localment) disponible d’una forma fàcil o inclús transparent per a ell. Hi ha diverses formes de fer-ho, cadascuna amb les seves avantatges i inconvenients, tres formes podrien ser: 
+na primera manera de fer-ho seria:
+        ◦ Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents.
+            i. A l’ordinador (amb un usuari administrador) modifiquem la ruta de Documentos 
+            ii. Deixem Documentos igual i cerquem la carpeta per la xarxa i la connectem com a unitat de xarxa</li>
+</ol>
+<p>Quin gran inconvenient veus en aquesta forma de fer-ho?
+Una segona manera podria ser:
+        ◦ Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents i a la fitxa de l’usuari, omplim el camp connectar de la seva carpeta, assignem una lletra i la ruta del recurs compartit. Per exemple: “R: \WIN2012\personals\%username%”
+Una tercera manera podria ser mitjançan un script d'inici de sessió:
+        ◦ L'script cal que s'anomeni logon.bat
+        ◦ Cal que estigui a una carpeta determinada
+        ◦ Cal que indiques simplement el nom de l'script a la fitxa de perfil de l'usuari, a l'apartat Script de inicio de sesión
+        ◦ I dintre de l'script només has de posar una línia que munta la unitat de xarxa del tipus net use Z: \WIN2012\personals\%username%</p>
+<ol>
+<li>Delega una uo a un usuari administrador i fer les comprovacions necessaries</li>
+</ol>
 
 
 
