@@ -630,6 +630,108 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Gestió del Domini AD.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-crearconfigurar-nou-bosc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Crear/configurar nou bosc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-crear-uo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Crear UO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-modificar-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Modificar directives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-configurar-gpo-per-uo-del-domini" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Configurar GPO per UO del domini
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Configurar GPO per UO del domini">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-proves-gpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1 Proves GPO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-validar-equip-client-al-domini" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Validar equip client al domini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-hores-especifiques-per-usuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Hores específiques per usuaris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-pasar-usuari-a-administrador-en-equip-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Pasar usuari a administrador en equip local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-carpetes-compartides-del-domini" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8 Carpetes compartides del domini
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-delegar-uo-a-adminitrador-proves" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.9 Delegar UO a adminitrador + Proves
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -718,40 +820,109 @@
 </div>
 <p><img alt="alt text" src="../img/domini24.png" /></p>
 <h1 id="3-gestio-del-domini-ad">3. Gestió del Domini AD.</h1>
-<ol>
-<li>Crea un nou bosc amb un nou domini. El domini s'ha de dir elteunom.cat, elteunom.com...</li>
-</ol>
+<h2 id="31-crearconfigurar-nou-bosc">3.1 Crear/configurar nou bosc</h2>
 <p>Utilitzem els mateixos pasos que amb els controlador de domini de <code>pmasoc</code>.</p>
 <p><img alt="alt text" src="../img/gestiodomini1.png" /></p>
 <p><img alt="alt text" src="../img/gestiodomini2.png" /></p>
-<p><img alt="alt text" src="img/gestiodomini3.png" /></p>
 <p><img alt="alt text" src="../img/gestiodomini4.png" /></p>
-<ol>
-<li>Crea una UO anomenada recursos_humans i dintre dos grups anomenats alumnes i professors</li>
-<li>Modifica les directives que fan referència a la política de paraules de pas</li>
-<li>Crea dos usuaris dintre de cada grup, prova la política de paraules de pas establerta en el pas anterior i decideix quin poden modificar la paraula de pas, si aquesta caduca...</li>
-<li>Valida un equip client al domini</li>
-<li>Fes que un usuari només es pugui connectar uns dies determinats. Què passa si l’usuari està connectat i finalitza el seu temps de connexió? </li>
-<li>Fes que un usuari normal del domini pugui ser administrador d’un equip local. Hi ha diverses formes de fer-ho. Bàsicament és fer el mateix, però des de l’equip local o des del servidor. La diferència seria si ho ha de fer l’administrador del servidor o un usuari operador. Entre elles:
-       ◦ Cal entrar a l’equip localment, amb un usuari que tingui permisos i dir-li que l’usuari X que pertany al domini formi part del grup d’administradors locals de l’equip. 
-       ◦ Des del Windows Server, clic dret a sobre l’equip i Administrar.</li>
-<li>Carpetes dels usuaris que es connecten al domini. Quan un usuari es connecta al domini ha de tenir la seva carpeta amb els seus arxius (tot emmagatzemat al servidor, no localment) disponible d’una forma fàcil o inclús transparent per a ell. Hi ha diverses formes de fer-ho, cadascuna amb les seves avantatges i inconvenients, tres formes podrien ser: 
-na primera manera de fer-ho seria:
-        ◦ Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents.
-            i. A l’ordinador (amb un usuari administrador) modifiquem la ruta de Documentos 
-            ii. Deixem Documentos igual i cerquem la carpeta per la xarxa i la connectem com a unitat de xarxa</li>
-</ol>
+<p><img alt="alt text" src="../img/domini9.png" /></p>
+<h2 id="32-crear-uo">3.2 Crear UO</h2>
+<p>Ens dirigim a la ferramenta <code>Usuaris y equipos de Active Directory</code>. D'aquesta manera, dintre del nostre domini creem una nova unitat organitzativa <strong>recursos_humans</strong>.</p>
+<p><img alt="alt text" src="../img/uoo1.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>No sel·leccionar l'opció: <strong>Proteger contenedor contra eliminación accidental</strong> ja que no podrás esborrar-la per si t'has equivocat en la configuració.</p>
+</div>
+<p><img alt="alt text" src="../img/uoo2.png" /></p>
+<p>Finalment, dintre d'aquesta UO creem dos grups anomentas: <code>alumnes</code> i <code>professors</code>.</p>
+<p><img alt="alt text" src="../img/uoo3.png" /></p>
+<p><img alt="alt text" src="../img/uoo4.png" /></p>
+<h2 id="33-modificar-directives">3.3 Modificar directives</h2>
+<p>Per poder modificar les directives de les paraules de pas, s'han de seguir els següents pasos:</p>
+<ul>
+<li>
+<p>Amb la combinació de tecles <code>Win + R</code>, escrivim <code>gpmc.msc</code> i Enter.</p>
+</li>
+<li>
+<p>S'ens obrirá una finestra <code>Administració de directives de grup</code>.</p>
+</li>
+<li>
+<p>Dintre de la nostra UO de <strong>recursos_humans</strong>, fem clic dret i <code>Crear una GPO en este dominio y vincularlo aquí</code>.</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../img/gpo15.png" /></p>
+<p>L'hi fiquem el nom que vulguem a la nostra GPO.</p>
+<p><img alt="alt text" src="../img/gpo2.png" /></p>
+<p>La editem.</p>
+<p><img alt="alt text" src="../img/gpo3.png" /></p>
+<h2 id="34-configurar-gpo-per-uo-del-domini">3.4 Configurar GPO per UO del domini</h2>
+<p>En dirigim a la ruta: <code>Configuración de equipo &gt; Directivas &gt; Configuracón de Windows &gt; Configuración de seguridad &gt; Directivas de cuenta &gt; Directiva de constraseña</code>.</p>
+<p><img alt="alt text" src="../img/gpo4.png" /></p>
+<p><img alt="alt text" src="../img/gpo5.png" /></p>
+<p><img alt="alt text" src="../img/gpo6.png" /></p>
+<p><img alt="alt text" src="../img/gpo7.png" /></p>
+<p><img alt="alt text" src="../img/gpo8.png" /></p>
+<p><img alt="alt text" src="../img/gpo9.png" /></p>
+<p><img alt="alt text" src="../img/gpo10.png" /></p>
+<p>Ara, ja dintre de les directives de paraula de pas, podem configurar qualsevol paràmetre d'aquests que surten per pantalla.</p>
+<p><img alt="alt text" src="../img/gpo14.png" /></p>
+<p>Finalment, per aplicar les noves directives, tanquem l'editor i executem en el servidor:</p>
+<div class="language-text highlight"><pre><span></span><code>gpupdate /force
+</code></pre></div>
+<h3 id="341-proves-gpo">3.4.1 Proves GPO</h3>
+<p><img alt="alt text" src="../img/gpo12.png" /></p>
+<p>Al intentar crear l'usuari amb una contranya amb menys de 2 caràcters (<strong>com hem configurat a la nostra diretiva</strong>) ens mostra un error sobre no complir els requisits de la directiva en l'active directory.</p>
+<p><img alt="alt text" src="../img/gpo16.png" /></p>
+<p>Si escrivim una contrasenya amb les caràcters necessaris, ja podem crear els dos usuaris perfectement.</p>
+<p><img alt="alt text" src="../img/gpo17.png" /></p>
+<h2 id="35-validar-equip-client-al-domini">3.5 Validar equip client al domini</h2>
+<p>Per poder vincular l'equip al domini solament hem d'utilitzar un usuari que estigui dintre del domini (<strong>en aquesta cas, pablo</strong>).</p>
+<p>D'aquesta manera, ens sortirà el missatge confirmant que estem dintre del domini.</p>
+<p><img alt="alt text" src="../img/vinculardomini1.png" /></p>
+<p><img alt="alt text" src="../img/vinculardomini2.png" /></p>
+<h2 id="36-hores-especifiques-per-usuaris">3.6 Hores específiques per usuaris</h2>
+<p>A la finestra de propietats, ves a la pestanya Compte.</p>
+<p>Fes clic al botó "Hores d'inici de sessió..." (Login Hours).</p>
+<p>Apareixerà una graella amb els dies de la setmana i les hores.</p>
+<p><img alt="alt text" src="../img/directives1.png" /></p>
+<p>Selecciona amb el ratolí els blocs de temps que vols permetre (per exemple, de dilluns a divendres de 08:00 a 18:00).</p>
+<p>Fes clic a Permetre.</p>
+<p>Tot el que no estigui marcat com a permès quedarà com a restringit (l’usuari no podrà iniciar sessió fora d’aquest horari).</p>
+<p><img alt="alt text" src="../img/directives2.png" /></p>
+<p>D'aquesta manera, avui com es dimecres no podrém iniciar sessió amb l'usuari <code>walid</code>.</p>
+<p><img alt="alt text" src="../img/directives3.png" /></p>
+<p>Què passa si l’usuari està connectat i finalitza el seu temps de connexió? <strong>Si l'usuari ja està connectat i finalitza el seu horari permès de connexió, no se li tanca automàticament la sessió.</strong></p>
+<h2 id="37-pasar-usuari-a-administrador-en-equip-local">3.7 Pasar usuari a administrador en equip local</h2>
+<p>Per afegir a una usuar local a tindre el rol d'Adminstrador, ens dirigim a les propietats del respectiu usuari.</p>
+<p><img alt="alt text" src="../img/directives4.png" /></p>
+<p>Ens dirigim a l'apartat <code>Miembro de</code> i al botó <code>Agregar</code></p>
+<p><img alt="alt text" src="../img/directives5.png" /></p>
+<p>Ja en aquest busquem els grups <code>Administradores</code> i <code>Admins. de dominio</code> perquè l'usuari tingui tots els privilegis que tenen tots els Administradors del sistema (<strong>els Administradors del sistema estàn dintre d'aquests grups, perquè ja tenen tots privilegis afegits</strong>).</p>
+<p><img alt="alt text" src="../img/directives6.png" /></p>
+<p><img alt="alt text" src="../img/directives7.png" /></p>
+<p><img alt="alt text" src="../img/directives8.png" /></p>
+<p>Al moment d'intentar configurar algun apartat del sistema ens mostra aquesta finestra per accedir amb les credencials d'un usuari Administrador</p>
+<p><img alt="alt text" src="../img/directives9.png" /></p>
+<p>Després de ficar les credencials del nostre nou Administrador, l'usuari <code>Pablo</code>. Ja tenim accès a l'apartat que estava restringit.</p>
+<p><img alt="alt text" src="../img/directives10.png" /></p>
+<h2 id="38-carpetes-compartides-del-domini">3.8 Carpetes compartides del domini</h2>
+<p>Carpetes dels usuaris que es connecten al domini. Quan un usuari es connecta al domini ha de tenir la seva carpeta amb els seus arxius (tot emmagatzemat al servidor, no localment) disponible d’una forma fàcil o inclús transparent per a ell. Hi ha diverses formes de fer-ho, cadascuna amb les seves avantatges i inconvenients, tres formes podrien ser: 
+na primera manera de fer-ho seria:</p>
+<ul>
+<li>Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents.</li>
+</ul>
+<p>i. A l’ordinador (amb un usuari administrador) modifiquem la ruta de Documentos </p>
+<p>ii. Deixem Documentos igual i cerquem la carpeta per la xarxa i la connectem com a unitat de xarxa</p>
 <p>Quin gran inconvenient veus en aquesta forma de fer-ho?
-Una segona manera podria ser:
-        ◦ Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents i a la fitxa de l’usuari, omplim el camp connectar de la seva carpeta, assignem una lletra i la ruta del recurs compartit. Per exemple: “R: \WIN2012\personals\%username%”
-Una tercera manera podria ser mitjançan un script d'inici de sessió:
-        ◦ L'script cal que s'anomeni logon.bat
-        ◦ Cal que estigui a una carpeta determinada
-        ◦ Cal que indiques simplement el nom de l'script a la fitxa de perfil de l'usuari, a l'apartat Script de inicio de sesión
-        ◦ I dintre de l'script només has de posar una línia que munta la unitat de xarxa del tipus net use Z: \WIN2012\personals\%username%</p>
-<ol>
-<li>Delega una uo a un usuari administrador i fer les comprovacions necessaries</li>
-</ol>
+Una segona manera podria ser:</p>
+<p>◦ Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents i a la fitxa de l’usuari, omplim el camp connectar de la seva carpeta, assignem una lletra i la ruta del recurs compartit. Per exemple: “R: \WIN2012\personals\%username%”</p>
+<p>Una tercera manera podria ser mitjançan un script d'inici de sessió:</p>
+<p>◦ L'script cal que s'anomeni logon.bat</p>
+<p>◦ Cal que estigui a una carpeta determinada</p>
+<p>◦ Cal que indiques simplement el nom de l'script a la fitxa de perfil de l'usuari, a l'apartat Script de inicio de sesión</p>
+<p>◦ I dintre de l'script només has de posar una línia que munta la unitat de xarxa del tipus net use Z: \WIN2012\personals\%username%</p>
+<h2 id="39-delegar-uo-a-adminitrador-proves">3.9 Delegar UO a adminitrador + Proves</h2>
+<p>Delega una uo a un usuari administrador i fer les comprovacions necessaries</p>
 
 
 
