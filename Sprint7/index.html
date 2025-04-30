@@ -771,7 +771,7 @@
 <img alt="alt text" src="../img/domini1.png" /></p>
 <p>Per defecte seguirem els pasos sense tocar ningun paràmetre, solament modificarem aquests ens els passos que surten a les captures de pantalla. Més endavant, trobarèm a quin servidor volem afegir el rol o característica (sel·leccionem l'únic que tenim).</p>
 <p><img alt="alt text" src="../img/domini2.png" /></p>
-<p>En aquest pas hem de sel·leccionar la casella de <strong>Servicios de Dominio Active Directory</strong></p>
+<p>En aquest pas, hem de sel·leccionar la casella de <strong>Servicios de Dominio Active Directory</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Per defecte si instal·lem el servei de domini d'Active Directory també s'instal·la el <strong>servei DNS</strong>, osigue que instal·lar-lo conjuntament com surt a la captura és <strong>opcional</strong>.</p>
@@ -794,6 +794,7 @@
 <p><img alt="alt text" src="../img/domini9.png" /></p>
 <p>Finalment, al reinicar la màquina haurèm de canviar la IP DNS de la nostra configuració de xarxa <code>127.0.0.1</code> a la IP estàtica de la màquina: <code>10.0.2.15</code>.</p>
 <p><img alt="alt text" src="../img/domini10.png" /></p>
+<hr />
 <h1 id="2-unir-equips-al-domini">2. Unir equips al domini</h1>
 <h2 id="21-configurar-usuari-per-vincular">2.1 Configurar usuari per vincular</h2>
 <p>Crearem un usuari de prova dintre del servidor per poder unir el client amb el domini.</p>
@@ -819,6 +820,7 @@
 <p><img alt="alt text" src="../img/domini23.png" /></p>
 </div>
 <p><img alt="alt text" src="../img/domini24.png" /></p>
+<hr />
 <h1 id="3-gestio-del-domini-ad">3. Gestió del Domini AD.</h1>
 <h2 id="31-crearconfigurar-nou-bosc">3.1 Crear/configurar nou bosc</h2>
 <p>Utilitzem els mateixos pasos que amb els controlador de domini de <code>pmasoc</code>.</p>
@@ -881,8 +883,8 @@
 <p><img alt="alt text" src="../img/vinculardomini1.png" /></p>
 <p><img alt="alt text" src="../img/vinculardomini2.png" /></p>
 <h2 id="36-hores-especifiques-per-usuaris">3.6 Hores específiques per usuaris</h2>
-<p>A la finestra de propietats, ves a la pestanya Compte.</p>
-<p>Fes clic al botó "Hores d'inici de sessió..." (Login Hours).</p>
+<p>A la finestra de <strong>propietats</strong>, ves a la pestanya <strong>Compte</strong>.</p>
+<p>Fes clic al botó <code>Horas de inicio de sesión</code> (Login Hours).</p>
 <p>Apareixerà una graella amb els dies de la setmana i les hores.</p>
 <p><img alt="alt text" src="../img/directives1.png" /></p>
 <p>Selecciona amb el ratolí els blocs de temps que vols permetre (per exemple, de dilluns a divendres de 08:00 a 18:00).</p>
@@ -891,11 +893,14 @@
 <p><img alt="alt text" src="../img/directives2.png" /></p>
 <p>D'aquesta manera, avui com es dimecres no podrém iniciar sessió amb l'usuari <code>walid</code>.</p>
 <p><img alt="alt text" src="../img/directives3.png" /></p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
 <p>Què passa si l’usuari està connectat i finalitza el seu temps de connexió? <strong>Si l'usuari ja està connectat i finalitza el seu horari permès de connexió, no se li tanca automàticament la sessió.</strong></p>
+</div>
 <h2 id="37-pasar-usuari-a-administrador-en-equip-local">3.7 Pasar usuari a administrador en equip local</h2>
 <p>Per afegir a una usuar local a tindre el rol d'Adminstrador, ens dirigim a les propietats del respectiu usuari.</p>
 <p><img alt="alt text" src="../img/directives4.png" /></p>
-<p>Ens dirigim a l'apartat <code>Miembro de</code> i al botó <code>Agregar</code></p>
+<p>Ens dirigim a l'apartat <code>Miembro de</code> i al botó <code>Agregar</code>.</p>
 <p><img alt="alt text" src="../img/directives5.png" /></p>
 <p>Ja en aquest busquem els grups <code>Administradores</code> i <code>Admins. de dominio</code> perquè l'usuari tingui tots els privilegis que tenen tots els Administradors del sistema (<strong>els Administradors del sistema estàn dintre d'aquests grups, perquè ja tenen tots privilegis afegits</strong>).</p>
 <p><img alt="alt text" src="../img/directives6.png" /></p>
@@ -906,23 +911,103 @@
 <p>Després de ficar les credencials del nostre nou Administrador, l'usuari <code>Pablo</code>. Ja tenim accès a l'apartat que estava restringit.</p>
 <p><img alt="alt text" src="../img/directives10.png" /></p>
 <h2 id="38-carpetes-compartides-del-domini">3.8 Carpetes compartides del domini</h2>
-<p>Carpetes dels usuaris que es connecten al domini. Quan un usuari es connecta al domini ha de tenir la seva carpeta amb els seus arxius (tot emmagatzemat al servidor, no localment) disponible d’una forma fàcil o inclús transparent per a ell. Hi ha diverses formes de fer-ho, cadascuna amb les seves avantatges i inconvenients, tres formes podrien ser: 
-na primera manera de fer-ho seria:</p>
+<p>Els pasos a seguir per crear carpetes compartids del domini són els següents:</p>
+<p>Accedeix al servidor.</p>
+<blockquote>
+<p>Crea una carpeta on vols compartir-la. Per exemple:</p>
+</blockquote>
+<div class="language-text highlight"><pre><span></span><code>C:\Compartit\DocumentsComuns
+</code></pre></div>
+<p><img alt="" src="../img/carpetesdomini1.png" /></p>
+<blockquote>
+<p>Configurar els permisos NTFS (nivell local del disc)</p>
+</blockquote>
+<p>Clic dret a la carpeta <code>Propietats &gt; Seguretat.</code></p>
+<p>Ja dintre d'aqui podem afegir quins usuaris o grups tinguin específics permissos a aquesta carpeta. En el meu cas, he ficat de prova el grup professors, amb el que porta incorporat un usuari anomenat <code>profe1</code>.</p>
+<p><img alt="alt text" src="../img/carpetesdomini2.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini3.png" /></p>
+<blockquote>
+<p>Compartir la carpeta a la xarxa</p>
+</blockquote>
+<p>A la mateixa finestra de propietats, ves a la pestanya Compartir.</p>
+<p>Fem clica a l'apartat <strong>Compartir</strong> i <code>Uso Compartido Avanzado</code>:</p>
+<p>Marca <strong>*Compartir esta carpeta</strong>.</p>
+<p>Dona-li un nom de compartició (per exemple: DocumentsComuns).</p>
+<p><img alt="alt text" src="../img/carpetesdomini4.png" /></p>
+<p>Clic a Permisos, on afegim els mateixos grups/usuaris que abans. Done'm tots els permissos de lectura i escriptura (<strong>control total</strong>).</p>
+<p><img alt="alt text" src="../img/carpetesdomini5.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini6.png" /></p>
+<p>Si ara iniciem sessió amb <code>profe1</code> i busquem la carpeta en la barra de tasques podem accedir perfectament a la carpeta compartida. A més a més, de que com tenim control total podem fer qualsevol cosa amb aquest usuari.</p>
+<p>Els usuaris poden accedir-hi així:</p>
 <ul>
-<li>Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents.</li>
+<li>Per nom del servidor:<div class="language-text highlight"><pre><span></span><code>\\nomServidor\DocumentsComuns
+</code></pre></div>
+</li>
 </ul>
-<p>i. A l’ordinador (amb un usuari administrador) modifiquem la ruta de Documentos </p>
-<p>ii. Deixem Documentos igual i cerquem la carpeta per la xarxa i la connectem com a unitat de xarxa</p>
-<p>Quin gran inconvenient veus en aquesta forma de fer-ho?
-Una segona manera podria ser:</p>
-<p>◦ Creem la carpeta de l’usuari al servidor i la compartim només per a l’usuari amb els permisos corresponents i a la fitxa de l’usuari, omplim el camp connectar de la seva carpeta, assignem una lletra i la ruta del recurs compartit. Per exemple: “R: \WIN2012\personals\%username%”</p>
-<p>Una tercera manera podria ser mitjançan un script d'inici de sessió:</p>
-<p>◦ L'script cal que s'anomeni logon.bat</p>
-<p>◦ Cal que estigui a una carpeta determinada</p>
-<p>◦ Cal que indiques simplement el nom de l'script a la fitxa de perfil de l'usuari, a l'apartat Script de inicio de sesión</p>
-<p>◦ I dintre de l'script només has de posar una línia que munta la unitat de xarxa del tipus net use Z: \WIN2012\personals\%username%</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>També pots crear un disc de xarxa (unitat Z:, per exemple) per facilitar-ne l'accés.</p>
+<p><img alt="alt text" src="../img/carpetesdomini12.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini13.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini14.png" /></p>
+</div>
+<p><img alt="alt text" src="../img/carpetesdomini7.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini8.png" /></p>
+<p>Podem crear/esborrar i modificar arxius dintre d'aquesta carpeta amb l'usuari <code>profe1</code>, que està dintre del grup <code>professors</code>.</p>
+<p><img alt="alt text" src="../img/carpetesdomini9.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini10.png" /></p>
+<p>D'altra banda, si intento accedir amb un altre usuari que no té permissos d'accès, em surt aquest missatge:</p>
+<p><img alt="alt text" src="../img/carpetesdomini11.png" /></p>
+<blockquote>
+<p>Afegir la carpeta a una GPO per mapar-la automàticament</p>
+</blockquote>
+<ol>
+<li>
+<p>Obre <code>gpmc.msc</code>.</p>
+</li>
+<li>
+<p>Crea o edita una GPO vinculada als usuaris o equips desitjats.</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../img/carpetesdomini15.png" /></p>
+<ol>
+<li>Navega a: <code>Configuración de usuario &gt; Preferencias &gt; Configuración de Windows &gt; Unidades de red</code></li>
+</ol>
+<p><img alt="alt text" src="../img/carpetesdomini16.png" /></p>
+<p><img alt="alt text" src="../img/carpetesdomini17.png" /></p>
+<p>Crea una nova entrada per mapar:</p>
+<p><img alt="alt text" src="../img/carpetesdomini18.png" /></p>
+<ol>
+<li>Ruta: \nomServidor\DocumentsComuns</li>
+</ol>
+<p>Unitat: Z: (o la que vulguis)</p>
+<p><img alt="alt text" src="../img/carpetesdomini19.png" /></p>
 <h2 id="39-delegar-uo-a-adminitrador-proves">3.9 Delegar UO a adminitrador + Proves</h2>
-<p>Delega una uo a un usuari administrador i fer les comprovacions necessaries</p>
+<p>Obrirm una altra vegada, <code>Usuarios i equipos de Active Directory</code></p>
+<p>Localitzem quina UO volem delegar a l'arbre AD. Desprès, a l’arbre de l’AD, selecciona la unitat organitzativa que volem delegar.</p>
+<p>El següent pas és fer <strong>clic dret sobre la OU &gt; Delegar control</strong></p>
+<p><img alt="alt text" src="../img/delegacio1.png" /></p>
+<ol>
+<li>Afegir l’usuari o grup
+Clica a Afegir (Add) &gt; escriu el nom de l’usuari o grup &gt; Comprovar noms &gt; D’acord.</li>
+</ol>
+<p><img alt="alt text" src="../img/delegacio2.png" /></p>
+<p><img alt="alt text" src="../img/delegacio3.png" /></p>
+<p>Ara, sel·leccionem les tasques que volem delegar, el que farem serà fer <strong>tasques comunes: crear, esborrar i administrar comptes d’usuari. També, resetejar contrasenyes, gestionar grups, etc. A més a més, crear una delegació personalitzada (per més control).</strong></p>
+<p><img alt="alt text" src="../img/delegacio4.png" /></p>
+<p><img alt="alt text" src="../img/delegacio5.png" /></p>
+<p>Per últim, tanquem l'asistent i executem la següent comanda per aplicar els nous canvis sense reiniciar el servidor.</p>
+<div class="language-text highlight"><pre><span></span><code>gpupdate /force
+</code></pre></div>
+<p>Finalment, realitzem les proves sobre l'usuari <code>pablo</code> el que està dintre de la UO <code>recursos_humans</code> que hem delegat el control.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hauria de poder crear/esborrar/modificar usuaris dins la OU delegada. També, no hauria de poder fer canvis fora d'aquesta OU.</p>
+</div>
+<p><img alt="alt text" src="../img/delegacio6.png" /></p>
+<p><img alt="alt text" src="../img/delegacio7.png" /></p>
+<p>Com podem veure, hem pogut esborrar l'usuari <code>walid</code> amb l'usuari <code>pablo</code>.</p>
+<p><img alt="alt text" src="../img/delegacio8.png" /></p>
 
 
 
