@@ -729,6 +729,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4-gpos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GPOs
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1008,6 +1017,152 @@ Clica a Afegir (Add) &gt; escriu el nom de l’usuari o grup &gt; Comprovar noms
 <p><img alt="alt text" src="../img/delegacio7.png" /></p>
 <p>Com podem veure, hem pogut esborrar l'usuari <code>walid</code> amb l'usuari <code>pablo</code>.</p>
 <p><img alt="alt text" src="../img/delegacio8.png" /></p>
+<h2 id="4-gpos">4. GPOs</h2>
+<ol>
+<li>
+<p>Modifica la GPO del domini establint algun canvi en una directiva d’usuari</p>
+<ul>
+<li>Obre la consola GPMC (gpmc.msc).</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos1.png" /></p>
+<ul>
+<li>
+<p>A l’esquerra, expandeix el teu domini (ex: domini.local).</p>
+</li>
+<li>
+<p>Fes clic dret a Default Domain Policy &gt; Edita.</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos2.png" /></p>
+<ul>
+<li>
+<p>Ves a:</p>
+<p><code>Configuració de l'usuari &gt; Plantilles administratives &gt; Menú Inici i Barra de Tasques</code></p>
+</li>
+<li>
+<p>Exemple: activa la política "Eliminar l'accés a les propietats del menú Inici".</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos3.png" /></p>
+<p><img alt="alt text" src="../img/gpos4.png" /></p>
+<ul>
+<li>Tanca l'editor. Aquesta política s’aplicarà a tots els usuaris del domini.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos5.png" /></p>
+</li>
+<li>
+<p>Torna a Default <code>Domain Policy &gt; Edita.</code></p>
+<p><img alt="alt text" src="../img/gpos6.png" /></p>
+<ul>
+<li>Ves a:</li>
+</ul>
+<p><code>Configuració de l'equip &gt; Plantilles administratives &gt; Sistema</code></p>
+<p><img alt="alt text" src="../img/gpos7.png" /></p>
+<ul>
+<li>
+<p>Exemple: activa "Evita l’accés a l’indicador d’ordres".</p>
+</li>
+<li>
+<p>Aquesta política s’aplicarà a tots els equips del domini.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Crea una GPO d’inici amb valors per defecte per a equips i usuaris</p>
+<ul>
+<li>
+<p>A GPMC, clic dret a la UO on vols aplicar-la (o al domini) &gt; Crea un GPO nou i vincula’l aquí.</p>
+</li>
+<li>
+<p>Dona-li un nom, per exemple: <code>GPO-Inici</code>.</p>
+</li>
+<li>
+<p>Fes clic dret sobre <code>GPO-Inici</code> &gt; Edita.</p>
+</li>
+</ul>
+<p><strong>Configuració d'equip:</strong></p>
+<ul>
+<li>Ves a:</li>
+</ul>
+<p><code>Configuració de l'equip &gt; Plantilles administratives &gt; Xarxa &gt; Connexions de xarxa</code></p>
+<p>Exemple: desactiva la connexió LAN.</p>
+<p><strong>Configuració d'usuari:</strong></p>
+<ul>
+<li>
+<p>Ves a:</p>
+<p><code>Configuració de l'usuari &gt; Plantilles administratives &gt; Sistema</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Crea una nova GPO per a una UO i contradiu una directiva del domini</p>
+<ul>
+<li>
+<p>Crea una UO nova: a <strong>Users and Computers AD</strong>, clic dret al domini &gt; <strong>Nova &gt; Unitat organitzativa</strong> (ex: <code>UO-Prova</code>).</p>
+</li>
+<li>
+<p>Mou un usuari o equip a aquesta UO.</p>
+</li>
+<li>
+<p>A <strong>GPMC</strong>, clic dret sobre la UO &gt; <strong>Crea un GPO nou i vincula’l aquí</strong>. Exemple: <code>GPO-UO</code>.</p>
+</li>
+<li>
+<p>Edita la GPO:</p>
+</li>
+<li>
+<p>Canvia la mateixa política que vas establir al domini, però amb valor contrari.</p>
+</li>
+<li>
+<p>Exemple: Si <strong>vas bloquejar el gestor de tasques al domini</strong>, aquí <strong>el permets</strong>.</p>
+</li>
+<li>
+<p>Observa quin valor s’aplica realment (el de la UO té preferència <strong>si no hi ha conflictes d’herència</strong> o bloqueigs).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Excloure un usuari d’una GPO aplicada a una UO</p>
+<ul>
+<li>
+<p>A la GPO aplicada a la UO, ves a <strong>Delegació</strong> &gt; clic a <strong>Avançat</strong>.</p>
+</li>
+<li>
+<p>Afegeix el nom de l’usuari que vols <strong>excloure</strong>.</p>
+</li>
+<li>
+<p>Marca <strong>"Llegeix" = Permetre</strong>, però <strong>"Aplica directiva de grup"</strong> = <strong>Denegar</strong>.</p>
+</li>
+<li>
+<p>Aquesta excepció impedirà que l’usuari hereti la GPO, encara que estigui a la UO.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Bloquejar l’herència de directives</p>
+<ul>
+<li>
+<p>Clic dret a la <strong>UO</strong> (per exemple, UO-Prova) &gt; <strong>Bloqueja la herència</strong>.</p>
+</li>
+<li>
+<p>Això impedeix que GPOs del nivell superior (com les del domini) s’apliquin a aquesta UO.</p>
+</li>
+<li>
+<p>Si alguna GPO està marcada com <strong>"Aplicació forçada"</strong>, sí que s'aplicarà tot i el bloqueig (veure pas 7).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Exigir que es compleixi alguna directiva (Forçar aplicació)</p>
+<ul>
+<li>
+<p>A GPMC, clic dret sobre la GPO &gt; <strong>Forçar aplicació</strong>.</p>
+</li>
+<li>
+<p>Això fa que aquesta GPO <strong>s’apliqui sempre</strong>, encara que alguna UO hagi bloquejat la herència.</p>
+</li>
+</ul>
+</li>
+</ol>
 
 
 
