@@ -1059,108 +1059,123 @@ Clica a Afegir (Add) &gt; escriu el nom de l’usuari o grup &gt; Comprovar noms
 <p><code>Configuració de l'equip &gt; Plantilles administratives &gt; Sistema</code></p>
 <p><img alt="alt text" src="../img/gpos7.png" /></p>
 <ul>
-<li>
-<p>Exemple: activa "Evita l’accés a l’indicador d’ordres".</p>
-</li>
-<li>
-<p>Aquesta política s’aplicarà a tots els equips del domini.</p>
-</li>
+<li>Aquesta política s’aplicarà a tots els equips del domini.</li>
 </ul>
 </li>
 <li>
 <p>Crea una GPO d’inici amb valors per defecte per a equips i usuaris</p>
 <ul>
-<li>
-<p>A GPMC, clic dret a la UO on vols aplicar-la (o al domini) &gt; Crea un GPO nou i vincula’l aquí.</p>
-</li>
-<li>
-<p>Dona-li un nom, per exemple: <code>GPO-Inici</code>.</p>
-</li>
-<li>
-<p>Fes clic dret sobre <code>GPO-Inici</code> &gt; Edita.</p>
-</li>
+<li>A GPMC, clic dret a la UO on vols aplicar-la (o al domini) &gt; Crea un GPO nou i vincula’l aquí.</li>
 </ul>
+<p><img alt="alt text" src="../img/gpos8.png" /></p>
+<ul>
+<li>Dona-li un nom, per exemple: <code>GPO-Inici</code>.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos9.png" /></p>
+<ul>
+<li>Fes clic dret sobre <code>GPO-Inici</code> &gt; Edita.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos10.png" /></p>
 <p><strong>Configuració d'equip:</strong></p>
 <ul>
 <li>Ves a:</li>
 </ul>
 <p><code>Configuració de l'equip &gt; Plantilles administratives &gt; Xarxa &gt; Connexions de xarxa</code></p>
 <p>Exemple: desactiva la connexió LAN.</p>
-<p><strong>Configuració d'usuari:</strong></p>
-<ul>
-<li>
-<p>Ves a:</p>
-<p><code>Configuració de l'usuari &gt; Plantilles administratives &gt; Sistema</code></p>
-</li>
-</ul>
+<p><img alt="alt text" src="../img/gpos11.png" /></p>
+<p><img alt="alt text" src="../img/gpos12.png" /></p>
+<p><img alt="alt text" src="../img/gpos13.png" /></p>
+<p>Exemple: Desactivar el cmd per als usuaris</p>
+<p><img alt="alt text" src="../img/gpos14.png" /></p>
+<p>Si inició sessió amb un usuari dintre de la UO <code>Recursos Humans</code>, com és l'usuari <strong>profe1</strong>. Comprovem que la GPO s'ha aplicat correctament.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Al moment de fer clic a qualsevol tecla per continuar, el cmd es tanca automàticament.</p>
+<p><img alt="alt text" src="../img/gpos15.png" /></p>
+</div>
 </li>
 <li>
 <p>Crea una nova GPO per a una UO i contradiu una directiva del domini</p>
 <ul>
-<li>
-<p>Crea una UO nova: a <strong>Users and Computers AD</strong>, clic dret al domini &gt; <strong>Nova &gt; Unitat organitzativa</strong> (ex: <code>UO-Prova</code>).</p>
-</li>
-<li>
-<p>Mou un usuari o equip a aquesta UO.</p>
-</li>
-<li>
-<p>A <strong>GPMC</strong>, clic dret sobre la UO &gt; <strong>Crea un GPO nou i vincula’l aquí</strong>. Exemple: <code>GPO-UO</code>.</p>
-</li>
-<li>
-<p>Edita la GPO:</p>
-</li>
-<li>
-<p>Canvia la mateixa política que vas establir al domini, però amb valor contrari.</p>
-</li>
-<li>
-<p>Exemple: Si <strong>vas bloquejar el gestor de tasques al domini</strong>, aquí <strong>el permets</strong>.</p>
-</li>
-<li>
-<p>Observa quin valor s’aplica realment (el de la UO té preferència <strong>si no hi ha conflictes d’herència</strong> o bloqueigs).</p>
-</li>
+<li>Crea una UO nova: a <strong>Users and Computers AD</strong>, clic dret al domini &gt; <strong>Nova &gt; Unitat organitzativa</strong> (ex: <code>UO-Prova</code>).</li>
 </ul>
+<p><img alt="alt text" src="../img/gpos16.png" /></p>
+<ul>
+<li>Mou un usuari o equip a aquesta UO.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos17.png" /></p>
+<ul>
+<li>A <strong>GPMC</strong>, clic dret sobre la UO &gt; <strong>Crea un GPO nou i vincula’l aquí</strong>. Exemple: <code>GPO-UO</code>.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos18.png" /></p>
+<ul>
+<li>Edita la GPO:</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos19.png" /></p>
+<ul>
+<li>Canvia la mateixa política que vas establir al domini, però amb valor contrari.</li>
+</ul>
+<p><strong>Creo la mateix GPO que he creat per a la GPO "recursos humans" per a tot el domini.</strong></p>
+<p><img alt="alt text" src="../img/gpos20.png" /></p>
+<p><img alt="alt text" src="../img/gpos21.png" /></p>
+<ul>
+<li>Exemple: Si <strong>vas bloquejar el cmd per als usuaris</strong>, aquí <strong>el permets</strong>.</li>
+</ul>
+<p><strong>Ara el que faig és a la UO que he creat configurar la GPO perquè l'usuari <code>fuap</code> si que tingui accès al cmd</strong></p>
+<p><img alt="alt text" src="../img/gpos22.png" /></p>
+<ul>
+<li>Observa quin valor s’aplica realment (el de la UO té preferència <strong>si no hi ha conflictes d’herència</strong> o bloqueigs).</li>
+</ul>
+<p>El que passa, es que com la GPO configura una UO <strong>específica</strong> no pot afectar el meu usuari <code>fuap</code> de dintre de ella, encara que sigui part del domini.</p>
+<p><img alt="alt text" src="../img/gpos23.png" /></p>
 </li>
 <li>
 <p>Excloure un usuari d’una GPO aplicada a una UO</p>
 <ul>
-<li>
-<p>A la GPO aplicada a la UO, ves a <strong>Delegació</strong> &gt; clic a <strong>Avançat</strong>.</p>
-</li>
+<li>A la GPO aplicada a la UO, ves a <strong>Delegació</strong> &gt; clic a <strong>Avançat</strong>.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos24.png" /></p>
+<p><img alt="alt text" src="../img/gpos25.png" /></p>
+<ul>
 <li>
 <p>Afegeix el nom de l’usuari que vols <strong>excloure</strong>.</p>
 </li>
 <li>
 <p>Marca <strong>"Llegeix" = Permetre</strong>, però <strong>"Aplica directiva de grup"</strong> = <strong>Denegar</strong>.</p>
 </li>
-<li>
-<p>Aquesta excepció impedirà que l’usuari hereti la GPO, encara que estigui a la UO.</p>
-</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos26.png" /></p>
+<ul>
+<li>Aquesta excepció impedirà que l’usuari hereti la GPO, encara que estigui a la UO.</li>
 </ul>
 </li>
 <li>
 <p>Bloquejar l’herència de directives</p>
 <ul>
-<li>
-<p>Clic dret a la <strong>UO</strong> (per exemple, UO-Prova) &gt; <strong>Bloqueja la herència</strong>.</p>
-</li>
-<li>
+<li>Clic dret a la <strong>UO</strong> (per exemple, UO-Prova) &gt; <strong>Bloqueja la herència</strong>.</li>
+</ul>
+<p><img alt="alt text" src="../img/gpos27.png" /></p>
+<p><strong>D'aquesta manera surt amb aquest icono a la UO.</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Això impedeix que GPOs del nivell superior (com les del domini) s’apliquin a aquesta UO.</p>
-</li>
-<li>
-<p>Si alguna GPO està marcada com <strong>"Aplicació forçada"</strong>, sí que s'aplicarà tot i el bloqueig (veure pas 7).</p>
-</li>
+</div>
+<p><img alt="alt text" src="../img/gpos28.png" /></p>
+<ul>
+<li>Si alguna GPO està marcada com <strong>"Aplicació forçada"</strong>, sí que s'aplicarà tot i el bloqueig (veure pas 7).</li>
 </ul>
 </li>
 <li>
 <p>Exigir que es compleixi alguna directiva (Forçar aplicació)</p>
 <ul>
-<li>
-<p>A GPMC, clic dret sobre la GPO &gt; <strong>Forçar aplicació</strong>.</p>
-</li>
-<li>
-<p>Això fa que aquesta GPO <strong>s’apliqui sempre</strong>, encara que alguna UO hagi bloquejat la herència.</p>
-</li>
+<li>A GPMC, clic dret sobre la GPO &gt; <strong>Forçar aplicació (o Exigido)</strong>.</li>
 </ul>
+<p><img alt="alt text" src="../img/gpos29.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Això fa que aquesta GPO <strong>s’apliqui sempre</strong>, encara que alguna UO hagi bloquejat la herència.</p>
+</div>
+<p><img alt="alt text" src="../img/gpos30.png" /></p>
 </li>
 </ol>
 
